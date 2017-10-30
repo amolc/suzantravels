@@ -1,0 +1,339 @@
+/* Base CSS */
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+a:focus { outline: 0 solid }
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    font-weight: 700;
+}
+body {
+
+}
+a:hover { text-decoration: none }
+
+
+.jumbotron p {
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+}
+
+section#header {
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+
+
+.context-head {
+    color: #324B73;
+}
+
+.content-info p {
+    font-size: 18px;
+    padding: 0px;
+    margin: 0 0px 11px;
+}
+
+.content-info ul {
+    padding: 0px;
+    margin: 0;
+    margin-left: 25px;
+    font-size: 16px;
+}
+
+/*
+.box-context {
+    margin-bottom: 70px;
+    height: 550px;
+}
+*/
+.content-info h3{
+    font-weight: 600;
+    font-size: 20px;
+}
+.context-img img {
+    height: 220px;
+    width: 100%;
+}
+
+.content-info ul li {
+    margin-bottom: 10px;
+}
+
+section#footer {
+    padding: 50px 0px;
+}
+/*--------------------*/
+/* MENU */
+/*--------------------*/
+
+#mu-hero .navbar-default {
+    background-color: #171717;
+    border-color: #171717;
+    padding: 5px 0;
+}
+
+.mu-navbar {
+    top: -150px;
+    transition: all 0.5s;
+}
+
+.mu-nav-show {
+    top: 0px;
+}
+
+#mu-hero .navbar-default .navbar-brand {
+    padding: 15px 15px;
+    font-size: 28px;
+    line-height: 20px;
+    color: #fff;
+}
+
+.mu-navbar .mu-menu li a {
+    color: #FFFFFF;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:focus, 
+.navbar-default .navbar-nav > .active > a:hover {
+    color: #fff;
+}
+/*--------------------*/
+/* HEADER */
+/*--------------------*/
+
+#mu-hero {
+    background-image: url("../img/singapore-166544.jpg");
+    display: inline;
+    float: left;
+    width: 100%;
+    background-position: top center;
+    background-attachment: fixed;
+    background-size: 100%;
+    padding: 70px 0px;
+    background-repeat: no-repeat;
+}
+
+.mu-hero-overlay {
+    display: inline;
+    float: left;
+    opacity: 0.94;
+    width: 100%;
+}
+
+.mu-menu-btn {
+    position: fixed;
+    right: 15%;
+    top: 50px;
+    color: #fff;
+    font-size: 25px;
+    border: 2px solid #fff;
+    padding: 5px 14px;
+    z-index: 999;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.mu-menu-btn:hover,
+.mu-menu-btn:focus {
+    border: 2px solid #fff;
+}
+.mu-hero-featured-content{
+    text-align: center;
+    /*border: 12px solid #18a7e2;*/
+    padding: 55px;
+    background: rgba(0, 0, 0, 0.5);
+}
+.mu-hero-featured-content h1{
+    color: #FFFFFF;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin: 30px 0px 0px;   
+}
+#footer{
+    background: #171717; 
+    border-top: 5px solid #18a7e2;
+}
+#footer .jumbotron{
+    background: transparent; 
+    padding: 0px;
+}
+.foot-text h4{
+    color: #fff; 
+    text-transform: uppercase; 
+    margin-bottom: 28px;
+}
+.foot-text h5{
+    color: #fff; 
+    font-size: 18px;
+}
+.foot-text p{
+    color: #fff; 
+    font-size: 16px;
+}
+#bottom-strip{
+    background-color: #171717;
+    padding: 15px 0px; 
+    border-top: 1px solid #545252;
+}
+#bottom-strip p{
+    text-align: center; 
+    color: #fff;  
+    font-size: 15px;
+    margin: 0px;
+}
+#bottom-strip p a{
+    color: #18a7e2;
+}
+.foot-text ul{
+    margin: 0px; 
+    padding: 0px;
+}
+.foot-text ul li{
+    list-style-type: none; 
+    float: left;
+}
+.foot-text ul li a{
+    color: #171717;
+    display: inline-block; 
+    font-size: 20px; 
+    margin-right: 20px;
+    background-color:  #fff; 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    text-align: center; 
+    line-height: 40px; 
+    transition: all 0.2s linear 0s; 
+    -webkit-transition: all 0.2s linear 0s; 
+    -moz-transition: all 0.2s linear 0s; 
+    -ms-transition: all 0.2s linear 0s; 
+    -o-transition: all 0.2s linear 0s;
+}
+.foot-text ul li:last-child a{
+    margin: 0px;
+}
+.pd-l80{
+    padding-left: 80px;
+}
+.tour-package{
+    padding: 60px 0px;
+}
+.hvr-radial-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+  background: #e1e1e1;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-radial-out:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ff2;
+  border-radius: 100%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-radial-out:hover, 
+.hvr-radial-out:focus, 
+.hvr-radial-out:active {
+  color: #171717;
+}
+.hvr-radial-out:hover:before, 
+.hvr-radial-out:focus:before, 
+.hvr-radial-out:active:before {
+  -webkit-transform: scale(2);
+  transform: scale(2);
+}
+.section-title{
+    font-size: 33px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.package-box{
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.09);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.09);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.09);
+    -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.09);
+    -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.09);
+    border: 1px solid #E8E8E8;
+    margin-bottom: 30px;
+}
+.content-info{padding: 20px;}
+.content-info ul li{
+    list-style-type: square;
+    color: #000;
+}
+.content-info ul li span{color: #000;}
+.package-box{
+    position: relative;
+    height: 100%;
+    min-height: 720px;
+}
+.package-box .btn-info{
+    color: #fff;
+    background-color: #171717;
+    border-color: #171717;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-weight: 600;
+    left: 0;
+    border-radius: 0px;
+    padding: 15px;
+    text-transform: uppercase;
+}
+.package-box .btn-info:hover{
+    background-color: #18a7e2;
+    color: #171717;
+     border-color: #18a7e2;
+}
+#book-now{padding: 60px;}
+.form-control{border-radius: 0px; -webkit-border-radius: 0px; -moz-border-radius: 0px; -ms-border-radius: 0px; -o-border-radius: 0px; height: 35px; border-color: #171717;}
+.form-control:focus, .form-control:hover, .form-control:active{box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none; border-color: #18a7e2; }
+.btn-success{border-radius: 0px; -webkit-border-radius: 0px; -moz-border-radius: 0px; -ms-border-radius: 0px; -o-border-radius: 0px; display: block; margin: 40px auto 0px; padding: 10px 45px; background-color: #18a7e2;
+    border-color: #18a7e2;}
+#thankyou{ width: 100%; padding: 15px; background: #5cb85c; color: #ffffff !important; margin-top: 30px;}
+#thankyou h4{margin: 0px;}

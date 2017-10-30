@@ -1,0 +1,39 @@
+{
+  "name": "cfo.cxohonour.com",
+  "version": "1.0.0",
+  "description": "This is 1.0 CFOhonour",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "connect": "^3.6.2",
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "mysql": "^2.13.0",
+    "mysql-crud": "^0.1.4",
+    "ng-init": "^4.0.1",
+    "node-cron": "^1.2.0",
+    "node-schedule": "^1.2.3",
+    "nodemailer": "^4.0.1",
+    "nodemailer-mailgun-transport": "^1.3.5",
+    "serve-static": "^1.12.3",
+    "system-sleep": "^1.3.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amolc/cfohonour.git"
+  },
+  "keywords": [
+    "cfohonour",
+    "fountaintechies"
+  ],
+  "author": "Amol Chawathe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amolc/cfohonour/issues"
+  },
+  "homepage": "https://github.com/amolc/cfohonour#readme"
+}
