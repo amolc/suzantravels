@@ -36,7 +36,9 @@ a:hover { text-decoration: none }
     padding: 0;
     margin: 0;
 }
-
+section{
+    padding: 60px 0px;
+}
 section#header {
     padding-top: 30px;
     padding-bottom: 50px;
@@ -88,7 +90,7 @@ section#footer {
 /*--------------------*/
 
 #mu-hero .navbar-default {
-    background-color: #171717;
+    background-color: #656057;
     border-color: #171717;
     padding: 5px 0;
 }
@@ -135,7 +137,7 @@ section#footer {
     background-position: top center;
     background-attachment: fixed;
     background-size: 100%;
-    padding: 70px 0px;
+    padding: 150px 0px 100px;
     background-repeat: no-repeat;
 }
 
@@ -167,18 +169,18 @@ section#footer {
 .mu-hero-featured-content{
     text-align: center;
     /*border: 12px solid #18a7e2;*/
-    padding: 55px;
+    /*padding: 55px;*/
     /*background: #ff5f1c;*/
 }
 .mu-hero-featured-content h1{
-    color: #FFFFFF;
+    color: #ff5f1c;
     font-size: 40px;
     text-transform: uppercase;
     margin: 30px 0px 0px;   
 }
 #footer{
     background: #171717; 
-    border-top: 5px solid #18a7e2;
+    border-top: 5px solid #fe6828;
 }
 #footer .jumbotron{
     background: transparent; 
@@ -293,6 +295,7 @@ section#footer {
     font-size: 33px;
     text-align: center;
     margin-bottom: 50px;
+    color: #656057;
 }
 .package-box{
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.09);
@@ -339,3 +342,40 @@ section#footer {
     border-color: #18a7e2;}
 #thankyou{ width: 100%; padding: 15px; background: #5cb85c; color: #ffffff !important; margin-top: 30px;}
 #thankyou h4{margin: 0px;}
+
+
+.package-masonry .row {
+ -moz-column-width: 21em;
+ -webkit-column-width: 21em;
+ -moz-column-gap: 1em;
+ -webkit-column-gap:1em; 
+  
+}
+
+.package-masonry .item {
+ display: inline-block;
+ padding:  .25rem;
+ width:  100%; 
+}
+
+.package-masonry .well {
+ position:relative;
+ display: block;
+ padding: 0px;
+ border: 0px;
+ border-radius: 0px;
+ background: #efefef;
+}
+.orenge-btn{
+    background: #fe6828;
+    border: 0px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 0px;
+    max-width: 130px;
+    padding: 10px 15px;
+    margin-top: 23px;
+}
+.orenge-btn:hover{
+    background: #656057;
+}
