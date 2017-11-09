@@ -94,7 +94,8 @@ section#footer {
 }
 
 .mu-navbar {
-    top: -150px;
+    /*top: -150px;*/
+    top: 0px;
     transition: all 0.5s;
 }
 
@@ -167,7 +168,7 @@ section#footer {
     text-align: center;
     /*border: 12px solid #18a7e2;*/
     padding: 55px;
-    background: #ff5f1c;
+    /*background: #ff5f1c;*/
 }
 .mu-hero-featured-content h1{
     color: #FFFFFF;
