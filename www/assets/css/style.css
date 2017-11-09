@@ -126,7 +126,8 @@ section#footer {
 /*--------------------*/
 
 #mu-hero {
-    background-image: url("../img/singapore-166544.jpg");
+    /*background-image: url("../img/singapore-166544.jpg");*/
+    background-color: #f1eada;
     display: inline;
     float: left;
     width: 100%;
@@ -166,7 +167,7 @@ section#footer {
     text-align: center;
     /*border: 12px solid #18a7e2;*/
     padding: 55px;
-    background: rgba(0, 0, 0, 0.5);
+    background: #ff5f1c;
 }
 .mu-hero-featured-content h1{
     color: #FFFFFF;
