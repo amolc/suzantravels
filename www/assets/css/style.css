@@ -574,7 +574,7 @@ section#footer {
   width: 100%;
   height: auto;
   display: inline-block;
-  margin-top: 30px;
+  margin-bottom: 30px;
 }
 #country-box .hero-grid-image {
   position: relative;
