@@ -2,7 +2,7 @@ var http = require('http');
 var mysql = require('mysql');
 var db = mysql.createPool({
   database: '80consult',
-  user: 'cio_choice',
+  user: 'root',
   password: '10gXWOqeaf',
   host: 'db.80startups.com',
 });
@@ -49,15 +49,15 @@ exports.consult = function (req, res) {
 		},function (err,vals){
 
     })
-    // var recipientEmail = 'bonneroute247@gmail.com,nadyshaikh@gmail.com,ceo@80startups.com,shital.talole@fountaintechies.com';
-    var recipientEmail = 'pravinshelar999@gmail.com'; //,ceo@80startups.com,shital.talole@fountaintechies.com'; //,ceo@80startups.com,shital.talole@80startups.com
-    var subject = "[BonneRouteTravels.COM] Bonne Route Travels Booking";
+     var recipientEmail = 'nadyshaikh@gmail.com,ceo@80startups.com,shital.talole@fountaintechies.com,pravinshelar999@gmail.com';
+    //var recipientEmail = 'pravinshelar999@gmail.com'; //,ceo@80startups.com,shital.talole@fountaintechies.com'; //,ceo@80startups.com,shital.talole@80startups.com
+    var subject = "[ambitiontours.COM] Ambition Tours Booking";
     var mailbody = '<table>\
                         <tr>\
-                        <td><img src="http://bonneroutetravels.com/assets/img/logo.jpg"></td><br>\
+                        <td><img src="https://ambitiontours.80startups.com/assets/img/logo.jpg"></td><br>\
                       </tr>\
                       <tr>\
-                        <td><h1>Dear Bonne Route Travels,</td>\
+                        <td><h1>Dear Ambition Tours,</td>\
                       </tr>\
                       <tr>\
                       </tr>\
@@ -71,7 +71,7 @@ exports.consult = function (req, res) {
                         <td>Best wishes,</td>\
                       </tr>\
                       <tr>\
-                        <td><h2>BonneRouteTravels.COM</h2></td>\
+                        <td><h2>ambitiontours.com</h2></td>\
                       </tr>\
                       <tr>\
                         <td bgcolor="#000000"><font color ="white">This is a one-time email. Please do not reply to this email.</font></td>\

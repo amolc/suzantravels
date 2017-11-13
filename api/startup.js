@@ -2,9 +2,9 @@ var http = require('http');
 var mysql = require('mysql');
 var db = mysql.createPool({
   database: '80consult',
-  user: 'cio_choice',
+  user: 'root',
   password: '10gXWOqeaf',
-  host: 'cxohonour.com',
+  host: 'db.80startups.com',
 });
 
 var CRUD = require('mysql-crud');
