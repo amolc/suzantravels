@@ -11,7 +11,7 @@ else if (document.location.hostname == "www.bonneroutetravels.com")
 
 }else{
 
-  var baseurl = "http://localhost:7070/api/";
+  var baseurl = "http://localhost:6008/api/";
 }
 
 app.config(['storeProvider', function (storeProvider) {

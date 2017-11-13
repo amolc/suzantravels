@@ -4,7 +4,7 @@ var db = mysql.createPool({
   database: '80consult',
   user: 'cio_choice',
   password: '10gXWOqeaf',
-  host: 'cxohonour.com',
+  host: 'db.80startups.com',
 });
 
 var CRUD = require('mysql-crud');
@@ -49,8 +49,8 @@ exports.consult = function (req, res) {
 		},function (err,vals){
 
     })
-
-    var recipientEmail = 'bonneroute247@gmail.com,nadyshaikh@gmail.com,ceo@80startups.com,shital.talole@fountaintechies.com'; //,ceo@80startups.com,shital.talole@fountaintechies.com'; //,ceo@80startups.com,shital.talole@80startups.com
+    // var recipientEmail = 'bonneroute247@gmail.com,nadyshaikh@gmail.com,ceo@80startups.com,shital.talole@fountaintechies.com';
+    var recipientEmail = 'pravinshelar999@gmail.com'; //,ceo@80startups.com,shital.talole@fountaintechies.com'; //,ceo@80startups.com,shital.talole@80startups.com
     var subject = "[BonneRouteTravels.COM] Bonne Route Travels Booking";
     var mailbody = '<table>\
                         <tr>\

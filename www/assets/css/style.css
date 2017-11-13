@@ -305,7 +305,7 @@ section#footer {
     font-size: 33px;
     text-align: center;
     margin-bottom: 50px;
-    color: #382f2a;
+    color: #280f0a;
 }
 .package-box{
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.09);
@@ -449,7 +449,6 @@ section#footer {
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-
 .packges-block{
     border: 1px solid #cfcfcf;
     background-color: #FFF;
@@ -536,4 +535,54 @@ section#footer {
 .packege-para{
     height: 80px;
     overflow: hidden;
+}
+#book-now{
+  background-color: #f1eada;
+}
+#book-now label{
+  color: #280f0a;
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+}
+.form-control:focus, .form-control:hover, .form-control:active{
+  border-color: #ff6624;
+}
+.form-group {
+    margin-bottom: 19px;
+}
+
+.p_element{
+  display: none;
+  margin-top: 30px;
+}
+.pakege-active{
+  display: block;
+}
+#cuntry-slider{
+  padding: 20px;
+  background-color: #f1eada;
+}
+.country-side-bar{
+  background-color: #FFF;
+  padding: 20px;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+}
+.country-side-bar ul{
+  margin: 0px;
+  padding: 0px;
+}
+.country-side-bar ul li{
+  line-height: 28px;
+  list-style-type: none;
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+}
+.country-side-bar ul li input[type="checkbox"]{
+  margin-right: 6px;
+  cursor: pointer;
 }

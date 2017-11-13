@@ -149,7 +149,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center">
-           <h2 class="section-title">BOOK NOW</h2>
+           <h2 class="section-title">Custom Tour</h2>
         </div>
       </div>
       <div class="row">
@@ -166,21 +166,7 @@
             <div class="form-group">
               <label for="email">Email Address:</label>
               <input type="email" class="form-control" ng-model="email" name="email" id="email" required>
-            </div>
-            <div class="form-group">
-              <label for="pwd">No of Adult :</label>
-
-              <select ng-model="adults" name="adults" id="adults" class="form-control" required>
-                  <option ng-repeat="item in adults" value="{{item}}">{{item}}</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="pwd">No of Child :</label>
-
-              <select ng-model="Child" name="Child" id="Child" class="form-control">
-                  <option ng-repeat="item in child" value="{{item}}">{{item}}</option>
-              </select>
-            </div>
+            </div>            
             <div class="form-group">
               <label for="pwd">Travel Date :</label>
               <input type="date" class="form-control" ng-model="travelDate" name="travelDate" id="travelDate" required>
@@ -189,17 +175,13 @@
             <div class="col-md-6">
             <div class="form-group">
               <label for="pwd">Special Request</label>
-              <textarea class="form-control mb19" name="message" ng-model="message" id="message" cols="30" rows="16"></textarea>
+              <textarea class="form-control mb19" name="message" ng-model="message" id="message" cols="30" rows="12"></textarea>
             </div>
-            <div class="form-group">
-              <label for="pwd">Promo Code :</label>
-              <input type="text" class="form-control" ng-model="promoCode" name="promoCode" id="promoCode">
             </div>
-                </div>
               <div class="clearfix"></div>
            <!--  <input type="text" class="form-control" ng-model="packageName" name="packageName" id="packageName"> -->
              <input type="hidden" class="form-control" ng-model="packagename" value="{{packagename}}" name="packageName" id="packageName">
-            <button class="btn btn-success orenge-btn" type="submit" value="Apply" class="wpcf7-form-control wpcf7-submit">BOOKING</button>
+            <button class="btn btn-success orenge-btn" type="submit" value="Apply" class="wpcf7-form-control wpcf7-submit">SUBMIT</button>
           </form>
           <div id="thankyou">
             <div class="thankyou">
