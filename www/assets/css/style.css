@@ -709,3 +709,13 @@ section#footer {
   font-family: 'Lato', sans-serif;
   font-size: 14px;
 }
+.form-group{
+  position: relative;
+}
+.icon-position{
+  position: absolute;
+  top: 32px;
+  font-size: 16px;
+  right: 11px;
+  color: #baacac;
+}
