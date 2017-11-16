@@ -44,7 +44,7 @@ app.post('/api/apply', startup.apply);
 app.post('/api/invest', investor.invest);
 
 
-app.listen(6008, function () {
-  console.log('CORS-enabled web server listening on port 6008')
+app.listen(6010, function () {
+  console.log('CORS-enabled web server listening on port 6010')
 })
-console.log("Magic at http://localhost:6008");
+console.log("Magic at http://localhost:6010");
