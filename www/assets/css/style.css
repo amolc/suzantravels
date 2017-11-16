@@ -778,6 +778,7 @@ section#footer {
     border: 1px solid #ef6511;
     padding: 0px;
     cursor: pointer;
+    background: #fff;
 }
 .bor-none{
   border-right: 0px !important;
