@@ -54,7 +54,9 @@ section#header {
 }
 
 
-
+.color-white{
+  color: #ffffff;
+}
 .context-head {
     color: #324B73;
 }
@@ -350,7 +352,17 @@ section#footer {
 .form-control:focus, .form-control:hover, .form-control:active{box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none; border-color: #18a7e2; }
 .btn-success{border-radius: 0px; -webkit-border-radius: 0px; -moz-border-radius: 0px; -ms-border-radius: 0px; -o-border-radius: 0px; display: block; margin: 40px auto 0px; padding: 10px 45px; background-color: #18a7e2;
     border-color: #18a7e2;}
-#thankyou{ width: 100%; padding: 15px; background: #5cb85c; color: #ffffff !important; margin-top: 30px;}
+#thankyou{
+    width: 60%;
+    padding: 45px;
+    background: #374048;
+    color: #ffffff !important;
+    margin-top: 30px;
+    border-radius: 7px;
+    margin: 60px auto;
+    text-align: center;
+}
+#thankyou a{font-size: 18px; text-transform: uppercase;}
 #thankyou h4{margin: 0px;}
 
 
@@ -709,9 +721,9 @@ section#footer {
   font-family: 'Lato', sans-serif;
   font-size: 14px;
 }
-.form-group{
+/*.form-group{
   position: relative;
-}
+}*/
 .icon-position{
   position: absolute;
   top: 32px;
@@ -722,7 +734,7 @@ section#footer {
 
 /*BOX CSS*/
 .card-title {
-    font-size: 24px;
+    font-size: 20px;
     margin: 0px 0px 10px;
     padding: 10px 17px 5px;
     color: #280f0a;
@@ -738,11 +750,11 @@ section#footer {
 .card-features ul li {
     list-style-type: none;
     float: left;
-    padding-right: 30px;
+    padding-right: 11px;
 }
 .card-features ul li {
     color: #280f0a;
-    font-size: 18px;
+    font-size: 16px;
 }
 .card-pricing {
     background: #ef6511 ;
@@ -786,4 +798,59 @@ section#footer {
 .product-img img{
     display: block;
     margin:0 auto;
+}
+
+/*FORM CSS*/
+.wrap-bg {
+    background-color: #374048;
+    padding: 35px 15px 15px 20px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+.form-horizontal .form-group{
+  margin: 11px 0px;
+}
+.form-heding {
+    font-size: 16px;
+    text-align: left;
+    margin-top: 15px;
+    color: #fff;
+}
+.form-horizontal .control-label {
+    text-align: left;
+    padding: 0px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #fff;
+}
+.form-horizontal .form-control {
+    border-radius: 0;
+    box-shadow: none;
+    font: 300 17px/24px "Poppins", sans-serif;
+    padding: 6px 18px;
+    height: 40px;
+    border-color: #e0e8ee;
+    background: #f8fbfd;
+}
+.smile-img{
+  width: 162px;
+  margin: 0 auto;
+}
+.section-header h2 {
+     
+    text-transform: uppercase;
+}
+.pay-form-wrap{
+  background-color: #374048;
+  padding: 35px 27px 15px 40px;
+  margin: 40px auto 0px;
+  text-align: center;
+  color: #ffffff;
+  width: 63%;
+  border-radius: 8px;
 }
