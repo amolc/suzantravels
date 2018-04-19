@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <script type="text/javascript">
+         if (window.localStorage.getItem('Admin_Id')<=0) 
+                {
+                   window.location.href="index.html";
+                }
+    </script>
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ambition Tours</title>
+
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+ 
+  <link href="../assets/css/table-style.css" rel="stylesheet">
+  <link href="../assets/css/responsive.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="../assets/js/angular.min.js"></script>
+  <script type="text/javascript" src="../assets/js/angular-storage.min.js"></script>
+  <script type="text/javascript" src="../assets/js/app.js"></script>
+  <script type="text/javascript" src="../assets/js/adminCtrl.js"></script>
+</head>
+
+<body data-ng-app="80consult" data-ng-controller="admincontroller">
+<!-- Start Header -->
+       <header id="top-header">
+            <div class="orenge-logo-strip">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="logo-img">
+                                <a href="index.html">
+                                  <img src="../assets/img/logo.png" class="img-responsive" alt="" title="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation-strip">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="top-nav">
+                                <nav class="navbar navbar-default">
+                                  <div class="container-fluid pd0">
+                                    <!-- Brand and toggle get grouped for better mobile display -->
+                                    <div class="navbar-header">
+                                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                      </button>
+                                      <!-- <a class="navbar-brand" href="#">Brand</a> -->
+                                    </div>
+
+                                    <!-- Collect the nav links, forms, and other content for toggling -->
+                                    <div class="collapse navbar-collapse pd0" id="bs-example-navbar-collapse-1">
+                                      <ul class="nav navbar-nav">
+                                        <li><a href="dashboard.html" class="hvr-underline-reveal">Dashboard</a></li>
+                                        <li><a href="attractions.html" class="hvr-underline-reveal">Attractions</a></li>
+                                        <li><a href="tours.html" class="hvr-underline-reveal">Package Tours</a></li>
+                                        <li><a href="countries.html" class="hvr-underline-reveal">Countries</a></li>
+                                       <li><a href="visa.html" class="hvr-underline-reveal">Visa Details</a></li>
+                                        <li><a href="gift-vouchers.html" class="hvr-underline-reveal">Travel Vouchers</a></li>
+<li><a href="settings.html" class="hvr-underline-reveal">Settings</a></li>
+                                          <!-- <li><a href="changepassword.html" class="hvr-underline-reveal">Change Password</a></li>
+                                        <li><a href="javascript:void(0)" class="hvr-underline-reveal" ng-click="adminlogout();">Logout</a></li> -->
+                                      </ul>
+                                      <ul class="nav navbar-nav navbar-right" ng-init="isAdminLoggedin()">
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                              <span>Welcome</span> 
+                                              <span class="pro-img">
+                                                <img src="../assets/img/user-icon.png" alt="" title="">
+                                              </span>
+                                              <span>Sadia Rahman</span>
+                                             <!--  <span>{{Admin_Name}}</span> -->
+                                              <span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                           
+                                              <li><a href="changepassword.html" class="hvr-underline-reveal">Change Password</a></li>
+                                              <li><a href="javascript:void(0)" class="hvr-underline-reveal" ng-click="adminlogout();">Logout</a></li>
+                                            </ul>
+                                          </li>
+                                      </ul>
+                                    </div><!-- /.navbar-collapse -->
+                                  </div><!-- /.container-fluid -->
+                                </nav>
+                            </div>
+                        </div >
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section id="dashboard-wrap">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12 col-md-12">
+              <ul class="nav nav-tabs">
+                <li class="active"><a  data-toggle="tab" href="#home"><h5>Attraction Bookings</h5></a></li>
+                <li><a data-toggle="tab" href="#menu1"><h5>Package Tour Enquiries</h5></a></li>
+                 <li><a data-toggle="tab" href="#menu2"><h5>Custom Tour Enquiries</h5></a></li>
+                  <li><a data-toggle="tab" href="#menu3"><h5>Air Ticket Enquiries</h5></a></li>
+                   <li><a data-toggle="tab" href="#menu4"><h5>Visa Services Enquiries</h5></a></li>
+                    <li><a data-toggle="tab" href="#menu5"><h5>Travel Voucher Bookings</h5></a></li>
+              </ul>
+
+              <div class="tab-content admin-tabs">
+                <div id="home" class="tab-pane fade in active">
+                 <div class=""  ng-init="getAttractionBookings();">
+                  <h2 class="text-center">Attraction Bookings</h2>
+                  <div class="dashboard-table">
+                 <table id="table">
+                      <thead>
+                        <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Package Name</th>
+                        <th>Adults Price</th>
+                        <th>Child Price</th>
+                        <th>Total Amount</th>
+                        <th></th>
+                        <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                      <tr ng-repeat="book in abooking">
+                          <td>{{$index+1}}</td>
+                          <td>{{book.fullName}}</td>
+                          <td>{{book.TourTitle}}</td>
+                          <td>${{book.adults * book.TourCost}}</td>
+                          <td>${{book.Child * book.ChildCost}}</td>
+                          <td>${{book.TotalAmount}}</td>
+                          <td><a href="booking-detail.html?Id={{book.BookingId}}"><i class="fa fa-eye"></i></a></td>
+                          <td><a href="javascript:void(0)" ng-click="deleteAttractionBookings(book.BookingId)"><i class="fa fa-trash"></i></a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                   </div>
+                  <div class="clearfix"></div>
+                </div>
+                </div>
+                <div id="menu1" class="tab-pane fade">
+                 <div class=" profile"  ng-init="getTourEnquiries();">
+                  <h2 class="text-center">Package Tour Enquiries</h2>
+                  <div class="dashboard-table">
+                 <table id="table">
+                      <thead>
+                        <tr>
+                        <th>#</th>
+                         <th>Name</th>
+                        <th>Package Name</th>
+                        <th>Adults Price</th>
+                        <th>Child Price</th>
+                        <th>Total Amount</th>
+                        <th></th>
+                        <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                       <tr ng-repeat="book in tbooking">
+                         <td>{{$index+1}}</td>
+                         <td>{{book.fullName}}</td>
+                          <td>{{book.TourTitle}}</td>
+                          <td>${{book.adults * book.TourCost}}</td>
+                          <td>${{book.Child * book.ChildCost}}</td>
+                          <td>${{book.TotalAmount}}</td>
+                          <td><a href="booking-detail.html?Id={{book.BookingId}}"><i class="fa fa-eye"></i></a></td>
+                           <td><a href="javascript:void(0)" ng-click="deleteTourEnquiries(book.BookingId)"><i class="fa fa-trash"></i></a></td>
+                        </tr>
+                        <!-- <tr>
+                          <td>Pravin Shelar</td>
+                          <td>Pravinshelar.demo@gmail.com</td>
+                          <td>9503254562</td>
+                          <td>23-12-2017</td>
+                        </tr>
+
+                        <tr>
+                          <td>Pravin Shelar</td>
+                          <td>Pravinshelar.demo@gmail.com</td>
+                          <td>9503254562</td>
+                          <td>23-12-2017</td>
+                        </tr> -->
+
+                      </tbody>
+                    </table>
+                   </div>
+                  <div class="clearfix"></div>
+                </div>
+                </div>
+
+                <div id="menu2" class="tab-pane fade">
+                 <div class="profile"  ng-init="getCustomTourEnquiries();">
+                  <h2 class="text-center">Custom Tour Enquiries</h2>
+                  <div class="dashboard-table">
+                 <table id="table">
+                      <thead>
+                        <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email Id</th>
+                        <th>Mobile No.</th>
+                        <th></th>
+                        <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                      <tr ng-repeat="book in cbooking">
+                          <td>{{$index+1}}</td>
+                          <td>{{book.fullName}}</td>
+                          <td>{{book.EmailId}}</td>
+                          <td>{{book.phoneNumber}}</td>
+                          <td><a href="custom-tour-detail.html?Id={{book.CTourId}}"><i class="fa fa-eye"></i></a></td>
+                          <td><a href="javascript:void(0)" ng-click="deleteCustomTourEnquiries(book.CTourId)"><i class="fa fa-trash"></i></a></td>
+                        </tr>
+                        <!-- <tr>
+                          <td>Pravin Shelar</td>
+                          <td>Pravinshelar.demo@gmail.com</td>
+                          <td>9503254562</td>
+                          <td>23-12-2017</td>
+                        </tr>
+
+                        <tr>
+                          <td>Pravin Shelar</td>
+                          <td>Pravinshelar.demo@gmail.com</td>
+                          <td>9503254562</td>
+                          <td>23-12-2017</td>
+                        </tr> -->
+
+                      </tbody>
+                    </table>
+                   </div>
+                  <div class="clearfix"></div>
+                </div>
+                </div>
+
+                <div id="menu3" class="tab-pane fade">
+                 <div class="profile"  ng-init="getAirTicketEnquiries();">
+                  <h2 class="text-center">Air Ticket Enquiries</h2>
+                  <div class="dashboard-table">
+                 <table id="table">
+                      <thead>
+                        <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email Id</th>
+                        <th>Mobile No.</th>
+                        <th></th>
+                        <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                      <tr ng-repeat="book in atbooking">
+                          <td>{{$index+1}}</td>
+                          <td>{{book.Name}}</td>
+                          <td>{{book.Email}}</td>
+                          <td>{{book.Contact}}</td>
+                          <td><a href="air-ticket-detail.html?Id={{book.Id}}"><i class="fa fa-eye"></i></a></td>
+                         <td><a href="javascript:void(0)" ng-click="deleteAirTicketEnquiries(book.Id)"><i class="fa fa-trash"></i></a></td>
+                        </tr>
+                        <!-- <tr>
+                          <td>Pravin Shelar</td>
+                          <td>Pravinshelar.demo@gmail.com</td>
+                          <td>9503254562</td>
+                          <td>23-12-2017</td>
+                        </tr>
+
+                        <tr>
+                          <td>Pravin Shelar</td>
+                          <td>Pravinshelar.demo@gmail.com</td>
+                          <td>9503254562</td>
+                          <td>23-12-2017</td>
+                        </tr> -->
+
+                      </tbody>
+                    </table>
+                   </div>
+                  <div class="clearfix"></div>
+                </div>
+                </div>
+
+                <div id="menu4" class="tab-pane fade">
+                 <div class="profile"  ng-init="getVisaEnquiries();">
+                  <h2 class="text-center">Visa Services Enquiries</h2>
+                  <div class="dashboard-table">
+                 <table id="table">
+                      <thead>
+                        <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Country</th>
+                        <th>Visa Charges</th>
+                        <th></th>
+                        <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                       <tr ng-repeat="book in vbooking">
+                          <td>{{$index+1}}</td>
+                          <td>{{book.Name}}</td>
+                          <td>{{book.Country}}</td>
+                          <td>${{book.VisaCharge}}</td>
+                          <td><a href="visa-enquiry-detail.html?Id={{book.EnquiryId}}"><i class="fa fa-eye"></i></a></td>
+                           <td><a href="javascript:void(0)" ng-click="deleteVisaEnquiries(book.EnquiryId)"><i class="fa fa-trash"></i></a></td>
+                        </tr>
+                        <!-- <tr>
+                          <td>Pravin Shelar</td>
+                          <td>Pravinshelar.demo@gmail.com</td>
+                          <td>9503254562</td>
+                          <td>23-12-2017</td>
+                        </tr>
+
+                        <tr>
+                          <td>Pravin Shelar</td>
+                          <td>Pravinshelar.demo@gmail.com</td>
+                          <td>9503254562</td>
+                          <td>23-12-2017</td>
+                        </tr> -->
+
+                      </tbody>
+                    </table>
+                   </div>
+                  <div class="clearfix"></div>
+                </div>
+                </div>
+
+                <div id="menu5" class="tab-pane fade">
+                 <div class="profile"  ng-init="getVoucherBookings();">
+                  <h2 class="text-center">Travel Voucher Bookings</h2>
+                  <div class="dashboard-table">
+                 <table id="table">
+                      <thead>
+                        <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total Amount</th>
+                        <th></th>
+                        <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                      <tr ng-repeat="book in tvbooking">
+                          <td>{{$index+1}}</td>
+                          <td>{{book.Name}}</td>
+                          <td>${{book.Price}}</td>
+                          <td>{{book.Quantity}}</td>
+                          <td>${{book.TotalAmount}}</td>
+                          <td><a href="voucher-booking-detail.html?Id={{book.VBookId}}"><i class="fa fa-eye"></i></a></td>
+                           <td><a href="javascript:void(0)" ng-click="deleteVoucherBookings(book.VBookId)"><i class="fa fa-trash"></i></a></td>
+                        </tr>
+                        <!-- <tr>
+                          <td>Pravin Shelar</td>
+                          <td>Pravinshelar.demo@gmail.com</td>
+                          <td>9503254562</td>
+                          <td>23-12-2017</td>
+                        </tr>
+
+                        <tr>
+                          <td>Pravin Shelar</td>
+                          <td>Pravinshelar.demo@gmail.com</td>
+                          <td>9503254562</td>
+                          <td>23-12-2017</td>
+                        </tr> -->
+
+                      </tbody>
+                    </table>
+                   </div>
+                  <div class="clearfix"></div>
+                </div>
+                </div>
+
+                
+              </div>
+                
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+ 
+ 
+
+
+
+
+
+
+ <section id="footer">
+            <div class="container">
+                <div class="row">
+                    <!-- <div class="col-sm-4 col-md-4">
+                        <div class="foot-text">
+                            <h4>About us</h4>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        </div>
+                    </div> -->
+                    <div class="col-sm-4 col-md-4 pd-l80">
+                        <div class="foot-text">
+                              <h4>Contact Us</h4>
+                              <h5>Ambition Tours & Travels  Pte. Ltd</h5>
+                              <p>#06-67, 1 Rochor Canal Rd,</p>
+                              <p>Sim Lim Square, </p>
+                              <p>Singapore 188504.</p>
+
+                       </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4 pd-l80">
+                        <div class="foot-text">
+                            <!-- <h4>select Hotels</h4>
+                            <ul>
+                                <li><a href="#" class="hvr-radial-out"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#" class="hvr-radial-out"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#" class="hvr-radial-out"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li><a href="#" class="hvr-radial-out"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer  id="bottom-strip">
+            <p>Copyright 2017- Ambition Tours - All Rights Reserved</p>
+        </footer>
+
+  <script  type="text/javascript"  src="../assets/js/jquery.min.js"></script>
+  <script   type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+  <script  type="text/javascript"  src="../assets/js/main.js"></script>
+ <script src="assets/js/custom.js"></script>
+
+<!-- <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
+
+
+</div>
+</body>
+
+</html>

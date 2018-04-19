@@ -49,9 +49,8 @@ exports.consult = function (req, res) {
 		},function (err,vals){
 
     })
-     var recipientEmail = 'nadyshaikh@gmail.com,ceo@80startups.com,shital.talole@fountaintechies.com,pravinshelar999@gmail.com';
-    //var recipientEmail = 'pravinshelar999@gmail.com'; //,ceo@80startups.com,shital.talole@fountaintechies.com'; //,ceo@80startups.com,shital.talole@80startups.com
-    var subject = "[ambitiontours.COM] Ambition Tours Booking";
+     var recipientEmail = 'sales@suzantravels.com';
+      var subject = "[ambitiontours.COM] Ambition Tours Booking";
     var mailbody = '<table>\
                         <tr>\
                         <td><img src="https://ambitiontours.80startups.com/assets/img/logo.jpg"></td><br>\
