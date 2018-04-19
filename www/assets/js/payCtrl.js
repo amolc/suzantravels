@@ -8,7 +8,7 @@ app.controller('paymentcontroller', function ($scope, $location, $http, $window)
  $scope.hide = window.localStorage.getItem('hide');
  if ($scope.hide == null) 
  {
-    $('#form-wrap').show();
+    $('#form-wrap').hide();
  }
  
 
