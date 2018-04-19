@@ -5,7 +5,7 @@ var moment = require("moment");
 var verifycode = randomString();
 var now = moment();
 var db = mysql.createPool({
-  database: 'ambitiontours',
+  database: 'suzantravels',
   user: 'root',
   password: '10gXWOqeaf',
   host: 'db.80startups.com',
@@ -55,7 +55,7 @@ exports.adminlogin = function (req, res) {
     }, function (err, val) {
 
 
-        if (val.length > 0) 
+        if (val.length > 0)
         {
 
                    userCRUD.load({
@@ -64,7 +64,7 @@ exports.adminlogin = function (req, res) {
                         Password: password,
                     },function (err2, val2) {
 
-                        if (val2.length > 0) 
+                        if (val2.length > 0)
                         {
 
                             var resdata2 = {
@@ -92,8 +92,8 @@ exports.adminlogin = function (req, res) {
 
                     });
 
-        } 
-        else 
+        }
+        else
         {
             var resdata = {
                 emailexist: false,
@@ -121,7 +121,7 @@ exports.updatepassword = function(req, res){
 
     userCRUD.update({UserId: req.body.UserId}, updateObj,function(err, val) {
 
-        if (!err) 
+        if (!err)
         {
             var resdata = {
                 status: true,
@@ -143,7 +143,7 @@ exports.updatepassword = function(req, res){
         }
 
     });
-    
+
 };
 
 exports.allcountries = function (req, res) {
@@ -188,27 +188,27 @@ exports.getCountryId = function(req, res){
     db.query(sql, function (err, data) {
         res.json(data[0]);
     });
-    
+
 };
 
 exports.getCountryDetails = function(req, res){
 
   var id = req.params.id;
-  var sql = "SELECT `CountryId`,`CountryTitle`,`CountryImage` FROM `tbl_Countries` WHERE CountryId = '"+id+"'";    
+  var sql = "SELECT `CountryId`,`CountryTitle`,`CountryImage` FROM `tbl_Countries` WHERE CountryId = '"+id+"'";
   db.query(sql, function (err, data) {
         res.json(data[0]);
     });
-    
+
 };
 
 exports.getAttractionCountryDetails = function(req, res){
 
   var id = req.params.id;
-  var sql = "SELECT `CountryId`,`CountryTitle`,`CountryImage` FROM `tbl_AttractionCountries` WHERE CountryId = '"+id+"'";    
+  var sql = "SELECT `CountryId`,`CountryTitle`,`CountryImage` FROM `tbl_AttractionCountries` WHERE CountryId = '"+id+"'";
   db.query(sql, function (err, data) {
         res.json(data[0]);
     });
-    
+
 };
 
 exports.getAllTours = function(req, res){
@@ -217,7 +217,7 @@ exports.getAllTours = function(req, res){
     db.query(sql, function (err, data) {
         res.json(data);
     });
-    
+
 };
 
 exports.getCountryTours = function(req, res){
@@ -227,7 +227,7 @@ exports.getCountryTours = function(req, res){
     db.query(sql, function (err, data) {
         res.json(data);
     });
-    
+
 };
 
 exports.getAllAttractions = function(req, res){
@@ -236,7 +236,7 @@ exports.getAllAttractions = function(req, res){
     db.query(sql, function (err, data) {
         res.json(data);
     });
-    
+
 };
 
 exports.getCountryAttractions = function(req, res){
@@ -246,7 +246,7 @@ exports.getCountryAttractions = function(req, res){
     db.query(sql, function (err, data) {
         res.json(data);
     });
-    
+
 };
 
 exports.getAllBookings = function(req, res){
@@ -256,7 +256,7 @@ exports.getAllBookings = function(req, res){
     db.query(sql, function (err, data) {
         res.json(data);
     });
-    
+
 };
 
 exports.getAttractionBookings = function(req, res){
@@ -267,7 +267,7 @@ exports.getAttractionBookings = function(req, res){
     db.query(sql, function (err, data) {
         res.json(data);
     });
-    
+
 };
 
 exports.getTourEnquiries = function(req, res){
@@ -278,7 +278,7 @@ exports.getTourEnquiries = function(req, res){
     db.query(sql, function (err, data) {
         res.json(data);
     });
-    
+
 };
 
 exports.getCustomTourEnquiries = function(req, res){
@@ -289,7 +289,7 @@ exports.getCustomTourEnquiries = function(req, res){
     db.query(sql, function (err, data) {
         res.json(data);
     });
-    
+
 };
 
 exports.getAirTicketEnquiries = function(req, res){
@@ -300,7 +300,7 @@ exports.getAirTicketEnquiries = function(req, res){
     db.query(sql, function (err, data) {
         res.json(data);
     });
-    
+
 };
 
 exports.getVisaEnquiries = function(req, res){
@@ -311,7 +311,7 @@ exports.getVisaEnquiries = function(req, res){
     db.query(sql, function (err, data) {
         res.json(data);
     });
-    
+
 };
 
 exports.getVoucherBookings = function(req, res){
@@ -322,58 +322,58 @@ exports.getVoucherBookings = function(req, res){
     db.query(sql, function (err, data) {
         res.json(data);
     });
-    
+
 };
 
 
 exports.getTourBookingDetails = function(req, res){
 
   var id = req.params.id;
-  var sql = "SELECT b.*,t.`TourType`,t.`TourImage`,t.`TourTitle` FROM `tbl_Bookings` as b LEFT JOIN `tbl_Tours` as t ON b.`TourId` = t.`TourId` WHERE BookingId= '"+id+"'";    
+  var sql = "SELECT b.*,t.`TourType`,t.`TourImage`,t.`TourTitle` FROM `tbl_Bookings` as b LEFT JOIN `tbl_Tours` as t ON b.`TourId` = t.`TourId` WHERE BookingId= '"+id+"'";
   db.query(sql, function (err, data) {
         res.json(data[0]);
     });
-    
+
 };
 
 exports.getCustomTourDetails = function(req, res){
 
   var id = req.params.id;
-  var sql = "SELECT * FROM `tbl_CustomTours` WHERE CTourId= '"+id+"'";    
+  var sql = "SELECT * FROM `tbl_CustomTours` WHERE CTourId= '"+id+"'";
   db.query(sql, function (err, data) {
         res.json(data[0]);
     });
-    
+
 };
 
 exports.getAirTicketDetails = function(req, res){
 
   var id = req.params.id;
-  var sql = "SELECT * FROM `tbl_AirTickets` WHERE Id= '"+id+"'";    
+  var sql = "SELECT * FROM `tbl_AirTickets` WHERE Id= '"+id+"'";
   db.query(sql, function (err, data) {
         res.json(data[0]);
     });
-    
+
 };
 
 exports.getVisaEnquiriesDetails = function(req, res){
 
   var id = req.params.id;
-  var sql = "SELECT v.*,d.`Country`,d.`VisaCharge`,d.`WorkingDays` FROM `tbl_VisaEnquiries` as v LEFT JOIN `tbl_VisaDetails` as d ON v.`VisaDetailId` = d.`Id` WHERE EnquiryId= '"+id+"'";    
+  var sql = "SELECT v.*,d.`Country`,d.`VisaCharge`,d.`WorkingDays` FROM `tbl_VisaEnquiries` as v LEFT JOIN `tbl_VisaDetails` as d ON v.`VisaDetailId` = d.`Id` WHERE EnquiryId= '"+id+"'";
   db.query(sql, function (err, data) {
         res.json(data[0]);
     });
-    
+
 };
 
 exports.getVoucherBookingDetails = function(req, res){
 
   var id = req.params.id;
-  var sql = "SELECT * FROM `tbl_VoucherBooking` WHERE VBookId= '"+id+"'";    
+  var sql = "SELECT * FROM `tbl_VoucherBooking` WHERE VBookId= '"+id+"'";
   db.query(sql, function (err, data) {
         res.json(data[0]);
     });
-    
+
 };
 
 
@@ -384,7 +384,7 @@ exports.getTourDetails = function(req, res){
     db.query(sql, function (err, data) {
         res.json(data[0]);
     });
-    
+
 };
 
 exports.getAdminDetails = function(req, res){
@@ -394,122 +394,122 @@ exports.getAdminDetails = function(req, res){
     db.query(sql, function (err, data) {
         res.json(data[0]);
     });
-    
+
 };
 
-exports.getAdminContactDetails = function(req, res){ 
+exports.getAdminContactDetails = function(req, res){
 
   var sql = "SELECT `UserId`,`Email`,`Address`,`ContactNo`,`Fax` FROM `tbl_Users` WHERE `UserType`='Admin' AND `IsDeleted` = '0'";
     db.query(sql, function (err, data) {
         res.json(data[0]);
     });
-    
+
 };
 
-exports.getOperatingHours= function(req, res){ 
+exports.getOperatingHours= function(req, res){
 
   var sql = "SELECT `Id`,`Days`,`FromTime`,`ToTime` FROM `tbl_OperatingHours` WHERE `IsDeleted` = '0'";
     db.query(sql, function (err, data) {
         res.json(data);
     });
-    
+
 };
 
 exports.getOpHoursDetails = function(req, res){
 
   var id = req.params.id;
-  var sql = "SELECT `Id`,`Days`,`FromTime`,`ToTime` FROM `tbl_OperatingHours` WHERE Id = '"+id+"'";    
+  var sql = "SELECT `Id`,`Days`,`FromTime`,`ToTime` FROM `tbl_OperatingHours` WHERE Id = '"+id+"'";
   db.query(sql, function (err, data) {
         res.json(data[0]);
     });
-    
+
 };
 
-exports.getPublicHolidays = function(req, res){ 
+exports.getPublicHolidays = function(req, res){
 
   var sql = "SELECT `Id`,`Title`,`Description` FROM `tbl_PublicHolidays` WHERE `IsDeleted` = '0'";
     db.query(sql, function (err, data) {
         res.json(data);
     });
-    
+
 };
 
 exports.getHolidayDetails = function(req, res){
 
   var id = req.params.id;
-  var sql = "SELECT `Id`,`Title`,`Description` FROM `tbl_PublicHolidays` WHERE Id = '"+id+"'";    
+  var sql = "SELECT `Id`,`Title`,`Description` FROM `tbl_PublicHolidays` WHERE Id = '"+id+"'";
   db.query(sql, function (err, data) {
         res.json(data[0]);
     });
-    
+
 };
 
-exports.getSocial = function(req, res){ 
+exports.getSocial = function(req, res){
 
   var sql = "SELECT `Id`,`Link`,`Image` FROM `tbl_SocialIcons` WHERE `IsDeleted` = '0'";
     db.query(sql, function (err, data) {
         res.json(data);
     });
-    
+
 };
 
 exports.getSocialDetails = function(req, res){
 
   var id = req.params.id;
-  var sql = "SELECT `Id`,`Link`,`Image` FROM `tbl_SocialIcons` WHERE Id = '"+id+"'";    
+  var sql = "SELECT `Id`,`Link`,`Image` FROM `tbl_SocialIcons` WHERE Id = '"+id+"'";
   db.query(sql, function (err, data) {
         res.json(data[0]);
     });
-    
+
 };
 
 
 exports.getAllVisaDetails = function(req, res){
 
-  var sql = "SELECT `Id`,`Country`,`VisaCharge`,`WorkingDays` FROM `tbl_VisaDetails` WHERE `IsDeleted`='0'";    
+  var sql = "SELECT `Id`,`Country`,`VisaCharge`,`WorkingDays` FROM `tbl_VisaDetails` WHERE `IsDeleted`='0'";
   db.query(sql, function (err, data) {
         res.json(data);
     });
-    
+
 };
 
 exports.getVisa = function(req, res){
-    
-  var sql = "SELECT `Id`,`Country`,`VisaCharge`,`WorkingDays` FROM `tbl_VisaDetails` WHERE `IsDeleted`='0' LIMIT 1";    
+
+  var sql = "SELECT `Id`,`Country`,`VisaCharge`,`WorkingDays` FROM `tbl_VisaDetails` WHERE `IsDeleted`='0' LIMIT 1";
   db.query(sql, function (err, data) {
         res.json(data[0]);
     });
-    
+
 };
 
 exports.getVisaDetails = function(req, res){
 
   var id = req.params.id;
-  var sql = "SELECT `Id`,`Country`,`VisaCharge`,`WorkingDays` FROM `tbl_VisaDetails` WHERE Id = '"+id+"'";    
+  var sql = "SELECT `Id`,`Country`,`VisaCharge`,`WorkingDays` FROM `tbl_VisaDetails` WHERE Id = '"+id+"'";
   db.query(sql, function (err, data) {
         res.json(data[0]);
     });
-    
+
 };
 
 
 exports.getAllGiftVouchers = function(req, res){
 
-  var sql = "SELECT `Id`,`Code`,`Price` FROM `tbl_GiftVoucher` WHERE `IsDeleted`='0'";    
+  var sql = "SELECT `Id`,`Code`,`Price` FROM `tbl_GiftVoucher` WHERE `IsDeleted`='0'";
   db.query(sql, function (err, data) {
         res.json(data);
     });
-    
+
 };
 
 exports.getVoucherDetails = function(req, res){
 
   var id = req.params.id;
-  var sql = "SELECT `Id`,`Code`,`Price` FROM `tbl_GiftVoucher` WHERE Id = '"+id+"'";    
+  var sql = "SELECT `Id`,`Code`,`Price` FROM `tbl_GiftVoucher` WHERE Id = '"+id+"'";
   db.query(sql, function (err, data) {
         res.json(data[0]);
     });
-    
+
 };
 
 
@@ -544,17 +544,17 @@ exports.addCountry = function (req, res) {
          fileName = '';
          console.log("image not present");
      }
-        
+
     var createObj = {
                                 "CountryTitle" : req.body.CountryTitle,
-                                "CountryImage": fileName || "", 
-                                "CreatedOn": dateToday || "",        
+                                "CountryImage": fileName || "",
+                                "CreatedOn": dateToday || "",
                             };
                             // console.log("after", createObj);
 
                             countriesCRUD.create(createObj, function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -610,17 +610,17 @@ exports.updateCountry = function (req, res) {
          fileName = req.body.CountryImage;
          console.log("image not present");
      }
-        
+
     var updateObj = {
                                 "CountryTitle" : req.body.CountryTitle,
-                                "CountryImage": fileName || "", 
-                                "ModifiedOn": dateToday || "",        
+                                "CountryImage": fileName || "",
+                                "ModifiedOn": dateToday || "",
                             };
                              //console.log("after", updateObj);
 
                             countriesCRUD.update({CountryId: req.body.CountryId}, updateObj,function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -654,13 +654,13 @@ exports.deleteCountry = function (req, res) {
     var id = req.params.id;
     var updateObj = {
                          "IsDeleted" :  '1',
-      
+
                     };
                             // console.log("after", createObj);
 
                             countriesCRUD.update({CountryId: id}, updateObj,function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -715,17 +715,17 @@ exports.addAttractionCountry = function (req, res) {
          fileName = '';
          console.log("image not present");
      }
-        
+
     var createObj = {
                                 "CountryTitle" : req.body.CountryTitle,
-                                "CountryImage": fileName || "", 
-                                "CreatedOn": dateToday || "",        
+                                "CountryImage": fileName || "",
+                                "CreatedOn": dateToday || "",
                             };
                             // console.log("after", createObj);
 
                             acountriesCRUD.create(createObj, function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -781,17 +781,17 @@ exports.updateAttractionCountry = function (req, res) {
          fileName = req.body.CountryImage;
          console.log("image not present");
      }
-        
+
     var updateObj = {
                                 "CountryTitle" : req.body.CountryTitle,
-                                "CountryImage": fileName || "", 
-                                "ModifiedOn": dateToday || "",        
+                                "CountryImage": fileName || "",
+                                "ModifiedOn": dateToday || "",
                             };
                              //console.log("after", updateObj);
 
                             acountriesCRUD.update({CountryId: req.body.CountryId}, updateObj,function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -825,13 +825,13 @@ exports.deleteAttractionCountry = function (req, res) {
     var id = req.params.id;
     var updateObj = {
                          "IsDeleted" :  '1',
-      
+
                     };
                             // console.log("after", createObj);
 
                             acountriesCRUD.update({CountryId: id}, updateObj,function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -888,7 +888,7 @@ exports.addTour = function (req, res) {
          fileName = '';
          console.log("image not present");
      }
-        
+
     var createObj = {
                                 "CountryId" :  req.body.CountryId,
                                 "TourType": req.body.TourType || "",
@@ -896,16 +896,16 @@ exports.addTour = function (req, res) {
                                 "TourDescription":req.body.TourDescription,
                                 "TourLocation": req.body.TourLocation || "",
                                 "TourDuration": req.body.TourDuration || "",
-                                "TourImage": fileName || "", 
-                                "TourCost": req.body.TourCost || "", 
-                                "ChildCost" : req.body.ChildCost || "", 
-                                "CreatedOn": dateToday || "",        
+                                "TourImage": fileName || "",
+                                "TourCost": req.body.TourCost || "",
+                                "ChildCost" : req.body.ChildCost || "",
+                                "CreatedOn": dateToday || "",
                             };
                             // console.log("after", createObj);
 
                             tourCRUD.create(createObj, function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -963,7 +963,7 @@ exports.updateTour = function (req, res) {
          fileName = req.body.TourImage;
          console.log("image not present");
      }
-        
+
     var updateObj = {
                                 "CountryId" :  req.body.CountryId,
                                 "TourType": req.body.TourType || "",
@@ -971,15 +971,15 @@ exports.updateTour = function (req, res) {
                                 "TourDescription":req.body.TourDescription,
                                 "TourLocation": req.body.TourLocation || "",
                                 "TourDuration": req.body.TourDuration || "",
-                                "TourImage": fileName || "", 
-                                "ChildCost" : req.body.ChildCost || "", 
-                                "ModifiedOn": dateToday || "",        
+                                "TourImage": fileName || "",
+                                "ChildCost" : req.body.ChildCost || "",
+                                "ModifiedOn": dateToday || "",
                             };
                             // console.log("after", createObj);
 
                             tourCRUD.update({TourId: req.body.TourId}, updateObj,function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -1011,13 +1011,13 @@ exports.deleteTour = function (req, res) {
     var tourid = req.params.id;
     var updateObj = {
                          "IsDeleted" :  '1',
-      
+
                     };
                             // console.log("after", createObj);
 
                             tourCRUD.update({TourId: tourid}, updateObj,function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -1044,18 +1044,18 @@ exports.deleteTour = function (req, res) {
 exports.addVisa= function (req, res) {
 
     dateToday = now.format("DD/MM/YYYY hh:mm a");
-        
+
     var createObj = {
                                 "Country" : req.body.Country,
                                 "VisaCharge": req.body.VisaCharge,
                                 "WorkingDays": req.body.WorkingDays,
-                                "CreatedOn": dateToday || "",        
+                                "CreatedOn": dateToday || "",
                             };
                             // console.log("after", createObj);
 
                             visaCRUD.create(createObj, function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -1086,13 +1086,13 @@ exports.updateVisa = function (req, res) {
                                 "Country" : req.body.Country,
                                 "VisaCharge": req.body.VisaCharge,
                                 "WorkingDays": req.body.WorkingDays,
-                                "ModifiedOn": dateToday || "",        
+                                "ModifiedOn": dateToday || "",
                             };
                             // console.log("after", createObj);
 
                             visaCRUD.update({Id: req.body.Id}, updateObj,function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -1124,13 +1124,13 @@ exports.deleteVisa = function (req, res) {
     var id = req.params.id;
     var updateObj = {
                          "IsDeleted" :  '1',
-      
+
                     };
                             // console.log("after", createObj);
 
                             visaCRUD.update({Id: id}, updateObj,function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -1157,17 +1157,17 @@ exports.deleteVisa = function (req, res) {
 exports.addVoucher= function (req, res) {
 
     dateToday = now.format("DD/MM/YYYY hh:mm a");
-        
+
     var createObj = {
                                 "Code" : req.body.Code,
                                 "Price": req.body.Price,
-                                "CreatedOn": dateToday || "",        
+                                "CreatedOn": dateToday || "",
                             };
                             // console.log("after", createObj);
 
                             voucherCRUD.create(createObj, function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -1197,13 +1197,13 @@ exports.updateVoucher = function (req, res) {
     var updateObj = {
                                 "Code" : req.body.Code,
                                 "Price": req.body.Price,
-                                "ModifiedOn": dateToday || "",        
+                                "ModifiedOn": dateToday || "",
                             };
                             // console.log("after", createObj);
 
                             voucherCRUD.update({Id: req.body.Id}, updateObj,function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -1235,13 +1235,13 @@ exports.deleteVoucher = function (req, res) {
     var id = req.params.id;
     var updateObj = {
                          "IsDeleted" :  '1',
-      
+
                     };
                             // console.log("after", createObj);
 
                             voucherCRUD.update({Id: id}, updateObj,function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -1273,13 +1273,13 @@ exports.updateContact = function (req, res) {
                                 "Address": req.body.Address,
                                 "ContactNo" : req.body.ContactNo,
                                 "Fax": req.body.Fax,
-                                "ModifiedOn": dateToday || "",        
+                                "ModifiedOn": dateToday || "",
                             };
                             // console.log("after", createObj);
 
                             userCRUD.update({UserId: req.body.UserId}, updateObj,function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -1310,13 +1310,13 @@ exports.updateOpHours = function (req, res) {
                                 "Days" : req.body.Days,
                                 "FromTime" : req.body.FromTime,
                                 "ToTime": req.body.ToTime,
-                                "ModifiedOn": dateToday || "",        
+                                "ModifiedOn": dateToday || "",
                             };
                             // console.log("after", createObj);
 
                             opHourCRUD.update({Id: req.body.Id}, updateObj,function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -1343,17 +1343,17 @@ exports.updateOpHours = function (req, res) {
 exports.addHoliday= function (req, res) {
 
     dateToday = now.format("DD/MM/YYYY hh:mm a");
-        
+
     var createObj = {
                                 "Title" : req.body.Title,
                                 "Description": req.body.Description,
-                                "CreatedOn": dateToday || "",        
+                                "CreatedOn": dateToday || "",
                             };
                             // console.log("after", createObj);
 
                             holidaysCRUD.create(createObj, function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -1383,13 +1383,13 @@ exports.updateHoliday = function (req, res) {
     var updateObj = {
                                 "Title" : req.body.Title,
                                 "Description": req.body.Description,
-                                "ModifiedOn": dateToday || "",        
+                                "ModifiedOn": dateToday || "",
                             };
                             // console.log("after", createObj);
 
                             holidaysCRUD.update({Id: req.body.Id}, updateObj,function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -1421,13 +1421,13 @@ exports.deleteHoliday = function (req, res) {
     var id = req.params.id;
     var updateObj = {
                          "IsDeleted" :  '1',
-      
+
                     };
                             // console.log("after", createObj);
 
                             holidaysCRUD.update({Id: id}, updateObj,function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -1482,17 +1482,17 @@ exports.addSocial = function (req, res) {
          fileName = '';
          console.log("image not present");
      }
-        
+
     var createObj = {
                                 "Link" : req.body.Link,
-                                "Image": fileName || "", 
-                                "CreatedOn": dateToday || "",        
+                                "Image": fileName || "",
+                                "CreatedOn": dateToday || "",
                             };
                             // console.log("after", createObj);
 
                             socialCRUD.create(createObj, function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -1547,17 +1547,17 @@ exports.updateSocial = function (req, res) {
          fileName = req.body.Image;
          console.log("image not present");
      }
-        
+
     var updateObj = {
                                 "Link" : req.body.Link,
-                                "Image": fileName || "", 
-                                "ModifiedOn": dateToday || "",        
+                                "Image": fileName || "",
+                                "ModifiedOn": dateToday || "",
                             };
                              //console.log("after", updateObj);
 
                             socialCRUD.update({Id: req.body.Id}, updateObj,function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -1590,13 +1590,13 @@ exports.deleteSocial = function (req, res) {
     var id = req.params.id;
     var updateObj = {
                          "IsDeleted" :  '1',
-      
+
                     };
                             // console.log("after", createObj);
 
                             socialCRUD.update({Id: id}, updateObj,function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -1625,13 +1625,13 @@ exports.deleteBookings = function (req, res) {
     var id = req.params.id;
     var updateObj = {
                          "IsDeleted" :  '1',
-      
+
                     };
                             // console.log("after", createObj);
 
                             bookCRUD.update({BookingId: id}, updateObj,function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -1660,13 +1660,13 @@ exports.deleteCustomTourEnquiries = function (req, res) {
     var id = req.params.id;
     var updateObj = {
                          "IsDeleted" :  '1',
-      
+
                     };
                             // console.log("after", createObj);
 
                             ctourCRUD.update({CTourId: id}, updateObj,function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -1695,13 +1695,13 @@ exports.deleteAirTicketEnquiries = function (req, res) {
     var id = req.params.id;
     var updateObj = {
                          "IsDeleted" :  '1',
-      
+
                     };
                             // console.log("after", createObj);
 
                             ticketCRUD.update({Id: id}, updateObj,function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -1730,13 +1730,13 @@ exports.deleteVisaEnquiries = function (req, res) {
     var id = req.params.id;
     var updateObj = {
                          "IsDeleted" :  '1',
-      
+
                     };
                             // console.log("after", createObj);
 
                             venquiryCRUD.update({EnquiryId: id}, updateObj,function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -1765,13 +1765,13 @@ exports.deleteVoucherBookings = function (req, res) {
     var id = req.params.id;
     var updateObj = {
                          "IsDeleted" :  '1',
-      
+
                     };
                             // console.log("after", createObj);
 
                             vbookCRUD.update({VBookId: id}, updateObj,function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,
@@ -1803,13 +1803,13 @@ exports.updateAboutUs = function (req, res) {
 
     var updateObj = {
                                 "Content" : req.body.Content,
-                                "ModifiedOn": dateToday || "",        
+                                "ModifiedOn": dateToday || "",
                             };
                              //console.log("after", updateObj);
 
                             aboutCRUD.update({Id: req.body.Id}, updateObj,function (err, data) {
 
-                                if (!err) 
+                                if (!err)
                                 {
                                     var resdata = {
                                         status: true,

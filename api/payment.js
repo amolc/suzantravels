@@ -4,7 +4,7 @@ var stripe = require("stripe")("sk_test_guEUC69eipC2OWffsxuKD3JY");
 var moment = require("moment");
 var now = moment();
 var db = mysql.createPool({
-  database: 'ambitiontours',
+  database: 'suzantravels',
   user: 'root',
   password: '10gXWOqeaf',
   host: 'db.80startups.com',
