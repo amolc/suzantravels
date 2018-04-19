@@ -38,6 +38,7 @@ app.controller('contactcontroller', function ($scope, $location, $http, $window)
  }
  $scope.getAboutUs = function() {             
 
+	       alert(baseurl);
              $http.get(baseurl + 'getAboutUs').success(function (res) {
 
                   if (res.status == 'false') {
