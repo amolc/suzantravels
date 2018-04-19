@@ -15,7 +15,6 @@ app.controller('contactcontroller', function ($scope, $location, $http, $window)
     $('#form-wrap').hide();
  }
  
-
   $scope.checkPassword = function(password){
  
       //console.log(password);
