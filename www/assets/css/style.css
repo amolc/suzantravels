@@ -430,8 +430,8 @@ section#footer {
 .navigation-strip{
     /*background-color: #280f0a;*/
     /*background-color: #ff6624;*/
-    background-color: #134da2;
-    border-top: 5px solid #fe6828;
+    background-color: #9e3eb9;
+    border-top: 5px solid #f059a5;
 }
 .navigation-strip .navbar{
     margin: 0px;
@@ -1370,4 +1370,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 @media (min-width: 1200px) {
 
+}
+
+.logoColor
+{
+	    color: #9e3eb9;
 }
