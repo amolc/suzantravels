@@ -12,7 +12,7 @@ app.controller('contactcontroller', function ($scope, $location, $http, $window)
  //alert($scope.hide);
  if ($scope.hide == null) 
  {
-    $('#form-wrap').show();
+    $('#form-wrap').hide();
  }
  
 
@@ -33,6 +33,7 @@ app.controller('contactcontroller', function ($scope, $location, $http, $window)
        }
        else
         $('#alert').show();
+  
 
 
  }
