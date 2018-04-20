@@ -24,10 +24,7 @@
     </head>
     <body data-ng-app="80consult" data-ng-controller="contactcontroller" ng-init="getCountryTours()">
         <!-- Start Header -->
-
-
-     
-       
+              
         <header id="top-header">
             <div class="orenge-logo-strip">
                 <div class="container">
@@ -119,14 +116,15 @@
                         <div class="packges-block">
                             <div class="col-sm-5 pd0">
                                 <div class="place-img">
-                                    <a href="tours-details.html?TourId={{a.TourId}}">
+                                    <a href="ToursDetails.html?TourId={{a.TourId}}">
                                     <img src="../uploads/tours/{{a.TourImage}}" class="img-responsive" alt="" title="">
                                     </a>
                                 </div>
                             </div>
                             <div class="col-sm-7">
                                 <div class="packeg-details-text">
-                                    <a href="tours-details.html?TourId={{a.TourId}}">
+                                 <!--   <a href="tours-details.html?TourId={{a.TourId}}"> -->
+                                    <a href="ToursDetails.html?TourId={{a.TourId}}">
                                     <h5 class="color-orenge">{{a.TourTitle}}</h5>
                                     <p class="color-black">{{a.TourDescription| limitTo : 120}}...</p>
                                     <p class="color-orenge">Details</p>
