@@ -6,8 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Suzan Travels</title>
-
-        
+      
         <link href="assets/css/bootstrap.min.css" rel="stylesheet">
         <link href="assets/css/font-awesome.min.css" rel="stylesheet">
         <link href="assets/css/style.css" rel="stylesheet">
@@ -92,7 +91,8 @@
                                             <li><a href="#">Combodia</a></li>
                                             <li><a href="#">Hong Kong</a></li> -->
                                             <li ng-repeat="c in countrylist">
-                                             <a href="country-attractions.html?country={{c.CountryId}}">{{c.CountryTitle}}</a>
+                                             <a href="travel-servic.html?country={{c.CountryId}}">{{c.CountryTitle}}</a>
+                                           <!--  <a href="country-attractions.html?country={{c.CountryId}}">{{c.CountryTitle}}</a> -->
                                             </li>
                                           </ul>
                                         </li>
@@ -180,7 +180,7 @@
                                   <span class="hero-tag effect-target">Ambition Tours</span>
                                   <h2 class="hero-grid-title effect-target">{{c.CountryTitle}}</h2>
                                   <!-- <p class="hero-grid-text effect-target effect-text">Falls mainly on the plain.</p> -->
-                                  <a class="hero-grid-link" href="country-tours.html?country={{c.CountryId}}">View more</a>
+                                  <a class="hero-grid-link" href="travel-servic.html?country={{c.CountryId}}"">View more</a>
                                 </figcaption>
                             </figure>
                     </div> 
