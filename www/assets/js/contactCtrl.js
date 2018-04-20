@@ -38,7 +38,6 @@ app.controller('contactcontroller', function ($scope, $location, $http, $window)
  }
  $scope.getAboutUs = function() {             
 
-	       alert(baseurl);
              $http.get(baseurl + 'getAboutUs').success(function (res) {
 
                   if (res.status == 'false') {
@@ -274,9 +273,7 @@ app.controller('contactcontroller', function ($scope, $location, $http, $window)
 
    }
 
-   $scope.getVisaDetails = function(id) {
-
-    //alert(id);
+  $scope.getVisaDetails = function(id) {
 
     $http.get(baseurl + 'getVisaDetails/'+id).success(function (res) {
 
@@ -293,11 +290,9 @@ app.controller('contactcontroller', function ($scope, $location, $http, $window)
         }).error(function () {
 
         });
-
    }
 
   $scope.getCountryAttractions = function() {
-
 
         var url = window.location.href;
         var parts = url.split("?");
@@ -306,8 +301,7 @@ app.controller('contactcontroller', function ($scope, $location, $http, $window)
            var urlparams = parts[1];
            var params = urlparams.split("&");
            var id = urlparams.split("=")
-           if (id[0]=='country') 
-           {
+           if (id[0]=='country') {
 
               $http.get(baseurl + 'getCountryAttractions/'+id[1]).success(function (res) {
 
@@ -349,6 +343,27 @@ app.controller('contactcontroller', function ($scope, $location, $http, $window)
         }
 
    }
+  
+  $scope.getCountry = function() {
+
+      var url = window.location.href;
+      var parts = url.split("?");
+      if(parts.length>1){
+
+         var urlparams = parts[1];
+         var params = urlparams.split("&");
+         var id = urlparams.split("=")
+         if (id[0]=='country') {
+               $scope.currentCountry = id[1];          
+         }
+         else{
+            window.location.href = 'index.html';
+         }
+      }else{
+          window.location.href = 'index.html';
+      }
+
+ }
 
       $scope.getCountryTours = function() {
 
@@ -399,12 +414,15 @@ app.controller('contactcontroller', function ($scope, $location, $http, $window)
         }
 
    }
+      
+      
+ 
 
 
 
   $scope.getSingaporeAttractions = function (req, res) {
 
-     var country = 'Singapore';
+           var country = 'Singapore';
            $http.get(baseurl + 'getCountryId/'+country).success(function (res) {
 
                     if (res.status == 'false') {

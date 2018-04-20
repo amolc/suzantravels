@@ -23,7 +23,7 @@
 
         <link id="bsdp-css" href="bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet">
     </head>
-    <body data-ng-app="80consult" data-ng-controller="contactcontroller">
+    <body data-ng-app="80consult" data-ng-controller="contactcontroller" data-ng-init="getCountry()">
         <!-- Start Header -->
         
         
@@ -92,7 +92,7 @@
                                             <li><a href="#">Combodia</a></li>
                                             <li><a href="#">Hong Kong</a></li> -->
                                             <li ng-repeat="c in countrylist">
-                                             <a href="country-attractions.html?country={{c.CountryId}}">{{c.CountryTitle}}</a>
+                                             <a href="travel-servic.html?country={{c.CountryId}}">{{c.CountryTitle}}</a>
                                             </li>
                                           </ul>
                                         </li>
@@ -127,36 +127,42 @@
                     </div>
                     <div class="col-sm-4">
                         <figure class="hero-grid effect-move">
+                              <a href="country-tours.html?country={{currentCountry}}">
                                 <img class="hero-grid-image effect-image" src="assets/img/tours.jpg" alt="" />
+                              </a>
                                 <figcaption class="hero-grid-content">
                                   <span class="hero-tag effect-target">Suzan Travels</span>
                                   <h2 class="hero-grid-title effect-target">Tours</h2>
                                   <!-- <p class="hero-grid-text effect-target effect-text">Falls mainly on the plain.</p> -->
-                                  <a class="hero-grid-link" href="country-tours.html?country={{c.CountryId}}">View more</a>
+                                  <a class="hero-grid-link" href="country-tours.html?country={{currentCountry}}">View more</a>
                                 </figcaption>
                             </figure>
                     </div> 
                     
                     <div class="col-sm-4">
                         <figure class="hero-grid effect-move">
+                              <a href="country-attractions.html?country={{currentCountry}}">
                                 <img class="hero-grid-image effect-image" src="assets/img/attraction.jpg" alt="" />
+                              </a>
                                 <figcaption class="hero-grid-content">
                                   <span class="hero-tag effect-target">Suzan Travels</span>
                                   <h2 class="hero-grid-title effect-target">Attraction</h2>
                                   <!-- <p class="hero-grid-text effect-target effect-text">Falls mainly on the plain.</p> -->
-                                  <a class="hero-grid-link" href="country-tours.html?country={{c.CountryId}}">View more</a>
+                                  <a class="hero-grid-link" href="country-attractions.html?country={{currentCountry}}">View more</a>
                                 </figcaption>
                             </figure>
                     </div> 
                     
                     <div class="col-sm-4">
                         <figure class="hero-grid effect-move">
+                              <a href="country-tours.html?country={{currentCountry}}">
                                 <img class="hero-grid-image effect-image" src="assets/img/transfer.jpg" alt="" />
+                              </a>
                                 <figcaption class="hero-grid-content">
                                   <span class="hero-tag effect-target">Suzan Travels</span>
                                   <h2 class="hero-grid-title effect-target">Transfer</h2>
                                   <!-- <p class="hero-grid-text effect-target effect-text">Falls mainly on the plain.</p> -->
-                                  <a class="hero-grid-link" href="country-tours.html?country={{c.CountryId}}">View more</a>
+                                  <a class="hero-grid-link" href="country-tours.html?country={{currentCountry}}">View more</a>
                                 </figcaption>
                             </figure>
                     </div> 

@@ -11,7 +11,6 @@ app.controller('paymentcontroller', function ($scope, $location, $http, $window)
     $('#form-wrap').hide();
  }
  
-
   $scope.checkPassword = function(password){
  
       //console.log(password);
@@ -29,7 +28,6 @@ app.controller('paymentcontroller', function ($scope, $location, $http, $window)
        }
        else
         $('#alert').show();
-
 
  }
 
