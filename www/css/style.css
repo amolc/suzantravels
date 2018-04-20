@@ -89,7 +89,7 @@
  .inn-page-bg {
      position: relative;
      overflow: hidden;
-     background: #f3f3f3;
+     /* background: #f3f3f3; */
 }
  .inn-page-con-bg {
      position: relative;

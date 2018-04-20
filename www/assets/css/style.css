@@ -1394,3 +1394,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 {
 	margin-top:0px !important;
 }
+
+.paddZero
+{
+	padding-left:0px !important;
+}
