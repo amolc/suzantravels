@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Suzan Travels</title>
+
+        
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+        <link href="assets/css/style.css" rel="stylesheet">
+        <link href="assets/css/responsive.css" rel="stylesheet">
+        
+        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+
+  <script type="text/javascript" src="assets/js/angular.min.js"></script>
+  <script type="text/javascript" src="assets/js/angular-storage.min.js"></script>
+  <script type="text/javascript" src="assets/js/app.js"></script>
+  <script type="text/javascript" src="assets/js/contactCtrl.js"></script>
+
+        <link id="bsdp-css" href="bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet">
+    </head>
+    <body data-ng-app="80consult" data-ng-controller="contactcontroller">
+        <!-- Start Header -->
+        
+        
+
+     
+        <header id="top-header">
+            <div class="orenge-logo-strip">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="logo-img">
+                                <a href="index.html">
+                                   <!--  <img src="assets/img/logo.png" alt="" title=""> -->
+                                   <h1 class="logoColor">Suzan Travels</h1>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="navigation-strip">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="top-nav">
+                                <nav class="navbar navbar-default">
+                                  <div class="container-fluid pd0">
+                                    <!-- Brand and toggle get grouped for better mobile display -->
+                                    <div class="navbar-header">
+                                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                      </button>
+                                      <!-- <a class="navbar-brand" href="#">Brand</a> -->
+                                    </div>
+
+
+                                    <!-- Collect the nav links, forms, and other content for toggling -->
+                                    <div class="collapse navbar-collapse pd0" id="bs-example-navbar-collapse-1">
+                                      <ul class="nav navbar-nav">
+                                        <li>
+                                          <a href="index.html">About Us</a>
+                                        </li>
+                                        <!-- <li><a href="index.html" class="hvr-underline-reveal">Destinations</a></li> -->
+                                       <!--  <li><a href="asia.html" class="hvr-underline-reveal">Our Services</a></li> -->
+                                         <li class="dropdown">
+                                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Our Services<span class="caret"></span></a>
+                                          <ul class="dropdown-menu">
+                                            <li><a href="asia.html">Package Tours</a></li>
+                                            <li><a href="custom-tour.html">Custom Tours</a></li>
+                                            <li><a href="air-ticket.html">Air Ticketing</a></li>
+                                            <li><a href="visa-services.html">Visa Services</a></li>
+                                            <li><a href="voucher.html">Travel Gift Vouchers</a></li>
+                                            <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                                          </ul>
+                                        </li>
+                                        <li class="dropdown" ng-init="getattractioncountries()">
+                                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Destinations <span class="caret"></span></a>
+                                          <ul class="dropdown-menu">
+                                            <!-- <li><a href="#">India</a></li>
+                                            <li><a href="#">Malaysia</a></li>
+                                            <li><a href="#">Thailand</a></li>
+                                            <li><a href="#">Combodia</a></li>
+                                            <li><a href="#">Hong Kong</a></li> -->
+                                            <li ng-repeat="c in countrylist">
+                                             <a href="country-attractions.html?country={{c.CountryId}}">{{c.CountryTitle}}</a>
+                                            </li>
+                                          </ul>
+                                        </li>
+                                       <!--  <li><a href="europe.html" class="hvr-underline-reveal">Europe</a></li>
+                                        <li><a href="visa.html" class="hvr-underline-reveal">Visa</a></li> -->
+                                        <li><a href="contact-us.html" class="hvr-underline-reveal">Contact Us</a></li>
+                                      </ul>
+                                    </div><!-- /.navbar-collapse -->
+                                  </div><!-- /.container-fluid -->
+                                </nav>
+                            </div>
+                        </div >
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        
+        
+     
+        <!-- <div id="home-banner">
+            <img src="assets/img/banner1.jpg" alt="" title="" / >
+        </div> -->
+      
+    
+<div class="container">
+ 
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+    <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+    <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+    <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+  </ul>
+
+  <div class="tab-content pad1p">
+    <div id="home" class="tab-pane fade in active">
+     <div class="container">
+  
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner slider_img">
+      <div class="item active">
+        <img src="assets/img/slide1.jpg" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="assets/img/slide2.jpg" alt="Chicago" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="assets/img/slide3.jpg" alt="New york" style="width:100%;">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+     
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3>Menu 1</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+      <h3>Menu 3</h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+  </div>
+</div>
+
+
+
+         <section id="footer">
+            <div class="container">
+                <div class="row">
+                   <!--  <div class="col-sm-4 col-md-4">
+                        <div class="foot-text">
+                            <h4>About us</h4>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        </div>
+                    </div> -->
+                    <div class="col-sm-3 col-md-3">
+                        <div class="foot-text">
+                              <h4>Contact Us</h4>
+                              <h5>Suzan Travels Pte. Ltd</h5>     
+                              <p>60 Paya Lebar Road </p>
+                              <p>#06-32 Paya Lebar Square, </p>
+                              <p>Singapore 409051</p>
+
+                       </div>
+                    </div>
+                    <div class="col-sm-5 col-md-5 pd-l80">
+                    
+                    </div>
+                    <div class="col-sm-4 col-md-4 pd-l70" ng-init="getSocial()">
+                        <div class="foot-social-icon">
+                            <div class="foot-text">
+                                <h4>Contact With Us</h4>
+                                <ul>
+                                    <li ng-repeat="social in sociallist">
+                                        <a href="{{social.Link}}">
+                                            <img src="../uploads/social/{{social.Image}}" alt="" title="">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="policy-content">
+                          <p>
+                            <a href="privacy-policy.html">Privacy Policy</a>
+                          </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer  id="bottom-strip">
+            <p>Copyright 2017- Suzan Travels - All Rights Reserved.</p>
+        </footer>
+        
+
+    <!--    <section id="form-wrap" hidden="">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12">
+          <div class="form-block">
+            <div class="signin-form profile">
+                          <h2>WelCome</h2>
+
+                          <div class="login-form">
+                            <form method="post" ng-submit="checkPassword(password)">
+                              <input type="password" name="password" placeholder="Password" required="" ng-model="password">
+                              <label id="alert" hidden="">Password Incorrect</label>
+                              <div class="tp">
+                                <input type="submit" value="ENTER" class="brawon-btn large-btn">
+                              </div>
+                            </form>
+                          </div>   
+                          <div class="login-logo">
+                            <img src="../assets/img/logo.png">
+                          </div>                         
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+
+  <!--  <section id="form-wrap" hidden="">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12">
+          <div class="form-block">
+            <div class="signin-form profile">
+                          <h2>WelCome</h2>
+
+                          <div class="login-form">
+                            <form method="post" ng-submit="checkPassword(password)">
+                              <input type="password" name="password" placeholder="Password" required="" ng-model="password">
+                              <label id="alert" hidden="">Password Incorrect</label>
+                              <div class="tp">
+                                <input type="submit" value="ENTER" class="brawon-btn large-btn">
+                              </div>
+                            </form>
+                          </div>   
+                          <div class="login-logo">
+                            <img src="../assets/img/logo.png">
+                          </div>                         
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/star-rating.js"></script>
+        <script src="assets/js/custom.js"></script>
+    </body>
+</html>

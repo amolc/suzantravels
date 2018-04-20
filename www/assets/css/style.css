@@ -1377,3 +1377,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 {
 	    color: #9e3eb9;
 }
+
+
+.pad1p
+{
+	padding:1%;
+}
+
+.slider_img img
+{
+	width:100% !important;
+	height:320px !important;
+}
+
+.marRemove
+{
+	margin-top:0px !important;
+}

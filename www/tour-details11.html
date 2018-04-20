@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from rn53themes.net/themes/demo/travelz/tour-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Apr 2018 08:06:51 GMT -->
+<head>
+    <title>The Travel - Tour Travel</title>
+    <!--== META TAGS ==-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- FAV ICON -->
+    <link rel="shortcut icon" href="images/fav.ico">
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins%7CQuicksand:400,500,700" rel="stylesheet">
+    <!-- FONT-AWESOME ICON CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!--== ALL CSS FILES ==-->
+    <link rel="stylesheet" href="css/style.css">
+      <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/mob.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <!-- Preloader -->
+   
+
+    <!--HEADER SECTION-->
+    
+        <header id="top-header">
+            <div class="orenge-logo-strip">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="logo-img">
+                                <a href="index.html">
+                                   <!--  <img src="assets/img/logo.png" alt="" title=""> -->
+                                   <h1 class="logoColor">Suzan Travels</h1>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="navigation-strip">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="top-nav">
+                                <nav class="navbar navbar-default">
+                                  <div class="container-fluid pd0">
+                                    <!-- Brand and toggle get grouped for better mobile display -->
+                                    <div class="navbar-header">
+                                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                      </button>
+                                      <!-- <a class="navbar-brand" href="#">Brand</a> -->
+                                    </div>
+
+
+                                    <!-- Collect the nav links, forms, and other content for toggling -->
+                                    <div class="collapse navbar-collapse pd0" id="bs-example-navbar-collapse-1">
+                                      <ul class="nav navbar-nav marRemove">
+                                        <li>
+                                          <a href="index.html">About Us</a>
+                                        </li>
+                                        <!-- <li><a href="index.html" class="hvr-underline-reveal">Destinations</a></li> -->
+                                       <!--  <li><a href="asia.html" class="hvr-underline-reveal">Our Services</a></li> -->
+                                         <li class="dropdown">
+                                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Our Services<span class="caret"></span></a>
+                                          <ul class="dropdown-menu">
+                                            <li><a href="asia.html">Package Tours</a></li>
+                                            <li><a href="custom-tour.html">Custom Tours</a></li>
+                                            <li><a href="air-ticket.html">Air Ticketing</a></li>
+                                            <li><a href="visa-services.html">Visa Services</a></li>
+                                            <li><a href="voucher.html">Travel Gift Vouchers</a></li>
+                                            <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                                          </ul>
+                                        </li>
+                                        <li class="dropdown" ng-init="getattractioncountries()">
+                                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Destinations <span class="caret"></span></a>
+                                          <ul class="dropdown-menu">
+                                            <!-- <li><a href="#">India</a></li>
+                                            <li><a href="#">Malaysia</a></li>
+                                            <li><a href="#">Thailand</a></li>
+                                            <li><a href="#">Combodia</a></li>
+                                            <li><a href="#">Hong Kong</a></li> -->
+                                            <li ng-repeat="c in countrylist">
+                                             <a href="country-attractions.html?country={{c.CountryId}}">{{c.CountryTitle}}</a>
+                                            </li>
+                                          </ul>
+                                        </li>
+                                       <!--  <li><a href="europe.html" class="hvr-underline-reveal">Europe</a></li>
+                                        <li><a href="visa.html" class="hvr-underline-reveal">Visa</a></li> -->
+                                        <li><a href="contact-us.html" class="hvr-underline-reveal">Contact Us</a></li>
+                                      </ul>
+                                    </div><!-- /.navbar-collapse -->
+                                  </div><!-- /.container-fluid -->
+                                </nav>
+                            </div>
+                        </div >
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+	<!--====== TOUR DETAILS - BOOKING ==========-->
+	
+	<!--====== TOUR DETAILS ==========-->
+	<section>
+		<div class="rows inn-page-bg com-colo">
+			<div class="container-fluid inn-page-con-bg tb-space">
+				<div class="col-md-9">
+					<!--====== TOUR TITLE ==========-->
+					<div class="tour_head">
+						<h2>The Best of Brazil & Argentina <span class="tour_star"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-half-o" aria-hidden="true"></i></span><span class="tour_rat">4.5</span></h2> </div>
+					<!--====== TOUR DESCRIPTION ==========-->
+					<div class="tour_head1">
+						<h3>Description</h3>
+						<p>Discover two of South America’s greatest cities, Rio de Janeiro and Buenos Aires, at a leisurely pace. A major highlight on this journey is a visit to Iguassu Falls in between your two city stays. It truly is one of the most spectacular sights on Earth. See the impressive falls from both the Brazilian and Argentine sides.</p>
+						<p>Brazil’s view takes you through clouds of mist and the opportunity to see these 275 falls, spanning nearly two miles! Argentina’s side allows you to walk along the boardwalk network and embark on a jungle train through the forest for unforgettable views. Hear the deafening roar and admire the brilliant rainbows created by the clouds of spray, and take in the majesty of this wonder of the world. From vibrant cities to scenic beauty, this vacation to Rio de Janeiro, Iguassu Falls, and Buenos Aires will leave you with vacation memories you’ll cherish for life.</p>
+					</div>
+					<!--====== ROOMS: HOTEL BOOKING ==========-->
+					<div class="tour_head1 hotel-book-room">
+						<h3>Photo Gallery</h3>
+						<div id="myCarousel1" class="carousel slide" data-ride="carousel">
+							<!-- Indicators -->
+							<ol class="carousel-indicators carousel-indicators-1">
+								<li data-target="#myCarousel1" data-slide-to="0"><img src="images/gallery/t1.jpg" alt="Chania">
+								</li>
+								<li data-target="#myCarousel1" data-slide-to="1"><img src="images/gallery/t2.jpg" alt="Chania">
+								</li>
+								<li data-target="#myCarousel1" data-slide-to="2"><img src="images/gallery/t3.jpg" alt="Chania">
+								</li>
+								<li data-target="#myCarousel1" data-slide-to="3"><img src="images/gallery/t4.jpg" alt="Chania">
+								</li>
+								<li data-target="#myCarousel1" data-slide-to="4"><img src="images/gallery/t5.jpg" alt="Chania">
+								</li>
+								<li data-target="#myCarousel1" data-slide-to="5"><img src="images/gallery/s6.jpg" alt="Chania">
+								</li>
+								<li data-target="#myCarousel1" data-slide-to="6"><img src="images/gallery/s7.jpg" alt="Chania">
+								</li>
+								<li data-target="#myCarousel1" data-slide-to="7"><img src="images/gallery/s8.jpg" alt="Chania">
+								</li>
+								<li data-target="#myCarousel1" data-slide-to="8"><img src="images/gallery/s9.jpg" alt="Chania">
+								</li>
+							</ol>
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner carousel-inner1" role="listbox">
+								<div class="item active"> <img src="images/gallery/t1.jpg" alt="Chania" width="460" height="345"> </div>
+								<div class="item"> <img src="images/gallery/t2.jpg" alt="Chania" width="460" height="345"> </div>
+								<div class="item"> <img src="images/gallery/t3.jpg" alt="Chania" width="460" height="345"> </div>
+								<div class="item"> <img src="images/gallery/t4.jpg" alt="Chania" width="460" height="345"> </div>
+								<div class="item"> <img src="images/gallery/t5.jpg" alt="Chania" width="460" height="345"> </div>
+								<div class="item"> <img src="images/gallery/t6.jpg" alt="Chania" width="460" height="345"> </div>
+								<div class="item"> <img src="images/gallery/t7.jpg" alt="Chania" width="460" height="345"> </div>
+								<div class="item"> <img src="images/gallery/t8.jpg" alt="Chania" width="460" height="345"> </div>
+								<div class="item"> <img src="images/gallery/t9.jpg" alt="Chania" width="460" height="345"> </div>
+							</div>
+							<!-- Left and right controls -->
+							<a class="left carousel-control" href="#myCarousel1" role="button" data-slide="prev"> <span><i class="fa fa-angle-left hotel-gal-arr" aria-hidden="true"></i></span> </a>
+							<a class="right carousel-control" href="#myCarousel1" role="button" data-slide="next"> <span><i class="fa fa-angle-right hotel-gal-arr hotel-gal-arr1" aria-hidden="true"></i></span> </a>
+						</div>
+					</div>
+					<!--====== TOUR LOCATION ==========-->
+					<div class="tour_head1 tout-map map-container">
+						<h3>Location</h3>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6290415.157581651!2d-93.99661009218904!3d39.661150926343694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880b2d386f6e2619%3A0x7f15825064115956!2sIllinois%2C+USA!5e0!3m2!1sen!2sin!4v1467884030780" allowfullscreen></iframe>
+					</div>
+					<!--====== ABOUT THE TOUR ==========-->
+					<div class="tour_head1">
+						<h3>About The Tour</h3>
+						<table>
+							<tr>
+								<th>Places covered</th>
+								<th class="event-res">Inclusions</th>
+								<th class="event-res">Exclusions</th>
+								<th>Event Date</th>
+							</tr>
+							<tr>
+								<td>Rio De Janeiro ,Brazil</td>
+								<td class="event-res">Accommodation</td>
+								<td class="event-res">Return Airfare & Taxes</td>
+								<td>Nov 12, 2017</td>
+							</tr>
+							<tr>
+								<td>Iguassu Falls </td>
+								<td class="event-res">8 Breakfast, 3 Dinners</td>
+								<td class="event-res">Arrival & Departure transfers</td>
+								<td>Nov 14, 2017</td>
+							</tr>
+							<tr>
+								<td>Peru,Lima </td>
+								<td class="event-res">First-class Travel</td>
+								<td class="event-res">travel insurance</td>
+								<td>Nov 16, 2017</td>
+							</tr>
+							<tr>
+								<td>Cusco & Buenos Aires </td>
+								<td class="event-res">Free Sightseeing</td>
+								<td class="event-res">Service tax of 4.50%</td>
+								<td>Nov 18, 2017</td>
+							</tr>
+						</table>
+					</div>
+					<!--====== DURATION ==========-->
+					<div class="tour_head1 l-info-pack-days days">
+						<h3>Detailed Day Wise Itinerary</h3>
+						<ul>
+							<li class="l-info-pack-plac"> <i class="fa fa-clock-o" aria-hidden="true"></i>
+								<h4><span>Day : 1</span> Arrival and Evening Dhow Cruise</h4>
+								<p>Arrive at the airport and transfer to hotel. Check-in time at the hotel will be at 2:00 PM. In the evening, enjoy a tasty dinner on the Dhow cruise. Later, head back to the hotel for a comfortable overnight stay.</p>
+							</li>
+							<li class="l-info-pack-plac"> <i class="fa fa-clock-o" aria-hidden="true"></i>
+								<h4><span>Day : 2</span> City Tour and Evening Free for Leisure</h4>
+								<p>After breakfast, proceed for tour of Dubai city. Visit Jumeirah Mosque, World Trade Centre, Palaces and Dubai Museum. Enjoy your overnight stay at the hotel.In the evening, enjoy a tasty dinner on the Dhow cruise. Later, head back to the hotel for a comfortable overnight stay.</p>
+							</li>
+							<li class="l-info-pack-plac"> <i class="fa fa-clock-o" aria-hidden="true"></i>
+								<h4><span>Day : 3</span> Desert Safari with Dinner</h4>
+								<p>Relish a yummy breakfast and later, proceed to explore the city on your own. Enjoy shopping at Mercato Shopping Mall, Dubai Mall and Wafi City. In the evening, enjoy the desert safari experience and belly dance performance. Relish a mouth-watering barbecue dinner and enjoy staying overnight in Dubai.</p>
+							</li>
+							<li class="l-info-pack-plac"> <i class="fa fa-clock-o" aria-hidden="true"></i>
+								<h4><span>Day : 4</span> Day at leisure</h4>
+								<p>Savour a satiating breakfast and relax for a while. Day Free for leisure. Overnight stay will be arranged in Dubai. In the evening, enjoy a tasty dinner on the Dhow cruise. Later, head back to the hotel for a comfortable overnight stay.</p>
+							</li>
+							<li class="l-info-pack-plac"> <i class="fa fa-clock-o" aria-hidden="true"></i>
+								<h4><span>Day : 5</span> Departure</h4>
+								<p>Fill your tummy with yummy breakfast and relax for a while. Later, check out from the hotel and proceed for your onward journey.In the evening, enjoy a tasty dinner on the Dhow cruise. Later, head back to the hotel for a comfortable overnight stay.</p>
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+				<div class="col-md-3 tour_r">
+					<!--====== SPECIAL OFFERS ==========-->
+					<div class="tour_right tour_offer">
+						<div class="band1"><img src="images/offer.png" alt="" /> </div>
+						<p>Special Offer</p>
+						<h4>$500<span class="n-td">
+								<span class="n-td-1">$800</span>
+								</span>
+							</h4> <a href="booking.html" class="link-btn">Book Now</a> </div>
+					<!--====== TRIP INFORMATION ==========-->
+					<div class="tour_right tour_incl tour-ri-com">
+						<h3>Trip Information</h3>
+						<ul>
+							<li>Location : Rio,Brazil</li>
+							<li>Arrival Date: Nov 12, 2017</li>
+							<li>Departure Date: Nov 21, 2017</li>
+							<li>Free Sightseeing & Hotel</li>
+						</ul>
+					</div>
+					<!--====== PACKAGE SHARE ==========-->
+					<div class="tour_right head_right tour_social tour-ri-com">
+						<h3>Share This Package</h3>
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a> </li>
+							<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a> </li>
+							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> </li>
+							<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </li>
+							<li><a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> </li>
+						</ul>
+					</div>
+					<!--====== HELP PACKAGE ==========-->
+					<div class="tour_right head_right tour_help tour-ri-com">
+						<h3>Help & Support</h3>
+						<div class="tour_help_1">
+							<h4 class="tour_help_1_call">Call Us Now</h4>
+							<h4><i class="fa fa-phone" aria-hidden="true"></i> 10-800-123-000</h4> </div>
+					</div>
+					<!--====== PUPULAR TOUR PACKAGES ==========-->
+					<div class="tour_right tour_rela tour-ri-com">
+						<h3>Popular Packages</h3>
+						<div class="tour_rela_1"> <img src="images/related1.png" alt="" />
+							<h4>Dubai 7Days / 6Nights</h4>
+							<p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text</p> <a href="#" class="link-btn">View this Package</a> </div>
+						<div class="tour_rela_1"> <img src="images/related2.png" alt="" />
+							<h4>Mauritius 4Days / 3Nights</h4>
+							<p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text</p> <a href="#" class="link-btn">View this Package</a> </div>
+						<div class="tour_rela_1"> <img src="images/related3.png" alt="" />
+							<h4>India 14Days / 13Nights</h4>
+							<p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text</p> <a href="#" class="link-btn">View this Package</a> </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--====== TIPS BEFORE TRAVEL ==========-->
+	
+	<!--====== FOOTER 1 ==========-->
+	
+         <section id="footer">
+            <div class="container">
+                <div class="row">
+                   <!--  <div class="col-sm-4 col-md-4">
+                        <div class="foot-text">
+                            <h4>About us</h4>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        </div>
+                    </div> -->
+                    <div class="col-sm-3 col-md-3">
+                        <div class="foot-text">
+                              <h4>Contact Us</h4>
+                              <h5>Suzan Travels Pte. Ltd</h5>     
+                              <p>60 Paya Lebar Road </p>
+                              <p>#06-32 Paya Lebar Square, </p>
+                              <p>Singapore 409051</p>
+
+                       </div>
+                    </div>
+                    <div class="col-sm-5 col-md-5 pd-l80">
+                    
+                    </div>
+                    <div class="col-sm-4 col-md-4 pd-l70" ng-init="getSocial()">
+                        <div class="foot-social-icon">
+                            <div class="foot-text">
+                                <h4>Contact With Us</h4>
+                                <ul>
+                                    <li ng-repeat="social in sociallist">
+                                        <a href="{{social.Link}}">
+                                            <img src="../uploads/social/{{social.Image}}" alt="" title="">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="policy-content">
+                          <p>
+                            <a href="privacy-policy.html">Privacy Policy</a>
+                          </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer  id="bottom-strip">
+            <p>Copyright 2017- Suzan Travels - All Rights Reserved.</p>
+        </footer>
+        
+	
+	<!--========= Scripts ===========-->
+	<script src="js/jquery-latest.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/materialize.min.js"></script>
+	<script src="js/custom.js"></script>
+</body>
+
+
+<!-- Mirrored from rn53themes.net/themes/demo/travelz/tour-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Apr 2018 08:07:57 GMT -->
+</html>
