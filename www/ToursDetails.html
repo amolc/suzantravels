@@ -166,52 +166,24 @@
 								<th>Places covered</th>
 									<th>Event Date</th>
 							</tr>
-							<tr>
-								<td>Rio De Janeiro ,Brazil</td>
+							<tr ng-repeat="eachPlace in Tour.TourPlaces">
+								<td>{{eachPlace.place}}</td>
 								
-								<td>Nov 12, 2017</td>
+								<td>{{eachPlace.date}}</td>
 							</tr>
-							<tr>
-								<td>Iguassu Falls </td>
-								
-								<td>Nov 14, 2017</td>
-							</tr>
-							<tr>
-								<td>Peru,Lima </td>
-								
-								<td>Nov 16, 2017</td>
-							</tr>
-							<tr>
-								<td>Cusco & Buenos Aires </td>
-								
-								<td>Nov 18, 2017</td>
-							</tr>
+							
 						</table>
 					</div>
 					<!--====== DURATION ==========-->
 					<div class="tour_head1 l-info-pack-days days">
 						<h3>Detailed Day Wise Itinerary</h3>
 						<ul>
-							<li class="l-info-pack-plac"> <i class="fa fa-clock-o" aria-hidden="true"></i>
-								<h4><span>Day : 1</span> Arrival and Evening Dhow Cruise</h4>
-								<p>Arrive at the airport and transfer to hotel. Check-in time at the hotel will be at 2:00 PM. In the evening, enjoy a tasty dinner on the Dhow cruise. Later, head back to the hotel for a comfortable overnight stay.</p>
+							<li class="l-info-pack-plac" ng-repeat="eachItinerary in Tour.TourItinerary"> 
+							  <i class="fa fa-clock-o" aria-hidden="true"></i>
+								<h4><span>{{eachItinerary.day}}</span> {{eachItinerary.title}}</h4>
+								<p>{{eachItinerary.description}}</p>
 							</li>
-							<li class="l-info-pack-plac"> <i class="fa fa-clock-o" aria-hidden="true"></i>
-								<h4><span>Day : 2</span> City Tour and Evening Free for Leisure</h4>
-								<p>After breakfast, proceed for tour of Dubai city. Visit Jumeirah Mosque, World Trade Centre, Palaces and Dubai Museum. Enjoy your overnight stay at the hotel.In the evening, enjoy a tasty dinner on the Dhow cruise. Later, head back to the hotel for a comfortable overnight stay.</p>
-							</li>
-							<li class="l-info-pack-plac"> <i class="fa fa-clock-o" aria-hidden="true"></i>
-								<h4><span>Day : 3</span> Desert Safari with Dinner</h4>
-								<p>Relish a yummy breakfast and later, proceed to explore the city on your own. Enjoy shopping at Mercato Shopping Mall, Dubai Mall and Wafi City. In the evening, enjoy the desert safari experience and belly dance performance. Relish a mouth-watering barbecue dinner and enjoy staying overnight in Dubai.</p>
-							</li>
-							<li class="l-info-pack-plac"> <i class="fa fa-clock-o" aria-hidden="true"></i>
-								<h4><span>Day : 4</span> Day at leisure</h4>
-								<p>Savour a satiating breakfast and relax for a while. Day Free for leisure. Overnight stay will be arranged in Dubai. In the evening, enjoy a tasty dinner on the Dhow cruise. Later, head back to the hotel for a comfortable overnight stay.</p>
-							</li>
-							<li class="l-info-pack-plac"> <i class="fa fa-clock-o" aria-hidden="true"></i>
-								<h4><span>Day : 5</span> Departure</h4>
-								<p>Fill your tummy with yummy breakfast and relax for a while. Later, check out from the hotel and proceed for your onward journey.In the evening, enjoy a tasty dinner on the Dhow cruise. Later, head back to the hotel for a comfortable overnight stay.</p>
-							</li>
+							
 						</ul>
 					</div>
 					

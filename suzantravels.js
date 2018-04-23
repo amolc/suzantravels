@@ -141,6 +141,9 @@ app.get('/api/getVoucherBookingDetails/:id', admin.getVoucherBookingDetails);
 app.get('/api/getAboutUs', admin.getAboutUs);
 app.post('/api/updateAboutUs',admin.updateAboutUs); 
 
+app.post('/api/addItinerary',admin.addItinerary);
+app.post('/api/updateTourPlaces',admin.updateTourPlaces);
+
 
 
 

@@ -895,10 +895,13 @@ exports.addTour = function (req, res) {
                                 "TourTitle" : req.body.TourTitle,
                                 "TourDescription":req.body.TourDescription,
                                 "TourLocation": req.body.TourLocation || "",
-                                "TourDuration": req.body.TourDuration || "",
+                                "TourDuration": "",
+                                "TourDurationDay": req.body.TourDurationDay || "", 
+                                "TourDurationNight": req.body.TourDurationNight || "", 
                                 "TourImage": fileName || "",
                                 "TourCost": req.body.TourCost || "",
                                 "ChildCost" : req.body.ChildCost || "",
+                                "TourPlaces" : req.body.TourPlaces || "",
                                 "CreatedOn": dateToday || "",
                             };
                             // console.log("after", createObj);
@@ -911,7 +914,7 @@ exports.addTour = function (req, res) {
                                         status: true,
                                         value:data.insertId,
                                         message: 'Details successfully added',
-                                        date : dateToday
+                                        date : data
                                     };
 
                                     res.jsonp(resdata);
@@ -922,6 +925,78 @@ exports.addTour = function (req, res) {
                                         status: false,
                                         error: err,
                                         message: 'Error: Details not successfully added. '
+                                    };
+
+                                    res.jsonp(resdata);
+                                }
+                            });
+};
+
+
+exports.addItinerary = function (req, res) {
+
+    dateToday = now.format("DD/MM/YYYY hh:mm a");
+    var tourid = req.body.TourId;
+    var updateObj = {
+                         "TourItinerary" :  req.body.TourItinerary,
+                    };
+                            // console.log("after", createObj);
+
+                            tourCRUD.update({TourId: tourid}, updateObj,function (err, data) {
+
+                                if (!err)
+                                {
+                                    var resdata = {
+                                        status: true,
+                                        value:data.insertId,
+                                        message: 'Details successfully deleted',
+                                        date : dateToday
+                                    };
+
+                                    res.jsonp(resdata);
+                                }
+                                else
+                                {
+                                    var resdata = {
+                                        status: false,
+                                        error: err,
+                                        message: 'Error: Details not successfully deleted. '
+                                    };
+
+                                    res.jsonp(resdata);
+                                }
+                            });
+};
+
+
+exports.updateTourPlaces = function (req, res) {
+
+    dateToday = now.format("DD/MM/YYYY hh:mm a");
+    var tourid = req.body.TourId;
+    var updateObj = {
+                         "TourPlaces" :  req.body.TourPlaces,
+                    };
+                            // console.log("after", createObj);
+
+                            tourCRUD.update({TourId: tourid}, updateObj,function (err, data) {
+
+                                if (!err)
+                                {
+                                    var resdata = {
+                                        status: true,
+                                        value:data.insertId,
+                                        message: 'Details successfully deleted',
+                                        date : dateToday
+                                    };
+
+                                    res.jsonp(resdata);
+                                }
+                                else
+                                {
+                                    var resdata = {
+                                        status: false,
+                                        error: err,
+                                        message: 'Error: Details not successfully deleted. '
                                     };
 
                                     res.jsonp(resdata);
@@ -964,15 +1039,18 @@ exports.updateTour = function (req, res) {
          console.log("image not present");
      }
 
-    var updateObj = {
-                                "CountryId" :  req.body.CountryId,
-                                "TourType": req.body.TourType || "",
-                                "TourTitle" : req.body.TourTitle,
-                                "TourDescription":req.body.TourDescription,
-                                "TourLocation": req.body.TourLocation || "",
-                                "TourDuration": req.body.TourDuration || "",
-                                "TourImage": fileName || "",
-                                "ChildCost" : req.body.ChildCost || "",
+          var updateObj =   {
+					    		"CountryId" :  req.body.CountryId,
+					            "TourType": req.body.TourType || "",
+					            "TourTitle" : req.body.TourTitle,
+					            "TourDescription":req.body.TourDescription,
+					            "TourLocation": req.body.TourLocation || "",
+					            "TourDuration": "",
+					            "TourDurationDay": req.body.TourDurationDay || "", 
+					            "TourDurationNight": req.body.TourDurationNight || "", 
+					            "TourImage": fileName || "",
+					            "TourCost": req.body.TourCost || "",
+					            "ChildCost" : req.body.ChildCost || "",
                                 "ModifiedOn": dateToday || "",
                             };
                             // console.log("after", createObj);

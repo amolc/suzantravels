@@ -13,7 +13,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Ambition Tours</title>
+  <title>Suzan Tours</title>
 
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
   <script type="text/javascript" src="../assets/js/adminCtrl.js"></script>
 </head>
 
-<body data-ng-app="80consult" data-ng-controller="admincontroller" ng-init="forminit();">
+<body data-ng-app="80consult" data-ng-controller="admincontroller" ng-init="getTourDetails();">
 <!-- Start Header -->
        <header id="top-header">
             <div class="orenge-logo-strip">
@@ -103,91 +103,35 @@
           <div class="container">
             <div class="row">
               <div class="col-sm-12 col-md-12">
-               <form id="addtour" name="addtour" ng-init="gettourcountries()">
+               <form id="addtour" name="addtour" ng-submit="addItinerary()">
                   <div class="attractions-form profile signin-form">
-                  <h2 class="text-center">Asia Tours</h2>
-                  <input type="hidden" name="type" ng-model="Tour.TourType" ng-init = "Tour.TourType='Tour'">
-                  <div class="col-sm-8 col-md-8 pd0">
-                   <!--  <div class="col-sm-6 col-md-6">
-                    <select ng-model="Tour.TourType" disabled="">
-                      <option value="Attraction">Attraction </option>
-                      <option value="Tour">Tour</option>
-                    </select>
-                  </div> -->
-            <!--  <div class="col-sm-6 col-md-6">
-                      <select id="country" name="country" ng-options="cou.CountryId as cou.CountryTitle for cou in countrylist" ng-model="Tour.CountryId" required="">
-                      </select>
-                  </div>
-                  <div class="col-sm-6 col-md-6">
-                    <input type="text" name="duration" placeholder="Location" required="" ng-model="Tour.TourLocation" id="address">
-                  </div> -->
+                  <h2 class="text-center">Add Itinerary</h2>
+              
+                  <input type="hidden" name="type" ng-model="Tour.CountryId">
                   
-                  <div class="col-sm-12 col-md-12">
-                    <input type="text" name="title" placeholder="Title" required="" ng-model="Tour.TourTitle">
+              <div class="col-sm-12 col-md-12 pd0">
+                                                                                                                         
+               <div class="row" ng-repeat="eachItinerary in itinerary">
+                  <div class="col-sm-2 col-md-2">
+                      <label style="padding-top: 31px;">{{eachItinerary.day}}</label>
                   </div>
-                  <div class="col-sm-6 col-md-6">
-                    <input type="text" name="price" placeholder="Price" pattern="[0-9]{1,5}[.]{0,1}[0-9]{0,2}" oninvalid="setCustomValidity('Enter Valid Price')" onchange="try{setCustomValidity('')}catch(e){}" required="" ng-model="Tour.TourCost">
-                  </div>
-                  <div class="col-sm-6 col-md-6">
-                    <input type="text" name="price" placeholder="Child Price" pattern="[0-9]{1,5}[.]{0,1}[0-9]{0,2}" oninvalid="setCustomValidity('Enter Valid Price')" onchange="try{setCustomValidity('')}catch(e){}" required="" ng-model="Tour.ChildCost">
-                  </div>
+                  <div class="col-sm-4 col-md-4">		         
+		              <input type="text" ng-model="eachItinerary.title" placeholder="Title" name="title" id="title" required>		           
+		          </div>
+		          <div class="col-sm-5 col-md-5">		         
+		              <textarea ng-model="eachItinerary.description" placeholder="Description" name="description" id="description" required></textarea>		           
+		          </div>
+             
+               </div>                
+              </div>
                   
-                  <div class="col-sm-6 col-md-6">
-                    <input type="text" name="TourDurationDay" placeholder="Days" required="" ng-model="Tour.TourDurationDay">
-                  </div>
-                  <div class="col-sm-6 col-md-6">
-                    <input type="text" name="TourDurationNight" placeholder="Nights" required="" ng-model="Tour.TourDurationNight">
-                  </div>
-                  
-                  <div class="col-sm-12 col-md-12">
-                   <textarea rows="9" placeholder="Description" required="" ng-model="Tour.TourDescription"></textarea>
-                  </div>
-                  
-                  <div class="col-sm-12 col-md-12">
-                    <div class="row">
-                      <div class="col-md-3">
-                       <label>Add Tour Places</label>
-                      </div>
-                      <div class="col-md-6"></div>
-                      <div class="col-md-3">
-                         <input type="button" ng-click="onAddPlace()" value="Add">
-                      </div>
-                    </div>                   
-                  </div>
-                  
-                  <div class="col-sm-12 col-md-12" ng-repeat="eachPlace in tourPlaces">
-                    <div class="row">
-                      <div class="col-md-5">
-                         <input type="text" placeholder="Place" name="place" ng-model="eachPlace.place">
-                      </div>
-                      <div class="col-md-5">
-                         <input type="date" name="date" ng-model="eachPlace.date">
-                      </div>
-                      <div class="col-md-2" ng-show="eachPlace.isRemovable==1">
-                         <input type="button" ng-click="onRemovePlace(eachPlace.id)" value="Remove">
-                      </div>
-                    </div>                   
-                  </div>
-                  
-                  </div>
-                  <div class="col-sm-4 col-md-4">
-                   <div class="col-sm-12 col-md-12">
-                     <input id="file_browse1" class="form-control" type='file' name="productimage" onchange="angular.element(this).scope().updateattachment('file_browse1');   $('#imagepreview').children().remove();" accept="image/*">
-                      <input type="hidden" name="imagename" ng-model="Tour.imagename">
-                  </div>
-                   <div class="col-sm-12 col-md-12 ">
-                     <div id="imagepreview">
-                       
-                     </div>
-                   </div>
-                    
-                  </div>
+                 
                  
                   <div class="col-sm-12 col-md-12">
                       <label id="alertmessage" hidden>{{alertmessage}}</label>
                   </div>
                   <div class="col-sm-6 col-md-6 ">
-                    <input type="submit" value="Next" ng-click="addTour()" class="small-btn brawon-btn pull-right">
+                    <input type="submit" value="Save" class="small-btn brawon-btn pull-right">
                   </div>
                   
                   <div class="clearfix"></div>

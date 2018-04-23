@@ -549,7 +549,8 @@ app.controller('contactcontroller', function ($scope, $location, $http, $window)
                       $scope.Tour.AdultPrice = $scope.Tour.adults * $scope.Tour.TourCost;
                       $scope.Tour.ChildPrice = $scope.Tour.Child * $scope.Tour.ChildCost;
                       $scope.Tour.TotalAmount = $scope.Tour.AdultPrice + $scope.Tour.ChildPrice;
-                      
+                      $scope.Tour.TourPlaces = JSON.parse($scope.Tour.TourPlaces);
+                      $scope.Tour.TourItinerary = JSON.parse($scope.Tour.TourItinerary);
                       console.log($scope.Tour);
 
                   }

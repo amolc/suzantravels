@@ -11,7 +11,6 @@ app.controller('admincontroller', function ($scope, $location, $http, $window) {
 
                 if(data.usernameexist === false)
                 {
-
                     $scope.alertmessage=data.message;
                     $("#alertmessage").show('slow');  
 
@@ -494,7 +493,12 @@ app.controller('admincontroller', function ($scope, $location, $http, $window) {
 
      $scope.forminit = function(ele) {
 
-     
+         $scope.tourPlaces = [{
+        	 id:1,
+        	 place:'',
+        	 date:'',
+        	 isRemovable:0
+         }]
         // if (typeof $scope.Tour === 'undefined')
         // $scope.Tour = {};
         // var url = window.location.href;
@@ -636,6 +640,37 @@ app.controller('admincontroller', function ($scope, $location, $http, $window) {
         }
         
     }
+    
+    $scope.onAddPlace = function(){
+    	
+    	 if(typeof $scope.tourPlaces[$scope.tourPlaces.length-1].place !=='undefined' && $scope.tourPlaces[$scope.tourPlaces.length-1].place !==''){
+    		 if(typeof $scope.tourPlaces[$scope.tourPlaces.length-1].date !=='undefined' && $scope.tourPlaces[$scope.tourPlaces.length-1].date !==''){
+	    		 var number = Math.random() // 0.9394456857981651
+	    		 number.toString(36); // '0.xtis06h6'
+	    		 var id = number.toString(36).substr(2, 9); // 'xtis06h6'
+	    		 var placeObject = {
+	    			   id:id,
+	    			   place:'',
+	    			   date:'',
+	    			   isRemovable:1
+	    		  }
+	    		 $scope.tourPlaces.push(placeObject);
+    		 }else{
+    			 alert('Tour date can not be empty');
+    		 }
+    	 }else{
+    		 alert('Tour place can not be empty');
+    	 }
+     }
+    
+    $scope.onRemovePlace = function(id){
+         for(var i=0;i<$scope.tourPlaces.length;i++){
+        	 if($scope.tourPlaces[i].id == id){
+        		 $scope.tourPlaces.splice(i,1);
+        	 }
+         }	
+   	 
+    }
 
     $scope.addTour = function() {   
 
@@ -667,15 +702,27 @@ app.controller('admincontroller', function ($scope, $location, $http, $window) {
 		                     }
 		                      
 		                      $scope.Tour.CountryId = id[1];
-	
-	                             alert($scope.Tour.CountryId);
+		                      
+		                      for(var i=0;i<$scope.tourPlaces.length;i++){
+		                    	 
+		                          var date = $scope.tourPlaces[i].date;
+		                          var visitDate = (date.getMonth()+1)+"-"+date.getDate()+"-"+date.getFullYear();
+		                    	  var placeObject = {
+		                    			 id:$scope.tourPlaces[i].id,
+		                    			 place:$scope.tourPlaces[i].place,
+		                    			 date:visitDate
+		                    	  }
+		                    	  $scope.Tour.TourPlaces.push(placeObject);
+		                      }
+		                      $scope.Tour.TourPlaces = JSON.stringify($scope.Tour.TourPlaces);
+
 		                   $http.post(baseurl + 'addTour/',$scope.Tour).success(function(res) {
 		                         
 		                       //console.log(res);
 		                      if (res.status == true) 
 		                       {
 		                         if ($scope.Tour.TourType == 'Tour')
-		                             window.location.href = 'country-tour.html?country='+$scope.Tour.CountryId;
+		                             window.location.href = 'add-itinerary.html?TourId='+res.value;
 		                           //window.location.href = 'tours.html';
 		                         if ($scope.Tour.TourType == 'Attraction')
 		                           window.location.href = 'country-attractions.html?country='+$scope.Tour.CountryId;
@@ -701,8 +748,6 @@ app.controller('admincontroller', function ($scope, $location, $http, $window) {
 
     $scope.getTourDetails = function() {             
 
-
-
         var url = window.location.href;
         var parts = url.split("?");
         if(parts.length>1){
@@ -712,6 +757,7 @@ app.controller('admincontroller', function ($scope, $location, $http, $window) {
            var id = urlparams.split("=")
            if (id[0]=='TourId') 
            {
+        	  
              $http.get(baseurl + 'getTourDetails/'+id[1]).success(function (res) {
 
                   if (res.status == 'false') {
@@ -722,6 +768,17 @@ app.controller('admincontroller', function ($scope, $location, $http, $window) {
                       $scope.attachmentCount = {};
                       $scope.attachment = {};
                       $scope.imgSrc = "";
+                      $scope.itinerary = [];
+                      for(var i=0;i<$scope.Tour.TourDurationDay;i++){
+                    	  var itineraryObject = {
+                    	      id:i+1,
+                    	      day:'Day : '+(i+1),
+                    	      title:'',
+                    	      description:''
+                    	  }                   	  
+                    	  $scope.itinerary.push(itineraryObject);
+                      }
+                      
                   }
 
               }).error(function () {
@@ -738,6 +795,165 @@ app.controller('admincontroller', function ($scope, $location, $http, $window) {
             window.location.href = 'dashboard.html';
         }
     } 
+    
+    $scope.getTourDetailsForUpdate = function() {             
+
+        var url = window.location.href;
+        var parts = url.split("?");
+        if(parts.length>1){
+
+           var urlparams = parts[1];
+           var params = urlparams.split("&");
+           var id = urlparams.split("=")
+           if (id[0]=='TourId') 
+           {
+        	  
+             $http.get(baseurl + 'getTourDetails/'+id[1]).success(function (res) {
+
+                  if (res.status == 'false') {
+
+                  }
+                  else {
+                      $scope.Tour = res;
+                      $scope.attachmentCount = {};
+                      $scope.attachment = {};
+                      $scope.imgSrc = "";
+                      $scope.itinerary = JSON.parse($scope.Tour.TourItinerary);
+                      $scope.TourPlaces =[]; 
+                      $scope.Tour.TourPlaces = JSON.parse($scope.Tour.TourPlaces);
+                      
+                      for(var i=0;i<$scope.Tour.TourPlaces.length;i++){                 	    
+                    	  var date = new Date($scope.Tour.TourPlaces[i].date.replace(/-/g,'/'));
+                    	  var objectPlace = {
+                              id:$scope.Tour.TourPlaces[i].id,
+                              place:$scope.Tour.TourPlaces[i].place,
+                              date:date,                             
+                          }
+                          $scope.TourPlaces.push(objectPlace);                         
+                      }
+                  }
+
+              }).error(function () {
+
+              });
+           }
+           else
+          {
+              window.location.href = 'dashboard.html';
+          }
+        }
+        else
+        {
+            window.location.href = 'dashboard.html';
+        }
+    } 
+    
+    
+    $scope.addItinerary = function() {             
+
+        var url = window.location.href;
+        var parts = url.split("?");
+        if(parts.length>1){
+
+           var urlparams = parts[1];
+           var params = urlparams.split("&");
+           var id = urlparams.split("=");
+           if (id[0]=='TourId') 
+           {
+        	   
+             var Tour = {
+                TourId:id[1],
+                TourItinerary:JSON.stringify($scope.itinerary)
+             }
+             $http.post(baseurl + 'addItinerary',Tour).success(function (res) {
+
+                  if (res.status == 'false') {
+
+                  }
+                  else {
+                      window.location="country-tour.html?country="+$scope.Tour.CountryId;
+                      
+                  }
+
+              }).error(function () {
+
+              });
+           }
+           else
+          {
+              window.location.href = 'dashboard.html';
+          }
+        }
+        else{
+            window.location.href = 'dashboard.html';
+        }
+    } 
+    
+    
+    $scope.updateTourPlaces = function() {             
+
+       var url = window.location.href;
+       var parts = url.split("?");
+       if(parts.length>1){
+
+          var urlparams = parts[1];
+          var params = urlparams.split("&");
+          var id = urlparams.split("=");
+          if (id[0]=='TourId') 
+          {
+       	   
+        	  $scope.Tour.TourPlaces = [];
+        	  for(var i=0;i<$scope.TourPlaces.length;i++){
+             	 
+                  var date = $scope.TourPlaces[i].date;
+                  var visitDate = (date.getMonth()+1)+"-"+date.getDate()+"-"+date.getFullYear();
+            	  var placeObject = {
+            			 id:$scope.TourPlaces[i].id,
+            			 place:$scope.TourPlaces[i].place,
+            			 date:visitDate
+            	  }
+            	  $scope.Tour.TourPlaces.push(placeObject);
+              }
+        	
+            var Tour = {
+               TourId:id[1],
+               TourPlaces:JSON.stringify($scope.Tour.TourPlaces)
+            }
+            
+            $http.post(baseurl + 'updateTourPlaces',Tour).success(function (res) {
+
+                 if (res.status == 'false') {
+
+                 }
+                 else {
+                     window.location="country-tour.html?country="+$scope.Tour.CountryId;                    
+                 }
+
+             }).error(function () {
+
+             });
+          }
+          else
+         {
+             window.location.href = 'dashboard.html';
+         }
+       }
+       else{
+           window.location.href = 'dashboard.html';
+       }
+   }
+    
+    
+    
+    $scope.editTourPlaces = function(TourId){
+    	window.location="update-tourPlaces.html?TourId="+TourId;
+    }
+    
+    $scope.editItinerary = function(TourId){
+    	window.location="update-itinerary.html?TourId="+TourId;
+    }
+    
+    
 
     $scope.updateTour = function() {             
 
