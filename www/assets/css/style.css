@@ -1375,7 +1375,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 .logoColor
 {
-	    color: #9e3eb9;
+	  
+	    font-family: 'Source Sans Pro', sans-serif;
+	       background: radial-gradient( red ,#9e3eb9, #18a7e2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+	    
 }
 
 
@@ -1398,4 +1403,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .paddZero
 {
 	padding-left:0px !important;
+}
+
+.boxSh
+{
+	    box-shadow: 3px 3px 5px 6px #ccc;
 }

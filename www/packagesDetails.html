@@ -22,12 +22,9 @@
 
         <link id="bsdp-css" href="bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet">
     </head>
-    <body data-ng-app="80consult" data-ng-controller="contactcontroller" ng-init="getCountryAttractions()">
+    <body data-ng-app="80consult" data-ng-controller="contactcontroller" ng-init="getCountryTours()">
         <!-- Start Header -->
-
-
-     
-       
+              
         <header id="top-header">
             <div class="orenge-logo-strip">
                 <div class="container">
@@ -35,15 +32,15 @@
                         <div class="col-sm-12">
                             <div class="logo-img">
                                 <a href="index.html">
-                                    <!-- <img src="assets/img/logo.png" alt="" title=""> -->
-                                    <h1 class="logoColor">Suzan Travels</h1>
+                                 <!--    <img src="assets/img/logo.png" alt="" title=""> -->
+                                 <h1 class="logoColor">Suzan Travels</h1>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-           <div class="navigation-strip">
+            <div class="navigation-strip">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12">
@@ -108,36 +105,37 @@
             </div>
         </header>
 
-        <section id="pakeges-wrap">
+        <section id="">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
                         <h2 class="section-title">
-                            {{CountryTitle}} Attractions
+                         Packages
                         </h2>
                     </div>
-                    <div class="col-sm-6" ng-repeat="a in attractionlist">
-                        <div class="packges-block">
+                  <div class="col-sm-6 ng-scope ">
+                        <div class="packges-block boxSh">
                             <div class="col-sm-5 pd0">
                                 <div class="place-img">
-                                    <a href="tours-details.html?TourId={{a.TourId}}">
-                                    <img src="../uploads/attractions/{{a.TourImage}}" class="img-responsive" alt="" title="">
+                                    <a href="ToursDetails.html?TourId=52">
+                                    <img src="assets/img/tours.jpg" class="img-responsive" alt="" title="">
                                     </a>
                                 </div>
                             </div>
                             <div class="col-sm-7">
                                 <div class="packeg-details-text">
-                                    <a href="tours-details.html?TourId={{a.TourId}}">
-                                    <h5 class="color-orenge">{{a.TourTitle}}</h5>
-                                    <p class="color-black">{{a.TourDescription| limitTo : 120}}...</p>
+                                 <!--   <a href="tours-details.html?TourId={{a.TourId}}"> -->
+                                    <a href="ToursDetails.html?TourId=52">
+                                    <h5 class="color-orenge ng-binding">Adventure Cove WaterPark</h5>
+                                    <p class="color-black ng-binding">Thrilling slides and encounters with marine life – all in one place. At Adventure Cove Waterpark, you can take high-spee...</p>
                                     <p class="color-orenge">Details</p>
                                     <div class="right-blck">
-                                        <p class="gray-small-text"><span>Location: {{a.TourLocation}} <br>
-                                            Duration: {{a.TourDuration}}</span>
+                                        <p class="gray-small-text"><span class="ng-binding">Location: Adventure Cove Waterpark 8 Sentosa Gateway, Sentosa Island, Singapore 098269 <br>
+                                            Duration: 2 hours</span>
                                         </p>
                                         <div class="star-rating-wrap">
                                              <!-- <div class="row lead"></div> -->
-                                            <div id="stars-existing" class="starrr" data-rating='3'></div>
+                                            <div id="stars-existing" class="starrr" data-rating="3"></div>
                                         </div>
                                         <!-- <div class="social-links">
                                             <ul>
@@ -149,11 +147,57 @@
                                     </a>
                                     <div class="price-right-block">
                                         <span>From SGD</span>
-                                        <h4>${{a.TourCost}}</h4>
+                                        <h4 class="ng-binding">$38</h4>
                                        <!--  <a href="#" ng-click="enquiryButton('Universal Studios Singapore One-Day Pass','76');" class="pakege-btn">Book Now</a> -->
+                                       <a href="booking.html?TourId=52" class="pakege-btn">Book Now</a>
+                                     <!--    <a style="margin-right: 10px" href="tours-details.html?TourId={{a.TourId}}" class="pakege-btn">View Details</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
 
-                                       <a href="booking.html?TourId={{a.TourId}}" class="pakege-btn">Book Now</a>
-                                         <a style="margin-right: 10px" href="tours-details.html?TourId={{a.TourId}}" class="pakege-btn">View Details</a>
+
+
+     <div class="col-sm-6 ng-scope ">
+                        <div class="packges-block boxSh">
+                            <div class="col-sm-5 pd0">
+                                <div class="place-img">
+                                    <a href="ToursDetails.html?TourId=52">
+                                    <img src="assets/img/attraction.jpg" class="img-responsive" alt="" title="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-7">
+                                <div class="packeg-details-text">
+                                 <!--   <a href="tours-details.html?TourId={{a.TourId}}"> -->
+                                    <a href="ToursDetails.html?TourId=52">
+                                    <h5 class="color-orenge ng-binding">Adventure Cove WaterPark</h5>
+                                    <p class="color-black ng-binding">Thrilling slides and encounters with marine life – all in one place. At Adventure Cove Waterpark, you can take high-spee...</p>
+                                    <p class="color-orenge">Details</p>
+                                    <div class="right-blck">
+                                        <p class="gray-small-text"><span class="ng-binding">Location: Adventure Cove Waterpark 8 Sentosa Gateway, Sentosa Island, Singapore 098269 <br>
+                                            Duration: 2 hours</span>
+                                        </p>
+                                        <div class="star-rating-wrap">
+                                             <!-- <div class="row lead"></div> -->
+                                            <div id="stars-existing" class="starrr" data-rating="3"></div>
+                                        </div>
+                                        <!-- <div class="social-links">
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                            </ul>
+                                        </div> -->
+                                    </div>
+                                    </a>
+                                    <div class="price-right-block">
+                                        <span>From SGD</span>
+                                        <h4 class="ng-binding">$38</h4>
+                                       <!--  <a href="#" ng-click="enquiryButton('Universal Studios Singapore One-Day Pass','76');" class="pakege-btn">Book Now</a> -->
+                                       <a href="booking.html?TourId=52" class="pakege-btn">Book Now</a>
+                                     <!--    <a style="margin-right: 10px" href="tours-details.html?TourId={{a.TourId}}" class="pakege-btn">View Details</a> -->
                                     </div>
                                 </div>
                             </div>
@@ -168,7 +212,7 @@
 
     <!-- End Header -->
 
-     <!--
+<!--
         <section id="header">
             <div class="container">
                 <div class="row">
@@ -366,7 +410,7 @@
         </section> -->
 
 
-      <section id="footer">
+     <section id="footer">
             <div class="container">
                 <div class="row">
                    <!--  <div class="col-sm-4 col-md-4">
@@ -415,7 +459,7 @@
             <p>Copyright 2017- Suzan Travels - All Rights Reserved.</p>
         </footer>
 
-        <section id="form-wrap" hidden="">
+         <section id="form-wrap" hidden="">
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-12">
