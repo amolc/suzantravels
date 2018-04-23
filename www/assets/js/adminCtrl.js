@@ -289,6 +289,9 @@ app.controller('admincontroller', function ($scope, $location, $http, $window) {
                               $scope.CountryId = id[1];
                               $scope.CountryTitle = data.CountryTitle;
                               $scope.tourlist = res;
+                              console.log($scope.tourlist);                          
+                              $("#tourDesc").append("<h1>Description</h1>");
+                              
                           }
 
                       }).error(function () {
@@ -636,49 +639,63 @@ app.controller('admincontroller', function ($scope, $location, $http, $window) {
 
     $scope.addTour = function() {   
 
-
           $("#alertmessage").hide();
+          
+             var url = window.location.href;
+             var parts = url.split("?");
+             if(parts.length>1){
 
-          if (typeof $scope.Tour.CountryId === 'undefined') 
-          {
-               $scope.alertmessage = "Please Select Country"
-               $("#alertmessage").show('slow');
-          }
-          else
-          {
+	             var urlparams = parts[1];
+	             var params = urlparams.split("&");
+	             var id = urlparams.split("=")
+	             if (id[0]=='country') {
+//	            	 
+//		            	 if (typeof $scope.Tour.CountryId === 'undefined') 
+//		                 {
+//		                      $scope.alertmessage = "Please Select Country"
+//		                      $("#alertmessage").show('slow');
+//		                 }
+//		                 else
+//		                 {
+	
+		                    setTimeout(function() { 
+	
+		                      if (Object.keys($scope.attachment).length>0) {
+		                       $scope.Tour.image = $scope.attachment.images[0];
+		                     }else{
+		                       $scope.Tour.image = '';
+		                     }
+		                      
+		                      $scope.Tour.CountryId = id[1];
+	
+	                             alert($scope.Tour.CountryId);
+		                   $http.post(baseurl + 'addTour/',$scope.Tour).success(function(res) {
+		                         
+		                       //console.log(res);
+		                      if (res.status == true) 
+		                       {
+		                         if ($scope.Tour.TourType == 'Tour')
+		                             window.location.href = 'country-tour.html?country='+$scope.Tour.CountryId;
+		                           //window.location.href = 'tours.html';
+		                         if ($scope.Tour.TourType == 'Attraction')
+		                           window.location.href = 'country-attractions.html?country='+$scope.Tour.CountryId;
+		                           //window.location.href = 'attractions.html';
+		                       }
+	
+	
+		                       }).error(function() {
+		                           
+		                       });
+		                
+		                     }, 1000);          
+	
+//		                 }  
+	            	 
+	             }
+             }
+            	 
 
-             setTimeout(function() { 
-
-               if (Object.keys($scope.attachment).length>0) {
-                $scope.Tour.image = $scope.attachment.images[0];
-              }else{
-                $scope.Tour.image = '';
-              }
-
-
-            $http.post(baseurl + 'addTour/',$scope.Tour).success(function(res) {
                   
-                //console.log(res);
-               if (res.status == true) 
-                {
-                  if ($scope.Tour.TourType == 'Tour')
-                      window.location.href = 'country-tour.html?country='+$scope.Tour.CountryId;
-                    //window.location.href = 'tours.html';
-                  if ($scope.Tour.TourType == 'Attraction')
-                    window.location.href = 'country-attractions.html?country='+$scope.Tour.CountryId;
-                    //window.location.href = 'attractions.html';
-                }
-
-
-                }).error(function() {
-                    
-                });
-         
-              }, 1000);
-
-           
-
-          }          
 
     }
 

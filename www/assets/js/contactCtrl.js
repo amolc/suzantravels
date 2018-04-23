@@ -528,9 +528,7 @@ app.controller('contactcontroller', function ($scope, $location, $http, $window)
    }
 
        $scope.getTourDetails = function() {             
-
-
-
+          
         var url = window.location.href;
         var parts = url.split("?");
         if(parts.length>1){
@@ -538,10 +536,9 @@ app.controller('contactcontroller', function ($scope, $location, $http, $window)
            var urlparams = parts[1];
            var params = urlparams.split("&");
            var id = urlparams.split("=")
-           if (id[0]=='TourId') 
-           {
+           if (id[0]=='TourId') {
              $http.get(baseurl + 'getTourDetails/'+id[1]).success(function (res) {
-
+            	 
                   if (res.status == 'false') {
 
                   }
@@ -552,6 +549,8 @@ app.controller('contactcontroller', function ($scope, $location, $http, $window)
                       $scope.Tour.AdultPrice = $scope.Tour.adults * $scope.Tour.TourCost;
                       $scope.Tour.ChildPrice = $scope.Tour.Child * $scope.Tour.ChildCost;
                       $scope.Tour.TotalAmount = $scope.Tour.AdultPrice + $scope.Tour.ChildPrice;
+                      
+                      console.log($scope.Tour);
 
                   }
 
@@ -731,40 +730,40 @@ app.controller('contactcontroller', function ($scope, $location, $http, $window)
 
    }
 
-      $scope.getTourDetails = function() {             
-
-        var url = window.location.href;
-        var parts = url.split("?");
-        if(parts.length>1){
-
-           var urlparams = parts[1];
-           var params = urlparams.split("&");
-           var id = urlparams.split("=")
-           if (id[0]=='TourId') 
-           {
-             $http.get(baseurl + 'getTourDetails/'+id[1]).success(function (res) {
-
-                  if (res.status == 'false') {
-
-                  }
-                  else {
-                      $scope.Tour = res;
-                  }
-
-              }).error(function () {
-
-              });
-           }
-           else
-          {
-              window.location.href = 'index.html';
-          }
-        }
-        else
-        {
-            window.location.href = 'index.html';
-        }
-    } 
+//      $scope.getTourDetails = function() {             
+//
+//        var url = window.location.href;
+//        var parts = url.split("?");
+//        if(parts.length>1){
+//
+//           var urlparams = parts[1];
+//           var params = urlparams.split("&");
+//           var id = urlparams.split("=")
+//           if (id[0]=='TourId') 
+//           {
+//             $http.get(baseurl + 'getTourDetails/'+id[1]).success(function (res) {
+//
+//                  if (res.status == 'false') {
+//
+//                  }
+//                  else {
+//                      $scope.Tour = res;
+//                  }
+//
+//              }).error(function () {
+//
+//              });
+//           }
+//           else
+//          {
+//              window.location.href = 'index.html';
+//          }
+//        }
+//        else
+//        {
+//            window.location.href = 'index.html';
+//        }
+//    } 
 
 $scope.initfunc = function () {
      //$scope.data = {};
