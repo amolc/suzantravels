@@ -7,6 +7,7 @@
 
         <title>Suzan Travels</title>
 
+        
         <link href="assets/css/bootstrap.min.css" rel="stylesheet">
         <link href="assets/css/font-awesome.min.css" rel="stylesheet">
         <link href="assets/css/style.css" rel="stylesheet">
@@ -22,9 +23,12 @@
 
         <link id="bsdp-css" href="bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet">
     </head>
-    <body data-ng-app="80consult" data-ng-controller="contactcontroller" ng-init="getCountryTours()">
+    <body data-ng-app="80consult" >
         <!-- Start Header -->
-              
+        
+        
+
+     
         <header id="top-header">
             <div class="orenge-logo-strip">
                 <div class="container">
@@ -32,14 +36,15 @@
                         <div class="col-sm-12">
                             <div class="logo-img">
                                 <a href="index.html">
-                                 <!--    <img src="assets/img/logo.png" alt="" title=""> -->
-                                 <h1 class="logoColor">Suzan Travels</h1>
+                                   <!--  <img src="assets/img/logo.png" alt="" title=""> -->
+                                   <h1 class="logoColor">Suzan Travels</h1>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
             <div class="navigation-strip">
                 <div class="container">
                     <div class="row">
@@ -104,313 +109,80 @@
                 </div>
             </div>
         </header>
-
-        <section id="">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h2 class="section-title">
-                         Packages
-                        </h2>
-                    </div>
-                  <div class="col-sm-6 ng-scope ">
-                        <div class="packges-block boxSh">
-                            <div class="col-sm-5 pd0">
-                                <div class="place-img">
-                                    <a href="ToursDetails.html?TourId=52">
-                                    <img src="assets/img/tours.jpg" class="img-responsive" alt="" title="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-sm-7">
-                                <div class="packeg-details-text">
-                                 <!--   <a href="tours-details.html?TourId={{a.TourId}}"> -->
-                                    <a href="ToursDetails.html?TourId=52">
-                                    <h5 class="color-orenge ng-binding">Adventure Cove WaterPark</h5>
-                                    <p class="color-black ng-binding">Thrilling slides and encounters with marine life – all in one place. At Adventure Cove Waterpark, you can take high-spee...</p>
-                                    <p class="color-orenge">Details</p>
-                                    <div class="right-blck">
-                                        <p class="gray-small-text"><span class="ng-binding">Location: Adventure Cove Waterpark 8 Sentosa Gateway, Sentosa Island, Singapore 098269 <br>
-                                            Duration: 2 hours</span>
-                                        </p>
-                                        <div class="star-rating-wrap">
-                                             <!-- <div class="row lead"></div> -->
-                                            <div id="stars-existing" class="starrr" data-rating="3"></div>
-                                        </div>
-                                        <!-- <div class="social-links">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                            </ul>
-                                        </div> -->
-                                    </div>
-                                    </a>
-                                    <div class="price-right-block">
-                                        <span>From SGD</span>
-                                        <h4 class="ng-binding">$38</h4>
-                                       <!--  <a href="#" ng-click="enquiryButton('Universal Studios Singapore One-Day Pass','76');" class="pakege-btn">Book Now</a> -->
-                                       <a href="booking.html?TourId=52" class="pakege-btn">Book Now</a>
-                                     <!--    <a style="margin-right: 10px" href="tours-details.html?TourId={{a.TourId}}" class="pakege-btn">View Details</a> -->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-
-
-
-     <div class="col-sm-6 ng-scope ">
-                        <div class="packges-block boxSh">
-                            <div class="col-sm-5 pd0">
-                                <div class="place-img">
-                                    <a href="ToursDetails.html?TourId=52">
-                                    <img src="assets/img/attraction.jpg" class="img-responsive" alt="" title="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-sm-7">
-                                <div class="packeg-details-text">
-                                 <!--   <a href="tours-details.html?TourId={{a.TourId}}"> -->
-                                    <a href="ToursDetails.html?TourId=52">
-                                    <h5 class="color-orenge ng-binding">Adventure Cove WaterPark</h5>
-                                    <p class="color-black ng-binding">Thrilling slides and encounters with marine life – all in one place. At Adventure Cove Waterpark, you can take high-spee...</p>
-                                    <p class="color-orenge">Details</p>
-                                    <div class="right-blck">
-                                        <p class="gray-small-text"><span class="ng-binding">Location: Adventure Cove Waterpark 8 Sentosa Gateway, Sentosa Island, Singapore 098269 <br>
-                                            Duration: 2 hours</span>
-                                        </p>
-                                        <div class="star-rating-wrap">
-                                             <!-- <div class="row lead"></div> -->
-                                            <div id="stars-existing" class="starrr" data-rating="3"></div>
-                                        </div>
-                                        <!-- <div class="social-links">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                            </ul>
-                                        </div> -->
-                                    </div>
-                                    </a>
-                                    <div class="price-right-block">
-                                        <span>From SGD</span>
-                                        <h4 class="ng-binding">$38</h4>
-                                       <!--  <a href="#" ng-click="enquiryButton('Universal Studios Singapore One-Day Pass','76');" class="pakege-btn">Book Now</a> -->
-                                       <a href="booking.html?TourId=52" class="pakege-btn">Book Now</a>
-                                     <!--    <a style="margin-right: 10px" href="tours-details.html?TourId={{a.TourId}}" class="pakege-btn">View Details</a> -->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-
-    <!-- End Header -->
-
-<!--
-        <section id="header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="jumbotron">
-                          <h3>Suzan Travels</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
--->
-
-        <div class="clearfix"></div>
-        <!-- <section id="context" class="tour-Package">
+        
+        
+        
+     
+        <!-- <div id="home-banner">
+            <img src="assets/img/banner1.jpg" alt="" title="" / >
+        </div> -->
+      
+       <section id="country-box" class="bg-creem" >
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-md-12">
-                        <h2 class="section-title">
-                            Travels Package
-                        </h2>
+                        <div class="about-content mr-b50">
+                            <h3>Packages</h3>
+                        </div>
                     </div>
-                    <div class="col-sm-12 package-masonry">
+                    <div class="col-sm-4">
+                        <figure class="hero-grid effect-move">
+                              <a href="#">
+                                <img class="hero-grid-image effect-image bright" src="assets/img/tours.jpg" alt="" />
+                              </a>
+                                <figcaption class="hero-grid-content">
+                                  <span class="hero-tag effect-target">Suzan Travels</span>
+                                  <h2 class="hero-grid-title effect-target packTtl">Charming City London
+                                    <p class="pp" ><span><i class="fa fa-sun-o pi" aria-hidden="true"></i>4 Days</span><span class="spnn" ><i class="fa fa-moon-o pi" aria-hidden="true"></i>5 Nights</span></p>
+                                  </h2>
 
-<div class="container">
-<div class="row">
-    <div class="item">
-      <div class="well"> 
-        <div class="box-context">
-                        <div class="Package-box">
-                        <div class="context-img text-center">
-                            <img src="assets/img/img-1.png" alt="img">
-                        </div>
-                        <div class="content-info">
-                            <h3>3D2N Wildlife From SGD 245</h3>
-                            <p>Package Includes :</p>
-                            <ul>
-                                <li><span>Return Airport Transfers</span></li>
-                                <li><span>2 Nights Accommodation</span></li>
-                                <li><span>Daily Breakfast</span></li>
-                                <li><span>Half-day Guided City Tour</span></li>
-                                <li><span>Sentosa Tour <small>(Cable Car, 4D Show & Wings of Time)</small></span></li>
-                                <li><span>Night Safari</span></li>
-                            </ul>
+                                  
+                                </figcaption>
+                            </figure>
+                    </div> 
+                    
+                    <div class="col-sm-4">
+                        <figure class="hero-grid effect-move">
+                              <a href="country-attractions.html?country={{currentCountry}}">
+                                <img class="hero-grid-image effect-image bright" src="assets/img/attraction.jpg" alt="" />
+                              </a>
+                                <figcaption class="hero-grid-content">
+                                  <span class="hero-tag effect-target">Suzan Travels</span>
+                                   <h2 class="hero-grid-title effect-target packTtl">Maxico City
+                                    <p class="pp" ><span><i class="fa fa-sun-o pi" aria-hidden="true"></i>4 Days</span><span class="spnn" ><i class="fa fa-moon-o pi" aria-hidden="true"></i>5 Nights</span></p>
+                                  </h2>
+                                  <!-- <p class="hero-grid-text effect-target effect-text">Falls mainly on the plain.</p> -->
+                                  <a class="hero-grid-link" href="country-attractions.html?country={{currentCountry}}">View more</a>
+                                </figcaption>
+                            </figure>
+                    </div> 
+                    
+                    <div class="col-sm-4">
+                        <figure class="hero-grid effect-move">
+                              <a href="country-tours.html?country={{currentCountry}}">
+                                <img class="hero-grid-image effect-image bright" src="assets/img/transfer.jpg" alt="" />
+                              </a>
+                                <figcaption class="hero-grid-content">
+                                  <span class="hero-tag effect-target">Suzan Travels</span>
+                                  <h2 class="hero-grid-title effect-target packTtl">Birmingham Australia
+                                    <p class="pp" ><span><i class="fa fa-sun-o pi" aria-hidden="true"></i>4 Days</span><span class="spnn" ><i class="fa fa-moon-o pi" aria-hidden="true"></i>5 Nights</span></p>
+                                  </h2>
+                                  <!-- <p class="hero-grid-text effect-target effect-text">Falls mainly on the plain.</p> -->
+                                  <a class="hero-grid-link" href="country-tours.html?country={{currentCountry}}">View more</a>
+                                </figcaption>
+                            </figure>
+                    </div> 
 
-                        
-                          <a href="enquiry.html?pck=3D2N WLIDLIFE From SGD 245" class="btn btn-info orenge-btn" role="button">Book Now</a>
-                        </div>
-                            </div>
-                    </div>
-      </div>
-    </div>
-     <div class="item">
-        <div class="well"> 
-            <div class="box-context">
-                        <div class="Package-box">
-                        <div class="context-img text-center">
-                            <img src="assets/img/img-2.png" alt="img">
-                        </div>
-                        <div class="content-info">
-                            <h3>4D3N Package From SGD 350</h3>
-                            <p>Package Includes :</p>
-                            <ul>
-                                <li><span>Return Airport Transfers</span></li>
-                                <li><span>3 Nights Accommodation</span></li>
-                                <li><span>Daily Breakfast</span></li>
-                                <li><span>Gardens by The Bay </span></li>
-                                <li><span>Half-day Guided City Tour</span></li>
-                                <li><span>Sentosa Tour <small>(Cable Car, 4D Show & Wings of Time)</small></span></li>
-                                <li><span>Universal Studios </span></li>
-                            </ul>
-                        
-                        <a href="enquiry.html?pck=4D3 Package From SGD 350" class="btn btn-info orenge-btn" role="button">Book Now</a>
-                         </div>
-                            </div>
-                    </div>
-        </div>
-    </div>
-    <div class="item">
-        <div class="well"> 
-         <div class="box-context">
-                         <div class="Package-box">
-                        <div class="context-img text-center">
-                            <img src="assets/img/img-3.png" alt="img">
-                        </div>
-                        <div class="content-info">
-                             <h3>3D2N Wildlife From SGD 245</h3>
-                            <p>Package Includes :</p>
-                            <ul>
-                                <li><span>Return Airport Transfers</span></li>
-                                <li><span>4 Nights Accommodation</span></li>
-                                <li><span>Daily Breakfast</span></li>
-                                <li><span>Full Day River Safari, Zoo & Night Safari Tour</span></li>
-                                <li><span>Half-day Guided City Tour</span></li>
-                                <li><span>Sentosa Tour <small>(Cable Car, 4D Show & Wings of Time)</small></span></li>
-                                <li><span>Universal Studios</span></li>
-                            </ul>
-                       
-                        <a href="enquiry.html?pck=3D2N WLIDLIFE From SGD 245" class="btn btn-info orenge-btn" role="button">Book Now</a>
-                         </div>
-                              </div>
-                    </div>
-        </div>
-    </div>
-    <div class="item">
-        <div class="well"> 
-                     <div class="box-context">
-                         <div class="Package-box">
-                            <div class="context-img text-center">
-                                <img src="assets/img/img-6.png" alt="img">
-                            </div>
-                            <div class="content-info">
-                                <h3>5D4N Package From SGD 495</h3>
-                                <p>Package Includes :</p>
-                                <ul>
-                                    <li><span>Return Airport Transfers</span></li>
-                                    <li><span>3 Nights Accommodation</span></li>
-                                    <li><span>Daily Breakfast</span></li>
-                                    <li><span>Full Day River Safari, Zoo & Night Sahari Tour</span></li>
-                                    <li><span>Half-day Guided City Tour</span></li>
-                                    <li><span>Sentosa Tour <small>(Cable Car, 4D Show & Wings of Time)</small></span></li>
-                                    <li><span>Universal Studios</span></li>
-                                    <li><span>Marina Bay Sands & Gardens By The Bay Tour</span></li>
-                                </ul>
-                            
-                            <a href="enquiry.html?pck=5D4N Package From SGD 495" class="btn btn-info orenge-btn" role="button">Book Now</a>
-                         </div>
-                             </div>
-                         
-                    </div>
-        </div>
-    </div>
-    <div class="item">
-        <div class="well">
-         <div class="box-context">
-                        <div class="Package-box">
-                        <div class="context-img text-center">
-                            <img src="assets/img/img-4.png" alt="img">
-                        </div>
-                        <div class="content-info">
-                             <h3>3D2N RWS From SGD 260</h3>
-                            <p>Package Includes :</p>
-                            <ul>
-                                <li><span>Return Airport Transfers</span></li>
-                                <li><span><span>2 Nights Accommodation</span></li>
-                                <li><span>Daily Breakfast</span></li>
-                                <li><span>Night Safari</span></li>
-                                <li><span>Universal Studios</span></li>
-                            </ul>
-                        
-                        <a href="enquiry.html?pck=3D2N RWS From SGD 260" class="btn btn-info orenge-btn" role="button">Book Now</a>
-                         </div>
-                            </div>
-                    </div>
-        </div>
-    </div>
-    <div class="item">
-        <div class="well"> 
-           <div class="box-context">
-                         <div class="Package-box">
-                        <div class="context-img text-center">
-                            <img src="assets/img/img-5.png" alt="img">
-                        </div>
-                        <div class="content-info">
-                            <h3>4D3N Package From SGD 365 </h3>
-                            <p>Package Includes :</p>
-                            <ul>
-                                <li><span>Return Airport Transfers</span></li>
-                                <li><span>3 Nights Accommodation</span></li>
-                                <li><span>Daily Breakfast</span></li>
-                                <li><span>Night Safari</span></li>
-                                <li><span>Half-day Guided City Tour</span></li>
-                                <li><span>Sentosa Tour <small>(Cable Car, 4D Show & Wings of Time)</small></span></li>
-                                <li><span>Universal Studios</span></li>
-                            </ul>
-                       
-                        <a href="enquiry.html?pck=4D3N Package From SGD 365" class="btn btn-info orenge-btn" role="button">Book Now</a>
-                         </div>
-                              </div>
-                    </div>
-        </div>
-    </div>
-</div>
-</div>
-
-                    </div>
-                    <!-- <div class="col-sm-12 col-md-12">
-                        <h2 class="section-title">
-                            Travels Package
-                        </h2>
+                    <div class="col-sm-12 col-md-12 text-center">
+                        <a href="asia.html" class="orenge-btn color-white">View More</a>
                     </div>
                 </div>
             </div>
-            <div class="clearfix"></div>
-        </section> -->
+        </section>
 
 
-     <section id="footer">
+
+         <section id="footer">
             <div class="container">
                 <div class="row">
                    <!--  <div class="col-sm-4 col-md-4">
@@ -419,20 +191,20 @@
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                         </div>
                     </div> -->
-                    <div class="col-sm-4 col-md-4">
+                    <div class="col-sm-3 col-md-3">
                         <div class="foot-text">
                               <h4>Contact Us</h4>
-                              <h5>Suzan Travels & Travels  Pte. Ltd</h5>
-                              <p>#06-67, 1 Rochor Canal Rd,</p>
-                              <p>Sim Lim Square, </p>
-                              <p>Singapore 188504.</p>
+                              <h5>Suzan Travels Pte. Ltd</h5>     
+                              <p>60 Paya Lebar Road </p>
+                              <p>#06-32 Paya Lebar Square, </p>
+                              <p>Singapore 409051</p>
 
                        </div>
                     </div>
-                    <div class="col-sm-4 col-md-4 pd-l80">
+                    <div class="col-sm-5 col-md-5 pd-l80">
                     
                     </div>
-                   <div class="col-sm-4 col-md-4 pd-l70" ng-init="getSocial()">
+                    <div class="col-sm-4 col-md-4 pd-l70" ng-init="getSocial()">
                         <div class="foot-social-icon">
                             <div class="foot-text">
                                 <h4>Contact With Us</h4>
@@ -455,11 +227,13 @@
                 </div>
             </div>
         </section>
+
         <footer  id="bottom-strip">
             <p>Copyright 2017- Suzan Travels - All Rights Reserved.</p>
         </footer>
+        
 
-         <section id="form-wrap" hidden="">
+    <!--    <section id="form-wrap" hidden="">
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-12">
@@ -484,9 +258,36 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
 
+
+  <!--  <section id="form-wrap" hidden="">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12">
+          <div class="form-block">
+            <div class="signin-form profile">
+                          <h2>WelCome</h2>
+
+                          <div class="login-form">
+                            <form method="post" ng-submit="checkPassword(password)">
+                              <input type="password" name="password" placeholder="Password" required="" ng-model="password">
+                              <label id="alert" hidden="">Password Incorrect</label>
+                              <div class="tp">
+                                <input type="submit" value="ENTER" class="brawon-btn large-btn">
+                              </div>
+                            </form>
+                          </div>   
+                          <div class="login-logo">
+                            <img src="../assets/img/logo.png">
+                          </div>                         
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
 
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>

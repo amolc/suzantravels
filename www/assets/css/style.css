@@ -1441,3 +1441,28 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 {
 	display:inline;
 }
+
+.pp
+{
+	padding-top:10px;
+	
+}
+.spnn
+{
+	padding-left:5%;
+}
+
+.pi
+{
+	padding-right:10px;
+}
+
+.bright
+{
+	filter:brightness(80%);
+}
+
+.packTtl
+{
+	font-size:23px !important;
+}
