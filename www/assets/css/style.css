@@ -1383,9 +1383,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 {
 	  
 	    font-family: 'Source Sans Pro', sans-serif;
-	       background: radial-gradient( red ,#9e3eb9, #18a7e2);
+	          background: radial-gradient( at top left, #18a7e2,#18a7e2,#b72175 ,#b72175);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  width:20%;
 	
    
 }
