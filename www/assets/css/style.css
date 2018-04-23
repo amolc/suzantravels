@@ -1435,6 +1435,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .card-features ul
 {
 	list-style:none;
+	    padding-left: 4%;
 }
 
 .card-features ul li
@@ -1465,4 +1466,31 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .packTtl
 {
 	font-size:23px !important;
+}
+
+.rent-box
+{
+	box-shadow:0 1px 4px rgba(41,51,57,.5);
+}
+
+.card-pricing-block
+{
+	background-color:#9e3eb9;
+	color:white;
+}
+
+.bRight
+{
+	border-right:1px solid white;
+}
+
+.pad10
+{
+	padding-top:10px;
+}
+
+.box-header img
+{
+	width:100%;
+	height:300px;
 }
