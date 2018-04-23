@@ -20,14 +20,18 @@ var vbookCRUD = CRUD(db,'tbl_VoucherBooking');
 
 var nodemailer = require('nodemailer');
 var mg = require('nodemailer-mailgun-transport');
-var transporter = nodemailer.createTransport({
-  host: 'in-v3.mailjet.com',
-  port: '587',
-  auth: {
-    user: '66ca4479851e0bd9cedc629bdff36ee6',
-    pass: 'a3ec60f55a89f7fab98891e86818c8db'
-  }
-});
+var mandrillTransport = require('nodemailer-mandrill-transport');
+
+//var nodemailer = require('nodemailer');
+//var mg = require('nodemailer-mailgun-transport');
+//var transporter = nodemailer.createTransport({
+//  host: 'in-v3.mailjet.com',
+//  port: '587',
+//  auth: {
+//    user: '66ca4479851e0bd9cedc629bdff36ee6',
+//    pass: 'a3ec60f55a89f7fab98891e86818c8db'
+//  }
+//});
 
 ////-----------------CONTACT-----------------
 
@@ -64,9 +68,9 @@ console.log(req.body);
 
     })
 
-    var recipientEmail = 'ceo@80startups.com,shital.talole@fountaintechies.com';
+    var recipientEmail = 'shital.talole@fountaintechies.com,priyarokade24@gmail.com';
     //var recipientEmail = 'pravinshelar999@gmail.com'; //,ceo@80startups.com,shital.talole@fountaintechies.com'; //,ceo@80startups.com,shital.talole@80startups.com
-    var subject = "Ambition Tours Booking";
+    var subject = "Suzan Tours Booking";
     var mailbody = '<table>\
                         <tr>\
                         <td><img src="https://ambitiontours.80startups.com/assets/img/logo.png"></td><br>\
@@ -576,43 +580,83 @@ exports.purchasevoucher = function (req, res) {
 
 ///____________________END______________________
 
+var transporter = nodemailer.createTransport(mandrillTransport({
+    auth: {
+      apiKey : 'F9E0Hvx-FBXauFHYHeulyg'
+    }
+}));
+
 function send_mail(usermail, subject, mailbody) {
 
-  /*var auth = {
-    auth: {
-      api_key: 'key-b4687b67307cb2598abad76006bd7a4a',
-      domain: '80startups.com'
-    }
-  }*/
+	  // var auth = {
+	  //   auth: {
+	  //     api_key: 'key-b4687b67307cb2598abad76006bd7a4a',
+	  //     domain: '80startups.com'
+	  //   }
+	  // }
 
-  var auth = {
-      auth: {
-        api_key: 'key-b4687b67307cb2598abad76006bd7a4a',
-        domain: '80startups.com'
-      }
-    }
+	  // var nodemailerMailgun = nodemailer.createTransport(mg(auth));
 
-  //var nodemailerMailgun = nodemailer.createTransport(mg(auth));
-  var nodemailerMailgun = nodemailer.createTransport(mg(auth));
-
-  nodemailerMailgun.sendMail({
-    from: 'operations@80startups.com',
-    //from: 'sales@suzantravels.com',
-    to: usermail, // An array if you have multiple recipients.
-    subject: subject,
-    //'h:Reply-To': 'operations@80startups.com',
-    'h:Reply-To': 'sales@suzantravels.com',
-    //You can use "html:" to send HTML email content. It's magic!
-    html: mailbody,
-    //You can use "text:" to send plain-text content. It's oldschool!
-    text: mailbody
-  }, function(err, info) {
-    if (err) {
-      console.log('Error: ' + err);
-    } else {
-      console.log('Response: ' + info);
-      //res.sendStatus(200);
-
-    }
-  });
-};
+	  transporter.sendMail({
+	    from: 'info@kryptobot.co',
+	    to: usermail, // An array if you have multiple recipients.
+	    subject: subject,
+	    'h:Reply-To': 'info@kryptobot.co',
+	    //You can use "html:" to send HTML email content. It's magic!
+	    html: mailbody,
+	    //You can use "text:" to send plain-text content. It's oldschool!
+	    text: mailbody
+	  }, function(err, info) {
+	    if (err) {
+	    	console.log(err);
+	    } else {
+	    	console.log(info);
+	      //console.log('Response: ' + info);
+	      //res.sendStatus(200);
+	    }
+	  });
+	};
+	
+	
+//function send_mail(usermail, subject, mailbody) {
+//
+//  /*var auth = {
+//    auth: {
+//      api_key: 'key-b4687b67307cb2598abad76006bd7a4a',
+//      domain: '80startups.com'
+//    }
+//  }*/
+//
+//  var auth = {
+//      auth: {
+//        api_key: 'F9E0Hvx-FBXauFHYHeulyg',
+//        domain: '80startups.com'
+//      }
+//    }
+//
+//  //var nodemailerMailgun = nodemailer.createTransport(mg(auth));
+//  var nodemailerMailgun = nodemailer.createTransport(mg(auth));
+//
+//  nodemailerMailgun.sendMail({
+//    from: 'info@kryptobot.co',
+//    //from: 'sales@suzantravels.com',
+//    to: usermail, // An array if you have multiple recipients.
+//    subject: subject,
+//    //'h:Reply-To': 'operations@80startups.com',
+//    'h:Reply-To': 'info@kryptobot.co',
+//    //You can use "html:" to send HTML email content. It's magic!
+//    html: mailbody,
+//    //You can use "text:" to send plain-text content. It's oldschool!
+//    text: mailbody
+//  }, function(err, info) {
+//	  console.log(info);
+//	  console.log(err);
+//    if (err) {
+//      console.log('Error: ' + err);
+//    } else {
+////      console.log(info);
+//      //res.sendStatus(200);
+//
+//    }
+//  });
+//};
