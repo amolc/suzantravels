@@ -1380,7 +1380,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	       background: radial-gradient( red ,#9e3eb9, #18a7e2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-	    
+	
+   
 }
 
 
