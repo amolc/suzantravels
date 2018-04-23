@@ -223,7 +223,7 @@ section#footer {
 #footer{
     /*background: #171717; */
     background-color: #444a50;
-    border-top: 5px solid #fe6828;
+    border-top: 5px solid #f059a5;
 }
 #footer .jumbotron{
     background: transparent; 
@@ -426,7 +426,7 @@ section#footer {
 }
 .orenge-logo-strip{
     /*background-color: #ffffff;*/
-    background-color: #f1eada;
+    /* background-color: #f1eada; */
     padding: 20px 0px;
 }
 .logo-img img{
@@ -581,7 +581,7 @@ section#footer {
     overflow: hidden;
 }
 #book-now{
-  background-color: #f1eada;
+ /*  background-color: #f1eada; */
 }
 #book-now label{
   color: #280f0a;
