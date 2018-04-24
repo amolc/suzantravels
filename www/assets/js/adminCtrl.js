@@ -704,7 +704,9 @@ app.controller('admincontroller', function ($scope, $location, $http, $window) {
 		                      $scope.Tour.CountryId = id[1];
 		                      $scope.TourPlaces = [];
 		                      
-		                      for(var i=0;i<$scope.tourPlaces.length;i++){
+		                 if(typeof $scope.tourPlaces[0].place !=='undefined' && $scope.tourPlaces[0].place!=''){
+		                	 
+		                	 for(var i=0;i<$scope.tourPlaces.length;i++){
 		                    	 
 		                          var date = $scope.tourPlaces[i].date;
 		                          var visitDate = (date.getMonth()+1)+"-"+date.getDate()+"-"+date.getFullYear();
@@ -717,7 +719,7 @@ app.controller('admincontroller', function ($scope, $location, $http, $window) {
 		                      }
 		                      $scope.Tour.TourPlaces = JSON.stringify($scope.TourPlaces);
 
-		                   $http.post(baseurl + 'addTour/',$scope.Tour).success(function(res) {
+		                     $http.post(baseurl + 'addTour/',$scope.Tour).success(function(res) {
 		                         
 		                       //console.log(res);
 		                      if (res.status == true) 
@@ -734,6 +736,12 @@ app.controller('admincontroller', function ($scope, $location, $http, $window) {
 		                       }).error(function() {
 		                           
 		                       });
+		                	 
+		                	 
+		                 }else{
+		                	 alert('Please add tour place');
+		                 }
+		                      
 		                
 		                     }, 1000);          
 	
