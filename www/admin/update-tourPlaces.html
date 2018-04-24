@@ -111,17 +111,18 @@
               <div class="col-sm-12 col-md-12 pd0">
                                                                                                                          
                <div class="row" ng-repeat="eachPlace in TourPlaces">
-                  <div class="col-sm-6 col-md-6">
+                   <div class="col-sm-2 col-md-2"></div>
+                  <div class="col-sm-8 col-md-8">
                     <input type="text" name="place" placeholder="Place" required="" ng-model="eachPlace.place">
                   </div>
-                  <div class="col-sm-4 col-md-4">		         
+                  <div class="col-sm-2 col-md-2"></div>
+             <!--     <div class="col-sm-4 col-md-4">		         
 		              <input type="date" ng-model="eachPlace.date" name="travelDate" id="travelDate" required>		           
-		          </div>            
+		          </div>  -->           
                </div>                
               </div>
                   
-                 
-                 
+                                
                   <div class="col-sm-12 col-md-12">
                       <label id="alertmessage" hidden>{{alertmessage}}</label>
                   </div>

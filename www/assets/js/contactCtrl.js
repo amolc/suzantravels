@@ -104,6 +104,11 @@ app.controller('contactcontroller', function ($scope, $location, $http, $window)
             {
                 $('#bookform').hide();
                 $('#thankyou').show('slow');
+                
+                setTimeout(function(){ 
+                	window.location.href = "index.html";               	
+                }, 4000);
+                
             }
 
           }
@@ -527,7 +532,7 @@ app.controller('contactcontroller', function ($scope, $location, $http, $window)
 
    }
 
-       $scope.getTourDetails = function() {             
+    $scope.getTourDetails = function() {             
           
         var url = window.location.href;
         var parts = url.split("?");
@@ -552,16 +557,16 @@ app.controller('contactcontroller', function ($scope, $location, $http, $window)
                       $scope.Tour.TotalAmount = $scope.Tour.AdultPrice + $scope.Tour.ChildPrice;
                       $scope.Tour.TourPlaces = JSON.parse($scope.Tour.TourPlaces);
                       $scope.Tour.TourItinerary = JSON.parse($scope.Tour.TourItinerary);
-                      for(var i=0;i<$scope.Tour.TourPlaces.length;i++){
-    	            	  var visitDate = new Date($scope.Tour.TourPlaces[i].date.replace(/-/g,'/'));
-    		              
-    		              var mm = ""+visitDate.getMonth();
-    		              if(mm.length < 2){
-    		              	mm = "0"+mm; 	
-    		              }
-    		              $scope.Tour.TourPlaces[i]['visitDate'] = visitDate.getDate()+"-"+mm+"-"+visitDate.getFullYear();
-    		              
-    	              }
+//                      for(var i=0;i<$scope.Tour.TourPlaces.length;i++){
+//    	            	  var visitDate = new Date($scope.Tour.TourPlaces[i].date.replace(/-/g,'/'));
+//    		              
+//    		              var mm = ""+visitDate.getMonth();
+//    		              if(mm.length < 2){
+//    		              	mm = "0"+mm; 	
+//    		              }
+//    		              $scope.Tour.TourPlaces[i]['visitDate'] = visitDate.getDate()+"-"+mm+"-"+visitDate.getFullYear();
+//    		              
+//    	              }
 
                   }
 

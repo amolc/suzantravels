@@ -496,7 +496,6 @@ app.controller('admincontroller', function ($scope, $location, $http, $window) {
          $scope.tourPlaces = [{
         	 id:1,
         	 place:'',
-        	 date:'',
         	 isRemovable:0
          }]
         // if (typeof $scope.Tour === 'undefined')
@@ -644,20 +643,19 @@ app.controller('admincontroller', function ($scope, $location, $http, $window) {
     $scope.onAddPlace = function(){
     	
     	 if(typeof $scope.tourPlaces[$scope.tourPlaces.length-1].place !=='undefined' && $scope.tourPlaces[$scope.tourPlaces.length-1].place !==''){
-    		 if(typeof $scope.tourPlaces[$scope.tourPlaces.length-1].date !=='undefined' && $scope.tourPlaces[$scope.tourPlaces.length-1].date !==''){
+//    		 if(typeof $scope.tourPlaces[$scope.tourPlaces.length-1].date !=='undefined' && $scope.tourPlaces[$scope.tourPlaces.length-1].date !==''){
 	    		 var number = Math.random() // 0.9394456857981651
 	    		 number.toString(36); // '0.xtis06h6'
 	    		 var id = number.toString(36).substr(2, 9); // 'xtis06h6'
 	    		 var placeObject = {
 	    			   id:id,
 	    			   place:'',
-	    			   date:'',
 	    			   isRemovable:1
 	    		  }
 	    		 $scope.tourPlaces.push(placeObject);
-    		 }else{
-    			 alert('Tour date can not be empty');
-    		 }
+//    		 }else{
+//    			 alert('Tour date can not be empty');
+//    		 }
     	 }else{
     		 alert('Tour place can not be empty');
     	 }
@@ -706,18 +704,19 @@ app.controller('admincontroller', function ($scope, $location, $http, $window) {
 		                      
 		                 if(typeof $scope.tourPlaces[0].place !=='undefined' && $scope.tourPlaces[0].place!=''){
 		                	 
-		                	 for(var i=0;i<$scope.tourPlaces.length;i++){
-		                    	 
-		                          var date = $scope.tourPlaces[i].date;
-		                          var visitDate = (date.getMonth()+1)+"-"+date.getDate()+"-"+date.getFullYear();
-		                    	  var placeObject = {
-		                    			 id:$scope.tourPlaces[i].id,
-		                    			 place:$scope.tourPlaces[i].place,
-		                    			 date:visitDate
-		                    	  }
-		                    	  $scope.TourPlaces.push(placeObject);
-		                      }
-		                      $scope.Tour.TourPlaces = JSON.stringify($scope.TourPlaces);
+//		                	 for(var i=0;i<$scope.tourPlaces.length;i++){
+//		                    	 
+//		                          var date = $scope.tourPlaces[i].date;
+//		                          var visitDate = (date.getMonth()+1)+"-"+date.getDate()+"-"+date.getFullYear();
+//		                    	  var placeObject = {
+//		                    			 id:$scope.tourPlaces[i].id,
+//		                    			 place:$scope.tourPlaces[i].place,
+//		                    			 date:visitDate
+//		                    	  }
+//		                    	  $scope.TourPlaces.push(placeObject);
+//		                      }
+		                	 
+		                      $scope.Tour.TourPlaces = JSON.stringify($scope.tourPlaces);
 
 		                     $http.post(baseurl + 'addTour/',$scope.Tour).success(function(res) {
 		                         
@@ -829,17 +828,17 @@ app.controller('admincontroller', function ($scope, $location, $http, $window) {
                       $scope.imgSrc = "";
                       $scope.itinerary = JSON.parse($scope.Tour.TourItinerary);
                       $scope.TourPlaces =[]; 
-                      $scope.Tour.TourPlaces = JSON.parse($scope.Tour.TourPlaces);
+                      $scope.TourPlaces = JSON.parse($scope.Tour.TourPlaces);
                       
-                      for(var i=0;i<$scope.Tour.TourPlaces.length;i++){                 	    
-                    	  var date = new Date($scope.Tour.TourPlaces[i].date.replace(/-/g,'/'));
-                    	  var objectPlace = {
-                              id:$scope.Tour.TourPlaces[i].id,
-                              place:$scope.Tour.TourPlaces[i].place,
-                              date:date,                             
-                          }
-                          $scope.TourPlaces.push(objectPlace);                         
-                      }
+//                      for(var i=0;i<$scope.Tour.TourPlaces.length;i++){                 	    
+//                    	  var date = new Date($scope.Tour.TourPlaces[i].date.replace(/-/g,'/'));
+//                    	  var objectPlace = {
+//                              id:$scope.Tour.TourPlaces[i].id,
+//                              place:$scope.Tour.TourPlaces[i].place,
+//                              date:date,                             
+//                          }
+//                          $scope.TourPlaces.push(objectPlace);                         
+//                      }
                   }
 
               }).error(function () {
@@ -911,22 +910,22 @@ app.controller('admincontroller', function ($scope, $location, $http, $window) {
           if (id[0]=='TourId') 
           {
        	   
-        	  $scope.Tour.TourPlaces = [];
-        	  for(var i=0;i<$scope.TourPlaces.length;i++){
-             	 
-                  var date = $scope.TourPlaces[i].date;
-                  var visitDate = (date.getMonth()+1)+"-"+date.getDate()+"-"+date.getFullYear();
-            	  var placeObject = {
-            			 id:$scope.TourPlaces[i].id,
-            			 place:$scope.TourPlaces[i].place,
-            			 date:visitDate
-            	  }
-            	  $scope.Tour.TourPlaces.push(placeObject);
-              }
+//        	  $scope.Tour.TourPlaces = [];
+//        	  for(var i=0;i<$scope.TourPlaces.length;i++){
+//             	 
+//                  var date = $scope.TourPlaces[i].date;
+//                  var visitDate = (date.getMonth()+1)+"-"+date.getDate()+"-"+date.getFullYear();
+//            	  var placeObject = {
+//            			 id:$scope.TourPlaces[i].id,
+//            			 place:$scope.TourPlaces[i].place,
+//            			 date:visitDate
+//            	  }
+//            	  $scope.Tour.TourPlaces.push(placeObject);
+//              }
         	
             var Tour = {
                TourId:id[1],
-               TourPlaces:JSON.stringify($scope.Tour.TourPlaces)
+               TourPlaces:JSON.stringify($scope.TourPlaces)
             }
             
             $http.post(baseurl + 'updateTourPlaces',Tour).success(function (res) {
