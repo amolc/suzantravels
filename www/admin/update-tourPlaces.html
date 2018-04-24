@@ -103,7 +103,7 @@
           <div class="container">
             <div class="row">
               <div class="col-sm-12 col-md-12">
-               <form id="addtour" name="addtour" ng-submit="updateTourPlaces()">
+               <form id="addtour" name="addtour">
                   <div class="attractions-form profile signin-form">
                   <h2 class="text-center">Update Tour Places</h2>
                   <input type="hidden" name="type" ng-model="Tour.CountryId">
@@ -111,22 +111,33 @@
               <div class="col-sm-12 col-md-12 pd0">
                                                                                                                          
                <div class="row" ng-repeat="eachPlace in TourPlaces">
-                  <div class="col-sm-6 col-md-6">
+                   <div class="col-sm-1 col-md-1"></div>
+                  <div class="col-sm-7 col-md-7">
                     <input type="text" name="place" placeholder="Place" required="" ng-model="eachPlace.place">
                   </div>
-                  <div class="col-sm-4 col-md-4">		         
+                  <div class="col-sm-3 col-md-3" ng-show="eachPlace.isRemovable!=0">
+                     <input type="submit" ng-click="onRemoveUpdatePlace(eachPlace.id)" value="Remove" class="small-btnbrawon-btn pull-right">
+                  </div>
+             <!--     <div class="col-sm-4 col-md-4">		         
 		              <input type="date" ng-model="eachPlace.date" name="travelDate" id="travelDate" required>		           
-		          </div>            
+		          </div>  -->           
                </div>                
               </div>
                   
-                 
-                 
+                                
                   <div class="col-sm-12 col-md-12">
                       <label id="alertmessage" hidden>{{alertmessage}}</label>
                   </div>
-                  <div class="col-sm-6 col-md-6 ">
-                    <input type="submit" value="Save" class="small-btn brawon-btn pull-right">
+                  <div class="col-sm-12 col-md-12">
+                    <div class="row">
+                      <div class="col-sm-6 col-md-6">
+                       		<input type="submit" value="Save" class="small-btn brawon-btn pull-right" ng-click="updateTourPlaces()">
+                       	    
+                     </div>
+                     <div class="col-sm-3 col-md-3">                      		
+                       	    <input type="submit" ng-click="onAddUpdatePlace()" value="New" class="small-btn brawon-btn pull-right">
+                     </div>
+                     </div>
                   </div>
                   
                   <div class="clearfix"></div>
