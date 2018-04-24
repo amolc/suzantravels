@@ -3,6 +3,7 @@ var mysql = require('mysql');
 var randomString = require('random-string');
 var moment = require("moment");
 var verifycode = randomString();
+var fs = require('fs');
 var now = moment();
 var db = mysql.createPool({
   database: 'suzantravels',

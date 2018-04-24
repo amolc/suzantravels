@@ -702,6 +702,7 @@ app.controller('admincontroller', function ($scope, $location, $http, $window) {
 		                     }
 		                      
 		                      $scope.Tour.CountryId = id[1];
+		                      $scope.TourPlaces = [];
 		                      
 		                      for(var i=0;i<$scope.tourPlaces.length;i++){
 		                    	 
@@ -712,9 +713,9 @@ app.controller('admincontroller', function ($scope, $location, $http, $window) {
 		                    			 place:$scope.tourPlaces[i].place,
 		                    			 date:visitDate
 		                    	  }
-		                    	  $scope.Tour.TourPlaces.push(placeObject);
+		                    	  $scope.TourPlaces.push(placeObject);
 		                      }
-		                      $scope.Tour.TourPlaces = JSON.stringify($scope.Tour.TourPlaces);
+		                      $scope.Tour.TourPlaces = JSON.stringify($scope.TourPlaces);
 
 		                   $http.post(baseurl + 'addTour/',$scope.Tour).success(function(res) {
 		                         
