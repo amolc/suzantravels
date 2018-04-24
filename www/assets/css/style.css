@@ -1398,6 +1398,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
    font-weight:400;
+   font-size:45px !important;
 }
 
 .pad1p
