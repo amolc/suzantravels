@@ -1476,8 +1476,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 .card-pricing-block
 {
-	background-color:#9e3eb9;
+	background-color:#f059a5;
 	color:white;
+	padding:5px
 }
 
 .bRight
