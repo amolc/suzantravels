@@ -67,7 +67,7 @@ section#header {
   color: #ffffff;
 }
 .color-orenge{
-  color: #fe6828;
+  color: #f059a5;
 }
 .brawon-btn{
   outline: none;
@@ -1221,8 +1221,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .nav-tabs>li.active>a:hover{
   background-color: transparent;
   border: 0px;
-  color: #fe6828;
-  border-bottom: 2px solid #fe6828;
+  color: #f059a5;
+  border-bottom: 2px solid #f059a5;
 }
 .nav-tabs li a h5{
   margin-bottom: 0px;
@@ -1330,7 +1330,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   .logo-img img{width: 124px;}
   .orenge-logo-strip{padding: 10px 0px;}
   .navbar-toggle{padding: 5px 3px;}
-  .navigation-strip{border-top: 2px solid #fe6828;}
+  .navigation-strip{border-top: 2px solid #f059a5;}
   .navbar{min-height: 100%;}
   .navbar-default .navbar-toggle{border-color: #fff}
   .navbar-default .navbar-toggle .icon-bar{background-color: #fff;}
