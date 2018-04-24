@@ -126,7 +126,7 @@ exports.booktour = function (req, res) {
 
               if (req.body.TourType == 'Tour'){
 
-              var customerEmail = req.body.email+',shital.talole@fountaintechies.com';
+              var customerEmail = req.body.email+',shital.talole@fountaintechies.com,priyarokade24@gmail.com';
               var recipientEmail = 'sales@suzantravels.com';
            //   var customerEmail = req.body.email; //,ceo@80startups.com,shital.talole@fountaintechies.com'; //,ceo@80startups.com,shital.talole@80startups.com
            //   var recipientEmail = 'komal.gaikwad@fountaintechies.com';
@@ -135,10 +135,10 @@ exports.booktour = function (req, res) {
 
               var mailbody = '<table>\
                             <tr>\
-                            <td><img src="https://ambitiontours.80startups.com/assets/img/logo.png"></td><br>\
+                            <td><h1 class="logoColor">Suzan<span class="logoSpan">travels</span></h1></td><br>\
                           </tr>\
                           <tr>\
-                            <td><h1>Dear Ambition Tours,</td>\
+                            <td><h1>Dear Suzan Travels,</td>\
                           </tr>\
                           <tr>\
                           </tr>\
@@ -151,7 +151,7 @@ exports.booktour = function (req, res) {
                             <td>Best wishes,</td>\
                           </tr>\
                           <tr>\
-                            <td><h2>ambitiontours.com</h2></td>\
+                            <td><h2>suzantravels.com</h2></td>\
                           </tr>\
                           <tr>\
                             <td bgcolor="#000000"><font color ="white">This is a one-time email. Please do not reply to this email.</font></td>\
@@ -161,7 +161,7 @@ exports.booktour = function (req, res) {
 
                 var customermailbody = '<table>\
                             <tr>\
-                            <td><img src="https://ambitiontours.80startups.com/assets/img/logo.png"></td><br>\
+                            <td><h1 class="logoColor">Suzan<span class="logoSpan">travels</span></h1></td><br>\
                           </tr>\
                           <tr>\
                             <td><h1>Dear ' + req.body.fullname + ',</td>\
@@ -178,7 +178,7 @@ exports.booktour = function (req, res) {
                             <td>Best wishes,</td>\
                           </tr>\
                           <tr>\
-                            <td><h2>ambitiontours.com</h2></td>\
+                            <td><h2>suzantravels.com</h2></td>\
                           </tr>\
                           <tr>\
                             <td bgcolor="#000000"><font color ="white">This is a one-time email. Please do not reply to this email.</font></td>\

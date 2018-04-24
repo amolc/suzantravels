@@ -903,6 +903,7 @@ exports.addTour = function (req, res) {
                                 "TourCost": req.body.TourCost || "",
                                 "ChildCost" : req.body.ChildCost || "",
                                 "TourPlaces" : req.body.TourPlaces || "",
+                                "TourOffer" : req.body.TourOffer || "",
                                 "CreatedOn": dateToday || "",
                             };
                             // console.log("after", createObj);
@@ -1052,6 +1053,7 @@ exports.updateTour = function (req, res) {
 					            "TourImage": fileName || "",
 					            "TourCost": req.body.TourCost || "",
 					            "ChildCost" : req.body.ChildCost || "",
+					            "TourOffer" : req.body.TourOffer || "",
                                 "ModifiedOn": dateToday || "",
                             };
                             // console.log("after", createObj);

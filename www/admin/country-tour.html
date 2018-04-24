@@ -13,7 +13,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Suzan Tours</title>
+  <title>Suzan Travels</title>
 
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/css/font-awesome.min.css" rel="stylesheet">
@@ -36,7 +36,7 @@
                         <div class="col-sm-12">
                             <div class="logo-img">
                                 <a href="index.html">
-                                  <img src="../assets/img/logo.png" class="img-responsive" alt="" title="">
+                                  <h1 class="logoColor">Suzan<span class="logoSpan">travels</span></h1>
                                 </a>
                             </div>
                         </div>
@@ -82,7 +82,7 @@
                                               <span class="pro-img">
                                                 <img src="../assets/img/user-icon.png" alt="" title="">
                                               </span>
-                                              <span>Sadia Rahman</span>
+                                              <span>Admin</span>
                                               <span class="caret"></span></a>
                                             <ul class="dropdown-menu">
                                            
@@ -113,7 +113,7 @@
                         <a href="tours-form.html?country={{CountryId}}" class="pakege-btn yellow-btn" style="width: auto">Add {{CountryTitle}} Tour</a>
                       </div>
                     </div>
-                    <div class="col-sm-6" ng-repeat="Tour in tourlist">
+                    <div class="col-sm-4" ng-repeat="Tour in tourlist">
                         <div class="packges-block">
                             <div class="col-sm-5 pd0">
                                 <div class="place-img">
@@ -126,11 +126,11 @@
                                     <div id="tourDesc"></div>
                                <!--    <p> {{Tour.TourDescription| limitTo : 120}}...</p> -->
                                     <div class="right-blck">
-                                        <p class="gray-small-text"><span>Location: {{Tour.TourLocation}}<br>
-                                            Duration: {{Tour.TourDuration}}</span>
-                                        </p>
-                                        
+                                        <p class="gray-small-text"><span>
+                                            Duration: {{Tour.TourDurationDay}}D{{Tour.TourDurationDay}}N</span>
+                                        </p>                                                                              
                                     </div>
+                                    </br>
                                     <div class="price-right-block">
                                         <span>From SGD</span>
                                         <h4>${{Tour.TourCost}}</h4>

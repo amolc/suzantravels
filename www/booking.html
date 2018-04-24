@@ -187,6 +187,9 @@
       </div>
       <div class="row">
       <div class="col-md-3">
+          <div class="packeg-details-text" style="text-align:center;padding-bottom: 0px;">
+           <h5><a href="#">{{Tour.TourTitle}}</a></h5>
+          </div>
          <div class="packges-block">
                             
               <div class="place-img">
@@ -194,19 +197,35 @@
                   <img src="../uploads/tours/{{Tour.TourImage}}" class="img-responsive" alt="" title="" ng-if="Tour.TourType=='Tour'" style="width: 100%">
               </div>
 
+                  
               <div class="col-sm-12">
               <div class="packeg-details-text">
-                    <h5><a href="#">{{Tour.TourTitle}}</a></h5>
+                   
                                  <!--    <p>{{Tour.TourDescription}}</p> -->
                    <!--  <div class="right-blck">
                         <p class="gray-small-text"><span>Location: {{Tour.TourLocation}} <br>
                                             Duration: {{Tour.TourDuration}}</span>
                         </p>
                     </div> -->
-                    <div class="price-right-block">
-                    <span>From SGD</span>
-                    <h4>${{Tour.TourCost}}</h4>
+                  
+                 <div class="row" style="padding-top: 15px;">
+                    <div class="col-md-6">
+                         <div class="price-right-block">
+		                    <span>Adult</span>
+		                    <h4>${{Tour.TourCost}}</h4>
+		                    
+		                  </div>
                     </div>
+                    <div class="col-md-6">
+                         <div class="price-right-block">
+		                    <span>Child</span>
+		                    <h4>${{Tour.ChildCost}}</h4>
+		                    
+		                  </div>
+                    </div>
+                 </div>
+                    
+                    
                     <div class="table-responsive">          
                     <table class="table table-bordered">
                       <tbody>
@@ -245,7 +264,7 @@
             <div class="col-md-6">
             <div class="form-group">
               <label for="phoneno">Phone Number:</label>
-              <input type="phoneno" class="form-control" ng-model="Tour.phonenumber" name="phonenumber" id="phonenumber" required>
+              <input type="text" class="form-control" pattern="\d*" ng-model="Tour.phonenumber" name="phonenumber" id="phonenumber" required>
             </div>
             </div>
 
@@ -278,7 +297,7 @@
             <div class="col-md-4">
             <div class="form-group">
               <label for="pwd">Travel Date :</label>
-              <input type="date" class="form-control" ng-model="Tour.travelDate" name="travelDate" id="travelDate" required>
+              <input type="date" class="form-control" min="{{todayDate}}" ng-model="Tour.travelDate" name="travelDate" id="travelDate" required>
             </div>
             </div>
 

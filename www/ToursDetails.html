@@ -145,7 +145,7 @@
 						<div class="band1"><!-- <img src="images/offer.png" alt="" /> --> </div>
 						<p>Special Offer</p>
 						<h4>${{Tour.TourCost}}<span class="n-td">
-								<span class="n-td-1">$50</span>
+								<span class="n-td-1">${{Tour.TourOffer}}</span>
 								</span>
 							</h4> <a href="booking.html?TourId={{Tour.TourId}}" class="link-btn">Book Now</a> </div>
 					<!--====== TOUR DESCRIPTION ==========-->
@@ -169,7 +169,7 @@
 							<tr ng-repeat="eachPlace in Tour.TourPlaces">
 								<td>{{eachPlace.place}}</td>
 								
-								<td>{{eachPlace.date}}</td>
+								<td>{{eachPlace.visitDate}}</td>
 							</tr>
 							
 						</table>

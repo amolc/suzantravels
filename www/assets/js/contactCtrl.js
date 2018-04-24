@@ -536,6 +536,7 @@ app.controller('contactcontroller', function ($scope, $location, $http, $window)
            var urlparams = parts[1];
            var params = urlparams.split("&");
            var id = urlparams.split("=")
+           $scope.todayDate=new Date().toISOString().split('T')[0];;
            if (id[0]=='TourId') {
              $http.get(baseurl + 'getTourDetails/'+id[1]).success(function (res) {
             	 
@@ -544,14 +545,23 @@ app.controller('contactcontroller', function ($scope, $location, $http, $window)
                   }
                   else {
                       $scope.Tour = res;
-                      $scope.Tour.adults = 2;
-                      $scope.Tour.Child = 2;
+                      $scope.Tour.adults = 1;
+                      $scope.Tour.Child = 0;
                       $scope.Tour.AdultPrice = $scope.Tour.adults * $scope.Tour.TourCost;
                       $scope.Tour.ChildPrice = $scope.Tour.Child * $scope.Tour.ChildCost;
                       $scope.Tour.TotalAmount = $scope.Tour.AdultPrice + $scope.Tour.ChildPrice;
                       $scope.Tour.TourPlaces = JSON.parse($scope.Tour.TourPlaces);
                       $scope.Tour.TourItinerary = JSON.parse($scope.Tour.TourItinerary);
-                      console.log($scope.Tour);
+                      for(var i=0;i<$scope.Tour.TourPlaces.length;i++){
+    	            	  var visitDate = new Date($scope.Tour.TourPlaces[i].date.replace(/-/g,'/'));
+    		              
+    		              var mm = ""+visitDate.getMonth();
+    		              if(mm.length < 2){
+    		              	mm = "0"+mm; 	
+    		              }
+    		              $scope.Tour.TourPlaces[i]['visitDate'] = visitDate.getDate()+"-"+mm+"-"+visitDate.getFullYear();
+    		              
+    	              }
 
                   }
 
