@@ -23,7 +23,7 @@
 
         <link id="bsdp-css" href="bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet">
     </head>
-    <body data-ng-app="80consult" data-ng-controller="contactcontroller" data-ng-init="getCountry()">
+    <body data-ng-app="80consult" data-ng-app="80consult" data-ng-controller="contactcontroller" ng-init="getCountryTours()">
         <!-- Start Header -->
         
         
@@ -117,55 +117,31 @@
             <img src="assets/img/banner1.jpg" alt="" title="" / >
         </div> -->
       
-       <section id="country-box" class="bg-creem" ng-init="gettourcountries()">
+       <section id="country-box" class="bg-creem" >
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-md-12">
                         <div class="about-content mr-b50">
-                            <h3>Services</h3>
+                            <h3>Packages</h3>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-4" ng-repeat="a in tourlist">
                         <figure class="hero-grid effect-move">
-                              <a href="packages.html?country={{currentCountry}}">
-                                <img class="hero-grid-image effect-image" src="assets/img/tours.jpg" alt="" />
+                              <a href="ToursDetails.html?TourId={{a.TourId}}">
+                                <img class="hero-grid-image effect-image bright" src="../uploads/tours/{{a.TourImage}}" alt="" />
                               </a>
                                 <figcaption class="hero-grid-content">
                                   <span class="hero-tag effect-target">Suzan Travels</span>
-                                  <h2 class="hero-grid-title effect-target">Tours</h2>
-                                  <!-- <p class="hero-grid-text effect-target effect-text">Falls mainly on the plain.</p> -->
-                                  <a class="hero-grid-link" href="packages.html?country={{currentCountry}}">View more</a>
+                                  <h2 class="hero-grid-title effect-target packTtl">{{a.TourTitle}}
+                                    <p class="pp" ><span><i class="fa fa-sun-o pi" aria-hidden="true"></i>{{a.TourDurationDay}} Days</span><span class="spnn" ><i class="fa fa-moon-o pi" aria-hidden="true"></i>{{a.TourDurationNight}} Nights</span></p>
+                                  </h2>
+
+                                  
                                 </figcaption>
                             </figure>
                     </div> 
                     
-                    <div class="col-sm-4">
-                        <figure class="hero-grid effect-move">
-                              <a href="country-attractions.html?country={{currentCountry}}">
-                                <img class="hero-grid-image effect-image" src="assets/img/attraction.jpg" alt="" />
-                              </a>
-                                <figcaption class="hero-grid-content">
-                                  <span class="hero-tag effect-target">Suzan Travels</span>
-                                  <h2 class="hero-grid-title effect-target">Attraction</h2>
-                                  <!-- <p class="hero-grid-text effect-target effect-text">Falls mainly on the plain.</p> -->
-                                  <a class="hero-grid-link" href="country-attractions.html?country={{currentCountry}}">View more</a>
-                                </figcaption>
-                            </figure>
-                    </div> 
                     
-                    <div class="col-sm-4">
-                        <figure class="hero-grid effect-move">
-                              <a href="country-tours.html?country={{currentCountry}}">
-                                <img class="hero-grid-image effect-image" src="assets/img/transfer.jpg" alt="" />
-                              </a>
-                                <figcaption class="hero-grid-content">
-                                  <span class="hero-tag effect-target">Suzan Travels</span>
-                                  <h2 class="hero-grid-title effect-target">Transfer</h2>
-                                  <!-- <p class="hero-grid-text effect-target effect-text">Falls mainly on the plain.</p> -->
-                                  <a class="hero-grid-link" href="country-tours.html?country={{currentCountry}}">View more</a>
-                                </figcaption>
-                            </figure>
-                    </div> 
 
                     <div class="col-sm-12 col-md-12 text-center">
                         <a href="asia.html" class="orenge-btn color-white">View More</a>
@@ -176,7 +152,7 @@
 
 
 
-         <section id="footer">
+        <section id="footer">
             <div class="container">
                 <div class="row">
                    <!--  <div class="col-sm-4 col-md-4">
@@ -216,6 +192,7 @@
                 </div>
             </div>
         </section>
+
         <footer  id="bottom-strip">
             <p>Copyright 2017- Suzan Travels - All Rights Reserved.</p>
         </footer>
