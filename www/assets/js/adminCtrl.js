@@ -666,8 +666,37 @@ app.controller('admincontroller', function ($scope, $location, $http, $window) {
         	 if($scope.tourPlaces[i].id == id){
         		 $scope.tourPlaces.splice(i,1);
         	 }
-         }	
-   	 
+         }	   	 
+    }
+    
+    $scope.onRemoveUpdatePlace = function(id){
+        for(var i=0;i<$scope.TourPlaces.length;i++){
+       	 if($scope.TourPlaces[i].id == id){
+       		 $scope.TourPlaces.splice(i,1);
+       	 }
+        }	
+  	 
+   }
+    
+    $scope.onAddUpdatePlace = function(){
+    	
+   	 if(typeof $scope.TourPlaces[$scope.TourPlaces.length-1].place !=='undefined' && $scope.TourPlaces[$scope.TourPlaces.length-1].place !==''){
+//   		 if(typeof $scope.tourPlaces[$scope.tourPlaces.length-1].date !=='undefined' && $scope.tourPlaces[$scope.tourPlaces.length-1].date !==''){
+	    		 var number = Math.random() // 0.9394456857981651
+	    		 number.toString(36); // '0.xtis06h6'
+	    		 var id = number.toString(36).substr(2, 9); // 'xtis06h6'
+	    		 var placeObject = {
+	    			   id:id,
+	    			   place:'',
+	    			   isRemovable:1
+	    		  }
+	    		 $scope.TourPlaces.push(placeObject);
+//   		 }else{
+//   			 alert('Tour date can not be empty');
+//   		 }
+   	 }else{
+   		 alert('Tour place can not be empty');
+   	 }
     }
 
     $scope.addTour = function() {   
@@ -828,17 +857,20 @@ app.controller('admincontroller', function ($scope, $location, $http, $window) {
                       $scope.imgSrc = "";
                       $scope.itinerary = JSON.parse($scope.Tour.TourItinerary);
                       $scope.TourPlaces =[]; 
-                      $scope.TourPlaces = JSON.parse($scope.Tour.TourPlaces);
+                      $scope.TourPlaces1 = JSON.parse($scope.Tour.TourPlaces);
+                                            
+                      for(var i=0;i<$scope.TourPlaces1.length;i++){                 	    
+                    	  var objectPlace = {
+                              id:(i+1),
+                              place:$scope.TourPlaces1[i].place,
+                              isRemovable:1,
+                          }
+                          $scope.TourPlaces.push(objectPlace);                         
+                      }
                       
-//                      for(var i=0;i<$scope.Tour.TourPlaces.length;i++){                 	    
-//                    	  var date = new Date($scope.Tour.TourPlaces[i].date.replace(/-/g,'/'));
-//                    	  var objectPlace = {
-//                              id:$scope.Tour.TourPlaces[i].id,
-//                              place:$scope.Tour.TourPlaces[i].place,
-//                              date:date,                             
-//                          }
-//                          $scope.TourPlaces.push(objectPlace);                         
-//                      }
+                      $scope.TourPlaces[0].isRemovable = 0;
+                      
+                      
                   }
 
               }).error(function () {
