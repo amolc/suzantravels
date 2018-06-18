@@ -541,7 +541,7 @@ app.controller('contactcontroller', function ($scope, $location, $http, $window)
            var urlparams = parts[1];
            var params = urlparams.split("&");
            var id = urlparams.split("=")
-           $scope.todayDate=new Date().toISOString().split('T')[0];;
+           $scope.todayDate=new Date().toISOString().split('T')[0];
            if (id[0]=='TourId') {
              $http.get(baseurl + 'getTourDetails/'+id[1]).success(function (res) {
             	 

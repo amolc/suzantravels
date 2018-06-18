@@ -70,13 +70,13 @@ console.log(req.body);
 
     var recipientEmail = 'shital.talole@fountaintechies.com,priyarokade24@gmail.com';
     //var recipientEmail = 'pravinshelar999@gmail.com'; //,ceo@80startups.com,shital.talole@fountaintechies.com'; //,ceo@80startups.com,shital.talole@80startups.com
-    var subject = "Suzan Tours Booking";
+    var subject = "Fountain Tours Booking";
     var mailbody = '<table>\
                         <tr>\
-                        <td><img src="https://ambitiontours.80startups.com/assets/img/logo.png"></td><br>\
+                        <td><img src="https://ambitiontours.80startups.com/assets/img/logo1.jpg"></td><br>\
                       </tr>\
                       <tr>\
-                        <td><h1>Dear Ambition Tours,</td>\
+                        <td><h1>Dear Fountain Tours,</td>\
                       </tr>\
                       <tr>\
                       </tr>\
@@ -135,10 +135,10 @@ exports.booktour = function (req, res) {
 
               var mailbody = '<table>\
                             <tr>\
-                            <td><h1 class="logoColor">Suzan<span class="logoSpan">travels</span></h1></td><br>\
+                            <td><img src="assets/img/logo1.jpg" alt="" title=""></td><br>\
                           </tr>\
                           <tr>\
-                            <td><h1>Dear Suzan Travels,</td>\
+                            <td><h1>Dear Fountain Tours,</td>\
                           </tr>\
                           <tr>\
                           </tr>\
@@ -161,7 +161,7 @@ exports.booktour = function (req, res) {
 
                 var customermailbody = '<table>\
                             <tr>\
-                            <td><h1 class="logoColor">Suzan<span class="logoSpan">travels</span></h1></td><br>\
+                            <td><img src="assets/img/logo1.jpg" alt="" title=""></td><br>\
                           </tr>\
                           <tr>\
                             <td><h1>Dear ' + req.body.fullname + ',</td>\
@@ -254,7 +254,7 @@ exports.customTour = function (req, res) {
               var customersubject  = "Thank You For Your Enquiry!";
           var mailbody = '<table>\
                               <tr>\
-                              <td><img src="https://ambitiontours.80startups.com/assets/img/logo.png"></td><br>\
+                              <td><img src="https://ambitiontours.80startups.com/assets/img/logo1.jpg"></td><br>\
                             </tr>\
                             <tr>\
                               <td><h1>Dear Ambition Tours,</td>\
@@ -281,7 +281,7 @@ exports.customTour = function (req, res) {
 
             var customermailbody = '<table>\
                               <tr>\
-                              <td><img src="https://ambitiontours.80startups.com/assets/img/logo.png"></td><br>\
+                              <td><img src="https://ambitiontours.80startups.com/assets/img/logo1.jpg"></td><br>\
                             </tr>\
                             <tr>\
                               <td><h1>Dear '+fullName+',</td>\
@@ -360,7 +360,7 @@ exports.airTicket = function (req, res) {
               var customersubject  = "Thank You for your enquiry!";
               var mailbody = '<table>\
                                   <tr>\
-                                  <td><img src="https://ambitiontours.80startups.com/assets/img/logo.png"></td><br>\
+                                  <td><img src="https://ambitiontours.80startups.com/assets/img/logo1.jpg"></td><br>\
                                 </tr>\
                                 <tr>\
                                   <td><h1>Dear Ambition Tours,</td>\
@@ -386,7 +386,7 @@ exports.airTicket = function (req, res) {
 
              var customermailbody = '<table>\
                                   <tr>\
-                                  <td><img src="https://ambitiontours.80startups.com/assets/img/logo.png"></td><br>\
+                                  <td><img src="https://ambitiontours.80startups.com/assets/img/logo1.jpg"></td><br>\
                                 </tr>\
                                 <tr>\
                                   <td><h1>Dear '+req.body.fullname+',</td>\
@@ -458,7 +458,7 @@ exports.visaEnquiry = function (req, res) {
               var customersubject  = "Thank You for your enquiry!";
               var mailbody = '<table>\
                                   <tr>\
-                                  <td><img src="https://ambitiontours.80startups.com/assets/img/logo.png"></td><br>\
+                                  <td><img src="https://ambitiontours.80startups.com/assets/img/logo1.jpg"></td><br>\
                                 </tr>\
                                 <tr>\
                                   <td><h1>Dear Ambition Tours,</td>\
@@ -485,7 +485,7 @@ exports.visaEnquiry = function (req, res) {
 
                       var customermailbody = '<table>\
                                   <tr>\
-                                  <td><img src="https://ambitiontours.80startups.com/assets/img/logo.png"></td><br>\
+                                  <td><img src="https://ambitiontours.80startups.com/assets/img/logo1.jpg"></td><br>\
                                 </tr>\
                                 <tr>\
                                   <td><h1>Dear '+req.body.name+',</td>\

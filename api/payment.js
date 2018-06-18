@@ -65,7 +65,7 @@ exports.tourPayment = function(req, res){
                             var customersubject  = "Thank You for your Booking!";
                             var mailbody = '<table>\
                                       <tr>\
-                                      <td><img src="https://ambitiontours.80startups.com/assets/img/logo.png"></td><br>\
+                                      <td><img src="https://ambitiontours.80startups.com/assets/img/logo1.jpg"></td><br>\
                                     </tr>\
                                     <tr>\
                                       <td><h1>Dear Ambition Tours,</td>\
@@ -92,7 +92,7 @@ exports.tourPayment = function(req, res){
 
                           var customermailbody = '<table>\
                                       <tr>\
-                                      <td><img src="https://ambitiontours.80startups.com/assets/img/logo.png"></td><br>\
+                                      <td><img src="https://ambitiontours.80startups.com/assets/img/logo1.jpg"></td><br>\
                                     </tr>\
                                     <tr>\
                                       <td><h1>Dear '+req.body.fullName+',</td>\
@@ -195,7 +195,7 @@ exports.voucherPayment = function(req, res){
 
                           var mailbody = '<table>\
                                       <tr>\
-                                      <td><img src="https://ambitiontours.80startups.com/assets/img/logo.png"></td><br>\
+                                      <td><img src="https://ambitiontours.80startups.com/assets/img/logo1.jpg"></td><br>\
                                     </tr>\
                                     <tr>\
                                       <td><h1>Dear Ambition Tours,</td>\
@@ -221,7 +221,7 @@ exports.voucherPayment = function(req, res){
 
                         var customermailbody = '<table>\
                                       <tr>\
-                                      <td><img src="https://ambitiontours.80startups.com/assets/img/logo.png"></td><br>\
+                                      <td><img src="https://ambitiontours.80startups.com/assets/img/logo1.jpg"></td><br>\
                                     </tr>\
                                     <tr>\
                                       <td><h1>Dear '+req.body.Name+',</td>\
