@@ -7,11 +7,11 @@ if (document.location.hostname == "suzantravels.80startups.com")
 }
 else if (document.location.hostname == "www.fountaintours.com")
 {
-  var baseurl = "https://www.suzantravels.com/api/";
+  var baseurl = "https://www.fountaintours.com/api/";
 
-}else if (document.location.hostname == "suzantravels.com")
+}else if (document.location.hostname == "fountaintours.com")
 {
-  var baseurl = "https://suzantravels.com/api/";
+  var baseurl = "https://www.fountaintours.com/api/";
 
 }else{
 
