@@ -5,17 +5,13 @@ if (document.location.hostname == "suzantravels.80startups.com")
   var baseurl = "https://suzantravels.80startups.com/api/";
 
 }
-else if (document.location.hostname == "www.suzantravels.80startups.com")
+else if (document.location.hostname == "www.fountaintours.com")
 {
-  var baseurl = "https://www.suzantravels.80startups.com/api/";
-
-}else if (document.location.hostname == "www.suzantravels.com")
-{
-  var baseurl = "https://www.suzantravels.com/api/"; 
+  var baseurl = "https://www.suzantravels.com/api/";
 
 }else if (document.location.hostname == "suzantravels.com")
 {
-  var baseurl = "https://suzantravels.com/api/"; 
+  var baseurl = "https://suzantravels.com/api/";
 
 }else{
 
