@@ -6,7 +6,7 @@ var verifycode = randomString();
 var fs = require('fs');
 var now = moment();
 var db = mysql.createPool({
-  database: 'suzantravels',
+  database: 'fountaintours',
   user: 'root',
   password: '10gXWOqeaf',
   host: 'db.80startups.com',
@@ -897,8 +897,8 @@ exports.addTour = function (req, res) {
                                 "TourDescription":req.body.TourDescription,
                                 "TourLocation": req.body.TourLocation || "",
                                 "TourDuration": "",
-                                "TourDurationDay": req.body.TourDurationDay || "", 
-                                "TourDurationNight": req.body.TourDurationNight || "", 
+                                "TourDurationDay": req.body.TourDurationDay || "",
+                                "TourDurationNight": req.body.TourDurationNight || "",
                                 "TourImage": fileName || "",
                                 "TourCost": req.body.TourCost || "",
                                 "ChildCost" : req.body.ChildCost || "",
@@ -1048,8 +1048,8 @@ exports.updateTour = function (req, res) {
 					            "TourDescription":req.body.TourDescription,
 					            "TourLocation": req.body.TourLocation || "",
 					            "TourDuration": "",
-					            "TourDurationDay": req.body.TourDurationDay || "", 
-					            "TourDurationNight": req.body.TourDurationNight || "", 
+					            "TourDurationDay": req.body.TourDurationDay || "",
+					            "TourDurationNight": req.body.TourDurationNight || "",
 					            "TourImage": fileName || "",
 					            "TourCost": req.body.TourCost || "",
 					            "ChildCost" : req.body.ChildCost || "",

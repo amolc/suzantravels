@@ -1,7 +1,7 @@
 var http = require('http');
 var mysql = require('mysql');
 var db = mysql.createPool({
-  database: 'suzantravels',
+  database: 'fountaintours',
   user: 'root',
   password: '10gXWOqeaf',
   host: 'db.80startups.com',
